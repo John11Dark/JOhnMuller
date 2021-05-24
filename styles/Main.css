@@ -1,0 +1,574 @@
+:root{
+    /*COLORS*/
+    --Primary-Color: #F25757 ;
+    --secondary-Color: #ABC1D0 ;
+    --tertiary-Color: #ff7f50; 
+    --title-Clr-:#5f9ea0; 
+
+    /* FONTS */
+    --Primary-Font: font-family: 'Roboto', sans-serif;
+    --secondary-Font: font-family:'Akaya Telivigala',cursive; 
+    
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 2em;
+    background: linear-gradient( 7deg ,rgb(0, 0, 0),rgb(8, 8, 8)) no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+p{ 
+    font-size: 1.15em;
+    font-family:'Akaya Telivigala',cursive;
+    color: white;
+    line-height: 1.9em;
+}
+body,
+h1,
+h3,
+h4,
+p {
+   margin: 0;
+}
+h1,
+h3,
+h4
+ {
+   margin-bottom: 0.25rem;
+}
+a { text-decoration: none; color: black; }
+button{
+    font-size: 2em;
+    font-family: 'Hammersmith One', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    cursor: pointer;
+    transition: 1.25s all ease;
+    outline: none;
+}
+main{ 
+    align-self: center;
+}
+header{
+    position:  fixed;
+    z-index: 3;
+    margin: 2% 12% 0% 12%;
+    width: min(95%, 50em);
+    display: flex;
+    align-items: center;
+  
+}
+
+.lines_menu{
+  
+    margin-left: 47em;
+    cursor: pointer;
+    transition: 2.2s;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: rgba(255, 157, 0, 0.972) solid 1px;
+}
+
+.lines_menu > div{ /*Navigation bar button*/
+    width: 25px;
+    height: 2.1px;
+    background-color:var(--tertiary-Color);
+    margin: 9.25px;
+    position: relative;
+    top:8px;
+    left: 0.85px;    
+}
+
+.lines_menu:hover .divein {
+    background-color: black;
+}
+
+.lines_menu:hover  {
+    background-color: var(--tertiary-Color);
+    border-color: black 2px;
+}
+
+.Socail-fixed-aside{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 0em;
+    margin-right:1vw ;
+    top: 15vw;
+    z-index: 10;
+
+}
+.Socail-fixed-aside img{
+    height: 32px;
+    margin-bottom: 1em ;
+}
+
+.Socail-fixed-aside img:hover {
+
+    opacity: .4;
+}
+
+
+
+
+
+/* AfterClick JS VAR to do Close btn */
+.AfterClick {
+    position: fixed;
+    margin-left: 56em;
+    transition: 4s;
+}
+
+
+
+.AfterClick #line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+    background-color: var(--tertiary-Color);
+    transition: 2s;
+    }
+    
+    
+    .AfterClick #line3{
+        transform: rotate(45deg) translate(-5px,-6px);
+        background-color: var(--tertiary-Color);
+        transition: 2s;
+    }
+    label { cursor: pointer;}
+
+    /*********************************************<><><><><>----- navigation bar design -----<><><><><><********************************/
+   
+    .bottom-100vh{ display: none;}
+    #Name-nav{
+       position: absolute;
+       left: 30em;
+       color: white;
+       text-transform: uppercase;
+       font-size: 1em;
+   }
+    #logoJM{
+        position: absolute;
+        font-size: 50em;
+        top: 400px;
+        left: 400px;
+        z-index: -1;
+        color: gray;
+        opacity: .04;
+    }
+    .Personal-img{
+        z-index: 0;
+        position: absolute;
+        left: 0em;
+        width:750px;
+        height: 100vh;
+        background-color: white;
+        opacity: .50;
+    }
+    
+    .bottom-100vh{
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        transform: translate(50% , -50%);
+        background-color: #131311;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        opacity: .98;
+    }
+    .LinksOFpage {
+        display: inline-flex;
+        position: relative;
+        left: 3%;
+        top: 14em;
+        margin-left:2em ;
+        text-transform: uppercase;
+    }
+    .LinksOFpage > a{
+        color: #bbbbbb;
+        font-size: 2.8em;
+        font-weight: bolder;
+    }
+
+    .LinksOFpage:hover > a{
+        opacity: .50;
+        color: var(--tertiary-Color);
+        position: relative;
+        transition: 2s linear ;
+        
+    }
+  
+    .LinksOFpage > a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: 0.90em;
+        left: 0;
+        background: #f5f5f5;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: 1.2s linear;
+      }
+      .LinksOFpage > a:hover:before,
+      .LinksOFpage > a:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+        transition: 2s ; 
+      }
+      
+      /* Jave Script On Navigation Bar */
+      .MenuShow{
+        display: block;
+         
+       }
+    #Currently-active > a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-buttons{
+        
+        position: absolute;
+        top: 65%;
+        left: 40%;
+    }
+
+    .nav-buttons > button{
+        position: relative;
+        border: 2.5px solid;
+        padding: 6px 2em;   
+        
+
+
+    }
+    .nav-buttons :nth-child(1) {
+        left: -1.1em;
+        top: 2.2em;
+        background-color: white;
+        color: var(--tertiary-Color);
+        padding: 6px 1em;     
+        transform: skewX(15deg);
+        transform: skewY(-3.5deg);
+        border-radius: 35px 0px 40px 55px;
+
+
+
+    }
+    .nav-buttons :nth-child(2) {
+        left: -5em;
+        top: 0em;
+        background-color: var(--tertiary-Color);
+        color: white;
+        transform: skewX(10deg);
+        transform: skewY(-5deg);
+        border-radius: 40px 35px 55px 0px;
+
+        
+    }
+
+    /****************************************<><><><><><><><><><><>About me form design<><><><>><><><><><><><><><**************************************/
+    .about-me-form{
+        display: none;
+    }
+         
+    .about-me-form{
+        z-index: 10;
+        position: fixed;
+        width: min(65% , 55em);
+        height: 70vh;
+        transform: translateY(20%);
+        background-color: rgba(196, 193, 193, 0.986);
+        border: solid 2px var(--tertiary-Color);
+        font-size: 1em;
+        border-radius: 25px;       
+
+
+    }  
+    .btn-close{
+        position: absolute;
+        right: 1em;
+        top: 10px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        font-size: 1.6em;
+        text-align: center;
+        transition:  1s;
+        color: whitesmoke;
+        background: var(--tertiary-Color);
+        transform: rotate(100deg);
+        cursor: pointer;
+    }
+    .btn-close:hover{
+            color: var(--tertiary-Color);
+            background: none;
+            transform: rotate(-300deg);
+            transition:  1s;
+    }
+    #AboutMeImg{
+        width: 12em;
+        position: absolute;
+        top: -12.5em;
+        left: 22.5em;
+
+    }
+    #Abou-tMe-Name{
+        transform: translate(35%, 140%);
+        font-size: 3em;
+        font-family: 'Berkshire Swash', cursive;
+        color: var(--tertiary-Color);
+        letter-spacing: 5px;
+        text-shadow: black 2px 3px;
+    }
+    #Title{
+        display: flex;
+        transform: translate(40%, 150%);
+        font-size: 1em;
+        color: var(--title-Clr-);
+        letter-spacing: 1.5px;   
+    }
+    #Aboutme-text{
+        width: 80%;
+        text-align: center;
+        position: relative;
+        top: 3em;
+        left: 2em;
+        margin-left: 3em;
+        margin-right:3em ;
+        font-size: 1.2em;
+        
+
+
+    }
+    #InfoMe{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        position: relative;
+        left: 5em;
+        top: 3em;
+    }
+    
+
+    .Sdetails{
+    position: relative;                
+    display: flex;  
+    top: 2em;
+    align-items: center;
+    line-height: 2.76em;
+    margin-right: 1em;  
+    width: 25%;
+
+
+    }    
+    span > .icons{
+        height: 39px;   
+        margin-left: 1em;
+        margin-right: 1em;  
+
+    } 
+    span > .icons:hover {
+        opacity: .75;
+    }
+
+    span > h3 {
+        font-size: 21px;
+
+    }  
+
+     /* Jave script on about me Form  */
+     .About-Me-AfterClick{
+        display:block;
+    }
+
+    .Btn-Close-AfterClick
+    {
+        display: none;
+    }
+    
+  
+    /* CV form  */
+
+    .btn-close-Cv{
+        position: absolute;
+        right: 0.5em;
+        top: 15px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        font-size: 1.6em;
+        text-align: center;
+        transition:  1s;
+        color: whitesmoke;
+        background: var(--tertiary-Color);
+        transform: rotate(100deg);
+        cursor: pointer;
+    }
+   
+    .btn-close-Cv:hover{
+            color: var(--tertiary-Color);
+            background: none;
+            transform: rotate(-300deg);
+            transition:  1s;
+    }
+
+
+    .CV-Form{
+        position: fixed;
+        transform: translate(-50% , -50%);
+        left: 50%;
+        top: 50%;
+        z-index: 10;    
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+        background-color: #f5f5f5;
+        height: 20em;
+        width: 20em; 
+        border-radius:25px ;
+        border: solid 2px var(--tertiary-Color);
+    }
+    .CV-Form {
+        display: none;
+    }
+    .CV-Form > h1 {
+        position: absolute;
+        top: 1em;
+        left:2em;  
+
+    }
+    .CV-buttons{
+        width: 70%;
+        height: 2.8em;
+        font-size: 2.1em;
+        align-self: center;
+        position: relative;
+        top: 3em;
+        background-color: var(--tertiary-Color);
+        color: var(--title-Clr-);
+        text-align:center;
+        padding: 0px 0px 5px 5px;
+        border-radius: 10px 20px 60px 10px;
+    }
+    #Pdf{
+            border-radius: 60px 20px 10px 10px;     
+            background-color: var(--title-Clr-);
+            color: var(--tertiary-Color);
+
+
+    }
+    .CV-buttons > img  {
+        height: 100px;
+        position: relative;
+        top: 20px;
+    }
+  
+     /* Jave script For CV  Form  */
+  
+     .About-Me-AfterClickCV{
+        display:block;
+    }
+
+    .Btn-Close-AfterClickCV
+    {
+        display: none;
+    }
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /****************************************<><><><><><><><><><><>Body design<><><><>><><><><><><><><><**************************************/
+
+#top_starter {/*Section*/
+padding: 5vw 0;
+margin-inline: auto;
+width: min(90%, 50em);
+display: flex;
+justify-content: space-around;
+
+}
+
+#top_starter div {
+    width: min(85%, 50em);
+    transform: translate(10% , 25%);
+    
+}
+#Top_img{
+    width: 22em;
+    position: relative;
+    left: 0em;
+    top: -5em;
+    float: left;
+    shape-outside:ellipse(20% 50%) ;
+    margin-right: 1rem;
+
+    
+}
+#Name_title{
+    opacity: .75;
+    color: rgb(146, 139, 139);
+    font-size: 3.2em;
+    position: relative;
+    top: 1.8em;
+    right: 1.4em;
+    z-index: 1;
+
+
+}
+#Name_title::before {
+content:"JM";
+position: absolute;
+left: -0.43em;
+font-size: 16em;
+top: 39px;
+opacity: .1;
+margin-bottom: -20em;
+
+
+}
+#Name_paragraph{
+    width: 19em;
+    font-size: 1.4em;
+    text-align:justify;
+    position: relative;
+    top: 4.8em;
+    right: 3em;
+
+        
+}
+body{
+    overflow-x: hidden;
+}
+
+
+
+
+
