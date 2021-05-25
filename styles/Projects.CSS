@@ -95,12 +95,8 @@ header{
     justify-content:space-around ;
     align-items: center;
     background-color: transparent;
+    transition: all 1.5s linear;
    z-index: 250; /*maybe in the future i will add new items so i make the header is in the very top */
-}
-
-/* apply JS after menu is interacting  */
-header.headerInteractingNav{
-    background-color: transparent;
 }
 
 /* 
@@ -204,7 +200,7 @@ transition: all 0.8s ease-out;
     width: 100%;
     display: flex;
     overflow: hidden;
-    z-index: 249; /* Layer under thhe navigation bar*/
+    z-index: 249; /* Layer under the navigation bar*/
     background-color: var(--Mode--tertiary-Color);
     transition:  cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
     animation: navAnim 1s forwards ease-out;
@@ -358,7 +354,7 @@ right: 1em;
  */
 
  /* aside Links/icons holder */
-.Socail-fixed-aside{
+.Social-fixed-aside{
 position: fixed;
 display: flex;
 flex-direction: column;
@@ -623,29 +619,19 @@ top: -4.8em;
 @media screen and (max-width:768px) {
    
     .mainNav{
-        clip-path: circle(30px at 82% 6.6%);
-        -webkit-clip-path:circle(1100px at 82% 6.6%);
+        clip-path: circle(30px at 79.1% 6.6%);
+        -webkit-clip-path:circle(30px at 79.1% 6.6%);
     }
-    
-    
 
     /* Scale effect JS  */
     .mainNav.clipJSApply{
-    clip-path: circle(1100px at 93.5% 5%);
-    -webkit-clip-path:circle(1100px at 93.5% 5%);
-    transition: all 2s ease-in;
+    clip-path: circle(1100px at 79.1% 6.6%);
+    -webkit-clip-path:circle(1100px at 79.1% 6.6%);
     }
 
-    
+
     /* back circuit */
     .circuitBack.Nav{
-    position: absolute;
-    right: -7.5em;
-    top: 10%;
-    transform: translateY(-10%);
-    z-index: 3;
-    animation: 200000s circuitAnim infinite ease-out;
-    width: 25em;
     display: none;
     }
 
@@ -658,18 +644,9 @@ top: -4.8em;
 
     /* page Links  */
     .navLinksList{
-    position: absolute;
-    top: 50%;
     transform: translate(0%,-50%);
-    list-style: none;
-    display: flex;
     flex-direction: column;
     gap: 3em;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    z-index: 4;
-    width: 100%;
     }
 
 
@@ -677,11 +654,6 @@ top: -4.8em;
     .navLinks{
     position: relative;
     font-size: 5vw;
-    color: var(--Mode--Primary-Color);
-    text-transform: uppercase;
-    display: flex;
-    transform: scale(1);
-    opacity: 0.7;
     }
 
     #navCodeBy{
@@ -756,7 +728,6 @@ top: -4.8em;
     width: 100%;
     text-align: center;
     transform: translate(-50%,-10%);
-
     }
 
     /* get in touch form */
@@ -801,7 +772,7 @@ top: -4.8em;
 
     /* link to skype */
     .callOnSkype{
-    top: -2.40em;
+    top: -3.25em;
     left: 25px;
     font-size: 20px;
     }
@@ -815,30 +786,74 @@ top: -4.8em;
 /* Mobile size */
 @media screen and (max-width:425px) {
     .mainNav{
-        clip-path: circle(1000px at 87.5% 6.6%);
-        -webkit-clip-path:circle(1000px at 87.5% 6.6%);
+        clip-path: circle(0px at 87.5% 6.6%);
+        -webkit-clip-path:circle(0px at 87.5% 6.6%);
     }
+     /* Scale effect JS  */
+     .mainNav.clipJSApply{
+        clip-path: circle(900px at 79.1% 6.6%);
+        -webkit-clip-path:circle(900px at 79.1% 6.6%);
+        }
 
-    header{
-        gap: 7em;
-    }
+    
+        /* my image while coding */
+        .navImageOfMeCoding{
+        width: 100%;
+        transform: skew(0deg);
+        }
+    
+        /* page Links  */
+        .navLinksList{
+        transform: translate(0%,-120%);
+        }
+    
+    
+        /* direct Links */
+        .navLinks{
+        font-size: 6.5vw;
+        }
+    
+        #navCodeBy{
+        bottom: 2px;
+        font-size: 3.1vw;
+        }
+    
+        /* get in touch button */
+        #navBtnGetInTouch{
+        position: absolute;
+        top: 80%;
+        left: 30%;
+        font-size: 4.5vw;
+        padding: 0.8em 1.4em 0.8em 1.4em;
+        }
+    
+  
+        .titleName{
+        display: none; 
+        }
+    
+        .JSApplyTitleName.titleName{
+           display:none;
+        }
 
     .Logo{
         width: 23vw;
     }
 
-    .Socail-fixed-aside{
+    .Social-fixed-aside{
         display: none;
     }
 
-    .Socail-fixed-aside  img{
+    .Social-fixed-aside  img{
         width: 30px;
         object-fit: contain;
+        margin: 0;
     }
 
-    .JSlinksVisible.Socail-fixed-aside{
+    .JSlinksVisible.Social-fixed-aside{
         display: flex;
-        right: 0.1em;
+        right: 0.2em;
+        margin: 0;
     }
 
     
@@ -934,29 +949,31 @@ top: -4.8em;
         width: 28px;
     }
 
-    @media screen and (max-width:375px) {
-        .getInTouchForm{
-            width: 100%;
-            height: 13em;
-        }
-
-        .sendEmail{ /* Send email button */
-            font-size: 0.6em;
-            height: 2.5em;
-            padding: 0 15px 0 15px;
-            left: -1.5em;
-        }
-
-        .callOnSkype{
-            font-size: 3.5vw;
-            position: absolute;
-            right: -5em;
-            top: -3.3em;
-        }
-
-    }
-    
 }
+
+
+@media screen and (max-width:375px) {
+    .getInTouchForm{
+        width: 100%;
+        height: 13em;
+    }
+
+    .sendEmail{ /* Send email button */
+        font-size: 0.6em;
+        height: 2.5em;
+        padding: 0 15px 0 15px;
+        left: -1.5em;
+    }
+
+    .callOnSkype{
+        font-size: 3.5vw;
+        position: absolute;
+        right: -5em;
+        top: -3.3em;
+    }
+
+}
+
     
     
     

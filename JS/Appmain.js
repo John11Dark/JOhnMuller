@@ -8,7 +8,7 @@ const mainNav = document.querySelector('.mainNav');
 // Title Name 
 
 // social aside links 
-const socialAside = document.querySelector('.Socail-fixed-aside');
+const socialAside = document.querySelector('.Social-fixed-aside');
 const titleName = document.querySelector('.titleName');
 // navigation bar pages links 
 const navLinks =document.querySelectorAll('.navLinksList li');
@@ -89,7 +89,7 @@ const OnScroll = new IntersectionObserver (function(entries, OnScroll) {
   entries.forEach(entry => {
       if (!entry.isIntersecting){
               return; 
-          }else{ entry.target.classList.add("HeaderbackColor");
+          }else{ entry.target.classList.add("HeaderBackColor");
           onscroll.unobserve(entry.target);
       }
   });
