@@ -6,6 +6,9 @@ const navBtn = document.querySelector('.navBurgerBtn');
 // navigation full screen
 const mainNav = document.querySelector('.mainNav'); 
 // Title Name 
+
+// social aside links 
+const socialAside = document.querySelector('.Socail-fixed-aside');
 const titleName = document.querySelector('.titleName');
 // navigation bar pages links 
 const navLinks =document.querySelectorAll('.navLinksList li');
@@ -39,6 +42,14 @@ navBtn.addEventListener('click', ()=>{
        //
      navBtn.classList.toggle('hoverClickJS');
      mainNav.classList.toggle('clipJSApply');
+
+
+     // tablet size 
+     titleName.classList.toggle('JSApplyTitleName');
+
+
+     // mobile size display social links aside
+     socialAside.classList.toggle('JSlinksVisible');
      // change title name color when the main nav is intersecting 
      titleName.classList.toggle('headerIntersectingNav');
      
