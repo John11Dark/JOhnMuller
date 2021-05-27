@@ -25,8 +25,11 @@ const copyRightText = document.querySelector('#copyRight');
 
 // When burger btn click 
 navBtn.addEventListener('click', ()=>{
-    
+  
+
     // navigation Links animation 
+
+
     navLinks.forEach((link, index) =>{
       if(link.style.animation){
         link.style.animation =''
@@ -60,8 +63,11 @@ navBtn.addEventListener('click', ()=>{
       }
       else
       {
+        if(screen.width <= 450)
+        {
         link.style.animation = `AsideLinksFadeAnim 0.5s linear forwards ${index / 3 + 1.2}s`
         link.style.animationDelay =`${index / 4 + 0.1}s`;
+        }
       }
     });
      // change title name color when the main nav is intersecting 
