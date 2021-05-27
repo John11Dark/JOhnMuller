@@ -1180,7 +1180,7 @@ header{
 }
 
 /* mobile Size medium */
-@media screen and (max-width:425px) {
+@media screen and (max-width:410px) {
 
     #copyRight{
         text-align: center;
