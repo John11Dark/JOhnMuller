@@ -26,8 +26,6 @@ const copyRightText = document.querySelector('#copyRight');
 // When burger btn click 
 navBtn.addEventListener('click', ()=>{
     
-  alert(screen.width);
-  alert(screen.height);
     // navigation Links animation 
     navLinks.forEach((link, index) =>{
       if(link.style.animation){

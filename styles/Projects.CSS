@@ -849,7 +849,7 @@ display: none;
 
 /* page Links  */
 .navLinksList{
-transform: translate(0%,-50%);
+transform: translate(-5%,-50%);
 flex-direction: column;
 gap: 3em;
 }
@@ -867,7 +867,7 @@ font-size: 14px;
 #navBtnGetInTouch{
 position: absolute;
 top: 85%;
-left: 38%;
+left: 33%;
 font-size: 1em;
 padding: 0.8em 1.4em 0.8em 1.4em;
 }
@@ -946,7 +946,7 @@ height: 7em;
      }
 
      #navBtnGetInTouch{
-        left: 34%;
+        left: 30%;
         }
     #JohnMullerImage{
     width:  32%;
@@ -969,7 +969,7 @@ height: 7em;
     }
 
     #navBtnGetInTouch{
-    left: 33%;
+    left: 29%;
     }
 
     .getInTouchHead{
@@ -1011,7 +1011,7 @@ height: 7em;
       -webkit-clip-path:circle(30px at 91% 6.64%);
     }
     #navBtnGetInTouch{
-        left: 30%;
+        left: 22%;
         }
     .titleName{
         font-size: 1.5em;
@@ -1065,7 +1065,7 @@ height: 7em;
 @media screen and (max-width: 450px){
     
     #navBtnGetInTouch{
-        left: 28%;
+        left: 23%;
         font-size: 0.9em;
         padding: 0.5 1.2em;
         }
@@ -1090,6 +1090,10 @@ height: 7em;
         font-size: 14px;
     }
 
+    .Social-fixed-aside img {
+        width: 27px;
+    }
+
 }
 
     /* Mobile size large */
@@ -1103,7 +1107,7 @@ transform: skew(0deg);
 #navBtnGetInTouch{
     font-size: 0.85em;
     padding: 0.5em 1.05em;
-    left :30.5%;
+    left :28%;
 }
 
 .mainNav{
@@ -1159,8 +1163,7 @@ header{
 }
 
 #JohnMullerImage{
-    width: 65%;
-    height: 55vh;
+    width: 70%;
     left: 0.3em;
     top: 1em;
 }
