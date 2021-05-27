@@ -1183,11 +1183,20 @@ header{
     }
     #navBtnGetInTouch{
     left: 25%;
+    top: 80%;
+    font-size: 0.85em;
+    padding: 0.45em 0.75em;
     }
     #JohnMullerImage{
         width: 50%;
         height: 50%;
     }
+
+    #navCodeBy{
+        font-size: 11px;
+    }
+
+
     .navLinksList{
         transform: translateY(-100%);
     }
