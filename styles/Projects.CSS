@@ -1,77 +1,87 @@
 :root{
 
-    /*COLORS*/
-    --Mode--Primary-Color: orangered ;
-    --Mode--secondary-Color: gray ;
-    --Mode--tertiary-Color: #110322;   
-    --Dark-Mode-Primary : black; 
-    --Dark-Mode-secondary : #fff; 
-    --Dark-Mode-secondaryItems : #f6f6f6; 
-    /* FONTS */
-    --Primary-Font1:  'Roboto', sans-serif;
-    --Primary-Font:  "Gill Sans", "Gill Sans MT", Calibri, sans-serif ;
-    --secondary-Font: 'Montserrat', sans-serif;
-    --tertiary-Font: 'Poppins', sans-serif;;
-    
-    }
+/*COLORS*/
+--Mode--Primary-Color: orangered ;
+--Mode--secondary-Color: gray ;
+--Mode--tertiary-Color: #110322;   
+--Dark-Mode-Primary : black; 
+--Dark-Mode-secondary : #fff; 
+--Dark-Mode-secondaryItems : #f6f6f6; 
+/* FONTS */
+--Primary-Font1:  'Roboto', sans-serif;
+--Primary-Font:  "Gill Sans", "Gill Sans MT", Calibri, sans-serif ;
+--secondary-Font: 'Montserrat', sans-serif;
+--tertiary-Font: 'Poppins', sans-serif;;
+
+}
+
 *,
 *::before, 
 *::after{
-    box-sizing: border-box;
+box-sizing: border-box;
+object-fit: contain;
 }
+
 html,body{
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
+scroll-behavior: smooth;
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
 }
+
 body{
-    font-family: var(--tertiary-Font);
-    font-weight: 600;
-    font-size: 1.5em;
-    line-height: 2em;
-    background: #ffffff ;
-    width: 100%;
+font-family: var(--tertiary-Font);
+font-weight: 600;
+font-size: 1.5em;
+line-height: 2em;
+background: #ffffff ;
+width: 100%;
 }
-    
+
 p{ 
-    font-size: 1.15em;
-    font-family: var(--secondary-Font);
-    color: var(--Mode--secondary-Color);
-    line-height: 1.5em;
+font-size: 1.15em;
+font-family: var(--secondary-Font);
+color: var(--Mode--secondary-Color);
+line-height: 1.5em;
 }
+
 body,
 h1,
 h3,
 h4,
 p {
-    margin: 0;
-    word-wrap: break-word;
-    
+margin: 0;
+word-wrap: break-word;
+
 }
+
 h1,
 h3,
-h4
-{
-    margin-bottom: 0.25rem;
-    font-family: var(--Primary-Font);
+h4{
+margin-bottom: 0.25rem;
+font-family: var(--Primary-Font);
 }
+
 a{ 
-    text-decoration: none; 
-    color: #110322;
-    letter-spacing: 1px;
-    
+text-decoration: none; 
+color: #110322;
+letter-spacing: 1px;
+
 }
+
 button{
-    border: none;
-    border-radius: 2.5rem ;
-    font-family: var(--tertiary-Font);
-    margin: 15px;
-    text-align: center;
-    cursor: pointer;
-    padding: 5px 5px;
-    transition: 1.25s all ease;
-    outline: none;
+border: none;
+border-radius: 2.5rem ;
+font-family: var(--tertiary-Font);
+margin: 15px;
+text-align: center;
+cursor: pointer;
+padding: 5px 5px;
+transition: 1.25s all ease;
+outline: none;
 }
+
+
+
 /* 
 //
 // Header and navigation bar
@@ -86,45 +96,39 @@ height: 10vh;
 z-index: 240;
 background-color: #ffffff;
 }
+
 header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content:space-around ;
-    align-items: center;
-    background-color: transparent;
-    transition: all 1.5s linear;
-   z-index: 250; /*maybe in the future i will add new items so i make the header is in the very top */
+position: fixed;
+top: 0;
+width: 100%;
+height: 10vh;
+display: flex;
+justify-content:space-around ;
+align-items: center;
+background-color: transparent;
+transition: all 1.5s linear;
+z-index: 250; /*maybe in the future i will add new items so i make the header is in the very top */
 }
 
-/* 
-//
-// logo 
-//
-*/
+/* /#/ logo /#/ */
 .linkHomePage{
-    transform: translateY(10%);
+transform: translateY(15%);
 }
 
-/*
-//
-//Navigation bar
-//
-*/
+/* /#/ Title name (My name Center) /#/ */
 .titleName{
-    color: var(--Mode--tertiary-Color);
-    font-size: 2.5em;
-    transform: translateY(25%);
-    transition: all 2s linear;
+color: var(--Mode--tertiary-Color);
+font-size: 2.2em;
+transform: translateY(25%);
+transition: all 2s linear;
 }
 
 /* apply JS after menu is interacting  */
 .headerIntersectingNav.titleName{
-    color: var(--Mode--Primary-Color);
-    transition: all 2.5s linear;
+color: var(--Mode--Primary-Color);
+transition: all 2.5s linear;
 }
+
 
 /*
 //
@@ -133,12 +137,13 @@ header{
 */
 .navBurgerBtn{ /*Burger button*/
 cursor: pointer;
-transform: translate(-10%,30%);
+transform: translate(10%,30%);
 height: 1.5em;
 }
+
 /* when mouse hover change color */
 .navBurgerBtn:hover .navLine{
-    background-color: var(--Dark-Mode-secondary);
+background-color: var(--Dark-Mode-secondary);
 }
 
 .navBurgerBtn:hover .navLine.Top{
@@ -147,25 +152,25 @@ left: 5px;
 }
 
 .navBurgerBtn:hover .navLine.Bottom{
-    position: relative;
-    right: 5px;
+position: relative;
+right: 5px;
 }
 
-    /*close button When hover JS */
+/*close button When hover JS */
 .hoverClickJS.navBurgerBtn:hover .navLine.Top{
-    position: relative;
-    left: -2.5px;
-    transform: translate(-10%,-10%);  
-    transition: 0.3s ease-in;
+position: relative;
+left: -2.5px;
+transform: translate(-10%,-10%);  
+transition: 0.3s ease-in;
 
 }
 
 .hoverClickJS.navBurgerBtn:hover .navLine.Bottom{
-    position: relative;
-    transform: translate(10%,10%);
-    right: -2.5px;
-    transition: 0.3s ease-out;
-  
+position: relative;
+transform: translate(10%,10%);
+right: -2.5px;
+transition: 0.3s ease-out;
+
 }
 
 .navLine{ /*Burger button normal*/
@@ -179,60 +184,58 @@ transition: all 0.8s ease-out;
 
 /* close button JS */
 .closeBtnJS .navLine.Top{
-    transform: rotate(-45deg) translate(-5px,5px );
-    transition: transform 0.3s ease-in-out;
+transform: rotate(-45deg) translate(-5px,5px );
+transition: transform 0.3s ease-in-out;
 }
 
 .closeBtnJS .navLine.Middle {
-    display: none;
+display: none;
 } 
 
 .closeBtnJS .navLine.Bottom{
-   transform: rotate(45deg) translate(-2.5px, 0px);
-   transition: transform 0.3s ease-in-out;
+transform: rotate(45deg) translate(-2.5px, 0px);
+transition: transform 0.3s ease-in-out;
 }        
-         
+        
 
 /* Main navigation abr full screen */
 .mainNav{
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    z-index: 249; /* Layer under the navigation bar*/
-    background-color: var(--Mode--tertiary-Color);
-    transition:  cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
-    animation: navAnim 1s forwards ease-out;
-    clip-path: circle(32px at 86.5% 6.8%);
-    -webkit-clip-path:circle(32px at 86.6% 6.7%);
-    transition: all 1.5s ease-out; 
+position: fixed;
+height: 100vh;
+width: 100%;
+display: flex;
+overflow: hidden;
+z-index: 249; /* Layer under the navigation bar*/
+background-color: var(--Mode--tertiary-Color);
+animation: navAnim 1s forwards ease-out;
+transition: all 1.5s ease-out; 
+clip-path: circle(32px at 87.60% 6.85%);
+-webkit-clip-path:circle(32px at 87.60% 6.85%);
 }
-
 
 /* Scale effect JS  */
 .mainNav.clipJSApply{
-    clip-path: circle(3000px at 93.5% 5%);
-    -webkit-clip-path:circle(3000px at 93.5% 5%);
-    transition: all 2s ease-in;
+clip-path: circle(3000px at 87.60% 6.8%);
+-webkit-clip-path:circle(3000px at 87.60% 6.8%);
+transition: all 2s ease-in;
 }
 
 /* back circuit */
 .circuitBack.Nav{
-    width: 50em;
-    position: absolute;
-    right: -7.5em;
-    top: 10%;
-    transform: translateY(-10%);
-    z-index: 3;
-    animation: 200000s circuitAnim infinite ease-out;
+width: 35em;
+position: absolute;
+right: -5em;
+top: 10%;
+z-index: 3;
+animation:  infinite circuitAnim 10s  linear; 
 }
 
 /* my image while coding */
 .navImageOfMeCoding{
-width: 50%;
+width: 100%;
 z-index: 1;
-transform: skew(10deg);
+transform: skew(-10deg);
+object-fit:cover;
 }
 
 /* Color burn blonde mode */
@@ -246,7 +249,7 @@ width: 100%;
 z-index: 2;
 }
 
-/* page Links  */
+/* page Links */
 .navLinksList{
 position: absolute;
 top: 50%;
@@ -262,8 +265,6 @@ width: 100%;
 }
 
 /* direct Links */
-
-
 .navLinks{
 position: relative;
 top: -20em;
@@ -275,9 +276,6 @@ transform: scale(1);
 opacity: 0.7;
 }
 
-section{
-    height: 200vh;
-}
 /* direct Links on mouse hover*/
 .navLinks:hover{
 opacity: 1;
@@ -285,36 +283,37 @@ transform: scale(1.1);
 }
 
 .navLinks:before { /* Underline hover */
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    top: 1.3em;
-    left: 0;
-    background: var(--Mode--Primary-Color);
-    transform: scaleX(0);
-    transition: 0.3s linear;
-  }
+content: "";
+position: absolute;
+width: 100%;
+height: 4px;
+top: 1.3em;
+left: 0;
+background: var(--Mode--Primary-Color);
+transform: scaleX(0);
+transition: 0.3s linear;
+}
 .navLinks:hover:before,
 .navLinks:focus:before { /* Underline hover */
-    transform: scaleX(1);
-    transition: 0.5s; 
-  }
-/*  */
+transform: scaleX(1);
+transition: 0.5s; 
+}
+/* current page */
 #navLink2{ /* active */
 opacity: 1;
 transform: scale(1.1);
 text-shadow: 0 0 4px var(--Mode--Primary-Color);
 }
+
 /* #navLink2::before{ /* Underline active *//*
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    top: 1.3em;
-    left: 0;
-    background: var(--Mode--Primary-Color);
-    transform: scaleX(1);
+content: "";
+position: absolute;
+width: 100%;
+height: 4px;
+top: 1.3em;
+left: 0;
+background: var(--Mode--Primary-Color);
+transform: scaleX(1);
 } */
 
 /* navigation bar footer */
@@ -327,33 +326,36 @@ font-size: 18px;
 right: 1em;
 }
 
-/* get in touch button */
+/* get in touch button navigation bar */
 #navBtnGetInTouch{
-    position: absolute;
-    top: 70%;
-    left: 45%;
-    z-index: 4;
-    font-size: 1.1em;
-    padding: 0.9em 1.6em 0.9em 1.6em;
-    background-color: var(--Dark-Mode-secondary);
-    color: var(--Mode--Primary-Color);
-    border-radius: 3rem;
-    transition: all 0.5s ease-out;
+position: absolute;
+top: 70%;
+left: 45%;
+z-index: 4;
+font-size: 1em;
+padding: 0.75em 1.55em 0.75em 1.55em;
+background-color: var(--Dark-Mode-secondary);
+color: var(--Mode--Primary-Color);
+border-radius: 3rem;
+transition: all 0.5s ease-out;
 }
+
 #navBtnGetInTouch:hover{
-    background-color: var(--Mode--Primary-Color);
-    color: var(--Dark-Mode-secondary);
-    transition: all 0.5s ease-out;
-    animation :  btnAnim 0.5s ease-in-out
+background-color: var(--Mode--Primary-Color);
+color: var(--Dark-Mode-secondary);
+transition: all 0.5s ease-out;
+animation :  btnAnim 0.5s ease-in-out
 }
+
+
 
 /* 
 //
 // social Media Links aside 
 //
- */
+*/
 
- /* aside Links/icons holder */
+/* aside Links/icons holder */
 .Social-fixed-aside{
 position: fixed;
 display: flex;
@@ -373,95 +375,94 @@ transform: scale(0.8);
 
 /* Icons Hover */
 .Links_SMedia:hover{
-    opacity: 1;
-    transform: scale(1);
+opacity: 1;
+transform: scale(1);
 
-    }
+}
+
 /*
 //
-// Section all items
+// Section all items Center
 //
 */
- 
+
+section{
+/* height: 400vh;
+ */}
+
+
+
 /*
 //
-// Footer all items
+// Footer all items #bottom
 //
 */
 .mainFooter{
-    width: 100%;
-    height: 100vh;
-    background:linear-gradient(30deg, #060408, #060408e1, #0000006c);
-    overflow: hidden;
-    display: flex;
-    z-index: 240;
-    position: absolute;
+width: 100%;
+height: 100vh;
+background:linear-gradient(30deg, #060408, #060408e1, #0000006c);
+overflow: hidden;
+display: flex;
+z-index: 240;
+position: absolute;
+justify-content: space-around;
+align-items: center;
 } 
 
 /* background animation  */
 .circuitBack.Footer{
-    position: absolute;
-    left: -3em;
-    top: 2%;
-    transform: translate(1%,-15%);
-    width: 31em;
-    animation:alternate  circuitAnim 21550s linear; 
-    overflow: hidden;
-    }
+position: absolute;
+left: -1em;
+top: 2%;
+width: 22em;
+animation:  infinite circuitAnim 10s  linear; 
+}
 
 
 /* My Image Footer */
 #JohnMullerImage{
-    height: 75vh;
-    width: 50%;
-    object-fit: contain;
-    transform: translate(5%,10%);
+height: 70vh;
+width: 50%;
+position: relative;
+top: -2em;
+animation: alternate imgAnim 2s linear infinite;
+z-index: 5;
+pointer-events: none;
 }
 
 /* get in touch holder */
 .getInTouchHead{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width:  min(50%, 38em);
-    height: 70%;
-    top: 10%;
-    left: 1.5em;
-    transform: translate(10%, 20%);
-    z-index: 5;
+position: relative;
+display: flex;
+flex-wrap: wrap;
+width:  min(48%, 35em);
+height: fit-content;
+z-index: 5;
 }
 
-/* get in touch Title hidden*/
-.formTitle{
-    color: var(--Mode--Primary-Color);
-    font-family: var(--secondary-Font);
-    position: relative;
-    left:0.8em;
-    top: 0.3em;
-}
 
 /* get in touch form */
 .getInTouchForm{
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5em;
-    width: min(92%,46em);
-    height: 25em;
-    margin: 1em 1em 0 1em;
-    position: relative;
-    left: 5em;
+display: flex;
+flex-wrap: wrap;
+gap: .5em;
+width: min(92%,46em);
+height: 15.8em;
+margin: 1em;
+position: relative;
+left: 5em;
 }
 
 /* Input form boxes */
 .formInput{
 width: 95%;
-height: 2.5em;
+height: 2em;
 border-radius: 10px;
 outline: none;
-font-size: 25px;
+font-size: 24px;
 color: #dadada;
 background-color: #2c2c2c;
-border: 2px solid rgb(66, 66, 66);
+border: 2px solid #424242;
 font-family: var(--tertiary-Font);
 padding-left: 10px;
 }
@@ -472,60 +473,80 @@ transition: all 0.3s linear;
 box-shadow: 0 0 10px #8080807e;
 
 }
+
 .email{ /* Sender email  */
-    width: 46.8%;
-    border-radius: 10px .5em 10px 10px;
+width: 46.5%;
+border-radius: 10px .5em 10px 10px;
 }
 
 .name{ /* Sender name */
-    width: 46.8%;
-    border-radius: .5em 10px 10px 10px;
+width: 46.5%;
+border-radius: .5em 10px 10px 10px;
 }
 
 .Subject{
-    position: relative;
-    top: -1.25em;
+position: relative;
+top: -1.25em;
 }
 .body{ /* message body */
-    height: 9em;
-    overflow-x: hidden;
-    resize: none;
-    position: relative;
-    top: -2.5em;
+height: 8em;
+overflow-x: hidden;
+resize: none;
+position: relative;
+top: -2.5em;
+}
+
+/* buttons flex holder */
+.call_action{ 
+position: absolute;
+bottom: -0.5em;
+left: -0.8em;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+
 }
 
 /* send email button */
 .sendEmail{ /* Send email button */
-    position: relative;
-    top: -4em;
-    color: whitesmoke;
-    background: var(--Mode--Primary-Color);
-    font-size: 0.9em;
-    padding: 0 35px 0 35px;
-    height: 3.3em;
+color: whitesmoke;
+background: var(--Mode--Primary-Color);
+font-size: 0.8em;
+padding: 0 30px 0 30px;
+height: 3.1em;
 }
+
 .sendEmail:hover{
-    animation: btnAnim 1s  ease-in-out;
-    background-color: var(--Dark-Mode-secondary);
-    color: var(--Mode--Primary-Color);
+animation: btnAnim 1s  ease-in-out;
+background-color: var(--Dark-Mode-secondary);
+color: var(--Mode--Primary-Color);
 }
 
 /* link to skype */
 .callOnSkype{
-    color: var(--Dark-Mode-secondary);
-    text-align: center;
-    position: relative;
-    top: -2.30em;
-    left: 30px;
-    cursor: alias;
-    font-size: 28px;
-    transform: scale(1); 
-    transition: 0.3s ease-in;   
+color: var(--Dark-Mode-secondary);
+text-align: center;
+cursor: alias;
+font-size: 22px;
+transform: scale(1); 
+transition: 0.3s ease-in;  
 }
+
 .callOnSkype:hover{
-    color:#099bdf;
-    transform: scale(1.1);
-    transition: 0.5s linear;   
+color:#099bdf;
+transform: scale(1.1);
+transition: 0.5s linear;   
+}
+
+.SkypeIcon{
+width: 35px;
+transition: all 2s linear;
+}
+
+.SkypeIcon:hover, .callOnSkype:hover .SkypeIcon{
+    content: url("../Assets/Images/Icons/socail Media/skypeIconWhite.png");
+    transition: all 2s linear;
 }
 
 
@@ -533,55 +554,62 @@ box-shadow: 0 0 10px #8080807e;
 /* Footer in footer*/
 
 .overflow /*footer  */{
-    overflow: hidden;
-    width: 100%;
-    height: 8em;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
+overflow: hidden;
+width: 100%;
+height: 8em;
+position: absolute;
+left: 0;
+bottom: 0;
+z-index: 0;
 }
 
 .footerInFooter{
-    position: absolute;
-    bottom: 0em;
-    width: 100%;
-    height: 3em;
-    background-color: var(--Mode--Primary-Color);
-    display :flex;
-    justify-content: space-around;
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 2.5em;
+background-color: var(--Mode--Primary-Color);
+display :flex;
+justify-content: space-around;
+align-items: center;
+gap: 3em;
 }
 
 /* Icons */
 .socialLinksFooter{
-position: absolute;
-top: -0.7em;
-left: 1em;
-display: flex;
 list-style: none;
-gap: 1em;
-z-index: 5;
-overflow: hidden;
+display: flex;
+gap: 5px;
+position: relative;
+}
+
+.SocailMediaIcons{
+ width: 45px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transform:scale(0.95);
+ opacity: 0.8;
+}
+
+.SocailMediaIcons:hover{
+ transform:scale(1.1);
+ opacity: 1;
 }
 
 #copyRight{
-    position: absolute;
-    color: rgb(207, 207, 207);
-    font-size: 23px;
-    width: 50%;
-    top: -1.1em;
-    left: 50%;
-    transform: translateX(-40%);
-    letter-spacing: 0.5px;
-    text-align: center;
+color: #cfcfcf;
+font-size: 22px;
+letter-spacing: 0.5px;
+transform: translate(10%,0%);
 }
 
 .logoFooter{
-position: absolute;
-right: 2em;
-top: -4.8em;
+position: relative;
+top: -1.5em;
+left: 1.5em;
+width: 145px;
 }
-
 
 /* 
 //
@@ -589,527 +617,839 @@ top: -4.8em;
 //
 */
 
-/* monitor from 1880 to up */ 
+/* monitor from 1880 and up */ 
 @media screen and (min-width:1880px) {
     .mainNav{
-        clip-path: circle(32px at 85.68% 6.1%);
-        -webkit-clip-path:circle(32px at 85.68% 6.1%);
-    }
-    
-    .circuitBack.Nav{
-        width: 75em;
-    }
-
-    .circuitBack.Footer{
-        top: 5em;
-        left: 1em;
-        width: 40em;
-    }
-
-    #JohnMullerImage{
-        transform: translate(25%, 11%);
-    }
-    .getInTouchHead{
-        transform: translate(20%,30%);
-    }
+    clip-path: circle(31px at 86.40% 6.45%);
+    -webkit-clip-path:circle(31px at 86.40% 6.45%);
 }
- 
 
-/* tablet size */
-@media screen and (max-width:768px) {
-   
-    .mainNav{
-        clip-path: circle(30px at 79.1% 6.6%);
-        -webkit-clip-path:circle(30px at 79.1% 6.6%);
-    }
+.circuitBack.Nav{
+    width: 50em;
+}
 
-    /* Scale effect JS  */
-    .mainNav.clipJSApply{
-    clip-path: circle(1100px at 79.1% 6.6%);
-    -webkit-clip-path:circle(1100px at 79.1% 6.6%);
-    }
+.circuitBack.Footer{
+    top: 3em;
+    left: 1em;
+    width: 30em;
+}
 
+#JohnMullerImage{
+    width: min(50vw,22em);
+}
 
-    /* back circuit */
-    .circuitBack.Nav{
-    display: none;
-    }
+/* get in touch form */
+.getInTouchForm{
+    width: 85%;
+    height: 17.2em;
+}
 
-    /* my image while coding */
-    .navImageOfMeCoding{
+/* Input form boxes */
+.formInput{
     width: 95%;
-    z-index:1;
-    transform: skew(10deg);
-    }
+    height: 2.3em;
+    font-size: 25px;
+}
 
-    /* page Links  */
-    .navLinksList{
-    transform: translate(0%,-50%);
-    flex-direction: column;
-    gap: 3em;
-    }
+.email{ /* Sender email  */
+    width: 46.8%;
+}
 
+.name{ /* Sender name */
+    width: 46.8%;
+}
 
-    /* direct Links */
-    .navLinks{
-    position: relative;
-    font-size: 5vw;
-    }
+.body{ /* message body */
+    height: 8em;
+}
 
-    #navCodeBy{
-    bottom: 2px;
-    font-size: 2vw;
-    }
-
-    /* get in touch button */
-    #navBtnGetInTouch{
-    position: absolute;
-    top: 80%;
-    left: 38%;
-    font-size: 2.7vw;
-    padding: 0.8em 1.4em 0.8em 1.4em;
-    }
-
-    .Logo{
-    width: 14vw;
-    position: relative;
-    top:10px;  
-    }
-
-    .titleName{
-    display: none;
-    font-size: 6vw;
-    transition: all 1.5s linear;
-    }
-
-    .JSApplyTitleName.titleName{
-        display: flex;
-        transition: all 1.5s linear;
-    }
-
-    
-    header{
-    gap: 3em;
-    transition: all 1.5s linear;
-    }
-
-
-    .circuitBack.Footer{
-    top: 20em;
-    left: 20%;
-    width: 20em;
-    }
-
-    .socialLinksFooter{
-    display: none;
-    }
-
-    .logoFooter{
-    display: none;
-    }
-    #JohnMullerImage{
-    position: absolute;
-    width: 12.5em;
-    transform: translate(81%, 56%);
-    }
-    .getInTouchHead{
-    transform: translate(-10%,10%);
+.call_action{ 
     width: 80%;
-    height: 10em;
+}
+}
+
+
+        /*  laptop small  */
+@media screen and (max-width:1270px) {
+
+    .mainNav{
+    clip-path: circle(30px at 88% 6.64%);
+    -webkit-clip-path:circle(30px at 88% 6.64%);
+    }
+
+    .mainNav.clipJSApply{
+    clip-path: circle(2000px at 89.3% 6.65%);
+    -webkit-clip-path:circle(2000px at 89.3% 6.65%);
+    }
+    
+    .navLinks{
+    font-size: 1.4em;
+    }
+
+    #navBtnGetInTouch{
+    top: 75%;
+    left: 40%;
+    }
+    
+    .circuitBack.Footer{
+    top: 5em;
+    }
+    
+    #JohnMullerImage{
+    width: min(45%, 15em);
+    left: -2em;
+    }
+    
+    .getInTouchHead{
+    width: min(75%,30em);
+    left: -2em;
+    }
+
+    .getInTouchForm{
+    width: 85%;
     }
 
     .footerInFooter{
-    height: 5vh ;
+        height: 2em ;
     }
-
+    
     #copyRight{
-    font-size: 3vw;
-    top: -1.5em;
-    width: 100%;
-    text-align: center;
-    transform: translate(-50%,-10%);
+        font-size: 20px;
+    }
+    .logoFooter{
+        width: 130px;
     }
 
-    /* get in touch form */
-    .getInTouchForm{
-    width: 94%;
-    height: 19.5em;
+    .SocailMediaIcons{
+        width: 40px;
     }
+    
+   
+    
+    
+    
+    
 
-    /* Input form boxes */
-    .formInput{
-    width: 96%;
-    height: 2.2em;
-    font-size: 22px;
-    }
+}
 
-    .formInput:focus{
-    border-bottom: 2.1px solid var(--Mode--Primary-Color);
-    }
-    .email{ /* Sender email  */
-    width: 46.8%;
-    border-radius: 10px .5em 10px 10px;
-    }
+        /*  laptop MS medium surface  */
+@media screen and (max-width:1180px) {
 
-    .name{ /* Sender name */
-    width: 46.8%;
-    }
-
-    .body{ /* message body */
-    height: 8em;
-    overflow-x: hidden;
-    resize: none;
-    position: relative;
-    top: -2.5em;
-    }
-
-    /* send email button */
-    .sendEmail{ /* Send email button */
-    font-size: 0.7em;
-    height: 3.1em;
-    padding: 0 30px 0 30px;
-    }
-
-    /* link to skype */
-    .callOnSkype{
-    top: -3.25em;
-    left: 25px;
-    font-size: 20px;
-    }
-    .SkypeIcon{
-    width: 32px;
-    }
-
-    }
-
-
-/* Mobile size */
-@media screen and (max-width:425px) {
     .mainNav{
-        clip-path: circle(0px at 87.5% 6.6%);
-        -webkit-clip-path:circle(0px at 87.5% 6.6%);
+    clip-path: circle(30px at 88.35% 6.64%);
+    -webkit-clip-path:circle(30px at 88.35% 6.64%);
     }
-     /* Scale effect JS  */
-     .mainNav.clipJSApply{
-        clip-path: circle(900px at 79.1% 6.6%);
-        -webkit-clip-path:circle(900px at 79.1% 6.6%);
-        }
 
+    .mainNav.clipJSApply {
+    clip-path: circle(1500px at 88.35% 6.64%);
+    -webkit-clip-path:circle(1500px at 88.35% 6.64%);
+    }
     
-        /* my image while coding */
-        .navImageOfMeCoding{
-        width: 100%;
-        transform: skew(0deg);
-        }
+    .navLinksList{
+        gap: 2.4em;
+        top: 40%;
+    }
+
+    .navLinks{
+    font-size: 1.3em;
+    }
+
+    .circuitBack.Footer{
+    top: 5.5em;
+    left: -2em;
+    }
     
-        /* page Links  */
-        .navLinksList{
-        transform: translate(0%,-120%);
-        }
+    #JohnMullerImage{
+    width: min(45%, 15em);
+    }
     
-    
-        /* direct Links */
-        .navLinks{
-        font-size: 6.5vw;
-        }
-    
-        #navCodeBy{
-        bottom: 2px;
-        font-size: 3.1vw;
-        }
-    
-        /* get in touch button */
-        #navBtnGetInTouch{
-        position: absolute;
-        top: 80%;
-        left: 30%;
-        font-size: 4.5vw;
-        padding: 0.8em 1.4em 0.8em 1.4em;
-        }
-    
+    .getInTouchHead{
+        left: -0.5em;
+    }
+
+    .getInTouchForm{
+    width: 80%;
+    height: 14.7em;
+    }
+
+    .formInput{
+        font-size: 22px;
+    }
+
+    .footerInFooter{
+        height: 1.5em ;
+    }
+
+    .SocailMediaIcons{
+    display: none;
+    }
+}
+
+        /*  laptop MS Small surface  */
+@media screen and (max-width:1024px){
+
+    .mainNav{
+        clip-path: circle(30px at 89% 6.4%);
+        -webkit-clip-path: circle(30px at 89% 6.4%);
+        
+    }
+
+    #JohnMullerImage{
+        width: min(40%,12em);
+        left: -3.5em;
+    }
+
+   .getInTouchForm{
+       left: 1em;
+   }
+
+   .circuitBack.Footer{
+        display: none;
+   }
+
+   .sendEmail{
+       font-size: 0.75em;
+       height: 2.8em;
+       padding: 0 20px;
+   }
+
+   .call_action{
+       width: 95%;
+   }
+
+   .callOnSkype{
+       font-size: 20px;
+   }
+
+   .SkypeIcon{
+       width: 29px;
+   }
   
-        .titleName{
-        display: none; 
-        }
-    
-        .JSApplyTitleName.titleName{
-           display:none;
-        }
+   .footerInFooter{
+       gap:0em;
+   }
+}
 
-    .Logo{
-        width: 23vw;
+/* I Pad size and surface laptops */
+@media screen and (max-width:860px) {
+
+.mainNav{
+clip-path: circle(30px at 88.5% 6.64%);
+-webkit-clip-path:circle(30px at 88.5% 6.64%);
+}
+
+.mainNav.clipJSApply{
+clip-path: circle(1100px at 89.1% 6.64%);
+-webkit-clip-path:circle(1100px at 89.1% 6.64%);
+}
+
+.circuitBack{
+display: none;
+}
+
+/* page Links  */
+.navLinksList{
+transform: translate(0%,-50%);
+flex-direction: column;
+gap: 3em;
+}
+
+/* direct Links */
+.navLinks{
+font-size: 1.45em;
+}
+
+#navCodeBy{
+bottom: 2px;
+font-size: 14px;
+}
+
+#navBtnGetInTouch{
+position: absolute;
+top: 85%;
+left: 38%;
+font-size: 1em;
+padding: 0.8em 1.4em 0.8em 1.4em;
+}
+
+.Logo{
+width:3.5em;
+position: relative;
+top:8px;  
+}
+
+.titleName{
+font-size: 1.75em;
+}
+
+.mainFooter{
+    flex-direction: column;
+}
+
+#JohnMullerImage{
+width:  27vw;
+left: 1em;
+top: 1.5em;
+}
+
+.getInTouchHead{
+width:90%;
+height: 15em;
+transform: translateY(25%);
+}
+
+.getInTouchForm{
+width: 80%;
+height: 14.70em;
+left: 3em;
+}
+
+.formInput{
+width: 96%;
+height: 2.2em;
+font-size: 23px;
+}
+
+.email{ 
+width: 46.8%;
+}
+
+.name{ 
+width: 46.8%;
+}
+
+.body{
+height: 7em;
+}
+
+.footerInFooter{
+    background-color: transparent;
+    gap: 0;
+    justify-content: center;
+}
+#copyRight{
+    font-size: 13px;
+}
+.logoFooter{
+   width: 45px;
+   top: -8px;
+   left: 1.8em; 
+}
+
+}
+
+    /* tablet XLarge size  */
+@media screen and (max-width:768px){
+    .mainNav{
+    clip-path: circle(30px at 89.1% 6.64%);
+    -webkit-clip-path:circle(30px at 89.1% 6.64%);
+     }
+
+     #navBtnGetInTouch{
+        left: 34%;
+        }
+    #JohnMullerImage{
+    width:  32%;
+    left: 1em;
+    top: 2.5em;
+    }
+    
+    .getInTouchHead{
+    transform: translateY(30%);
     }
 
-    .Social-fixed-aside{
+        
+}
+
+    /* tablet Large size  */
+@media screen and (max-width:635px){
+    .mainNav{
+      clip-path: circle(30px at 90.1% 6.64%);
+      -webkit-clip-path:circle(30px at 90.1% 6.64%);
+    }
+
+    #navBtnGetInTouch{
+    left: 33%;
+    }
+
+    .getInTouchHead{
+        width: 100%;
+    }
+
+    #JohnMullerImage{
+        width: 35%;
+    }
+
+    .Social-fixed-aside {
+        right: 0.2em;
+    }
+
+    .Social-fixed-aside img{
+        width: 30px;
+    }
+
+    .sendEmail{
+        font-size: 0.68em;
+        padding: 0 15px;  
+    }
+
+    .callOnSkype{
+        font-size: 16px;
+    }
+
+
+
+
+
+
+}
+
+   /* tablet Medium size  */
+@media screen and (max-width:500px){
+    .mainNav{
+      clip-path: circle(30px at 91% 6.64%);
+      -webkit-clip-path:circle(30px at 91% 6.64%);
+    }
+    #navBtnGetInTouch{
+        left: 30%;
+        }
+    .titleName{
+        font-size: 1.5em;
+    }
+
+    .getInTouchHead{
+        width: 100%;
+    }
+    .getInTouchForm{
+        width: 100%;
+        left: 1em;
+    }
+
+    #JohnMullerImage{
+        width: 50%;
+    }
+
+    .Social-fixed-aside {
         display: none;
     }
 
-    .Social-fixed-aside  img{
+    .Social-fixed-aside img{
         width: 30px;
-        object-fit: contain;
-        margin: 0;
+        opacity: 0.7;
+        transform: translateX(250%);
     }
 
-    .JSlinksVisible.Social-fixed-aside{
+    .JSlinksVisible.Social-fixed-aside {
         display: flex;
-        right: 0.2em;
-        margin: 0;
     }
 
+    #copyRight{
+        font-size: 11px;
+    }    
+    .logoFooter{
+        width: 35px;
+        top: 0;
+        left: 1.5em;
+    }
+    .sendEmail{
+        font-size: 0.68em;
+        padding: 0 15px;  
+    }
+
+    .callOnSkype{
+        font-size: 16px;
+    }
+}
+
+   /* tablet small size  */
+@media screen and (max-width: 450px){
     
-    .circuitBack.Nav{
-        width: 25em;
+    #navBtnGetInTouch{
+        left: 28%;
+        font-size: 0.9em;
+        padding: 0.5 1.2em;
+        }
+    #JohnMullerImage{
+        width: 52%;
+        top: 1.75em;
+        left: 0.8em;
     }
-
-    .circuitBack.Footer{
-        top: 20.5em;
-        left: 14%;
-        width: 78vw;
+    .titleName{
+        font-size: 1.35em;
     }
-
-    .footerInFooter{
-        height: 3.5vh ;
-     }
- 
-     #copyRight{
-         font-size: 3vw;
-         transform: translate(-50%,-18%);
-     }
-
-     #JohnMullerImage{
-        position: absolute;
-        top: -7.5%;
-        left: -9.5%;
-        width: 48vw;
-         transform: translate(81%,58%); 
-         animation: alternate imgAnim 2.5s linear infinite;
-    }
-
-
-    .getInTouchHead{
-        transform: translate(-18%,8%);
-        width: 97%;
-        height: 15em;
-    }
-
-    /* get in touch form */
-    .getInTouchForm{
-        width: 98%;
-        height: 14.5em;
+    #copyRight{
         position: relative;
-        left: 1.6em;
+        font-size: 10px;
+    }
+    .sendEmail{
+        font-size: 0.65em;
+        padding: 0 13px;  
     }
 
-    /* Input form boxes */
-    .formInput{
+    .callOnSkype{
+        font-size: 14px;
+    }
+
+}
+
+    /* Mobile size large */
+@media screen and (max-width:425px) {
+
+
+.navImageOfMeCoding{
+transform: skew(0deg);
+}
+
+#navBtnGetInTouch{
+    font-size: 0.85em;
+    padding: 0.5em 1.05em;
+    left :30.5%;
+}
+
+.mainNav{
+    clip-path: circle(0px at 87.5% 6.6%);
+    -webkit-clip-path:circle(0px at 87.5% 6.6%);
+}
+
+.titleName{
+    display: none;
+}
+
+header{
+    gap: 5em;
+}
+.getInTouchHead{
+    transform: translateY(30%);
+}
+.getInTouchForm{
     width: 100%;
-    height: 2em;
-    font-size: 6vw;
-    }
-    
-    .email{ /* Sender email  */
-        width: 48%;
-        border-radius: 10px .5em 10px 10px;
-    }
-    
-    .name{ /* Sender name */
-        width: 48%;
-    }
-    
-    .body{ /* message body */
-        height: 6em;
-        overflow-x: hidden;
-        resize: none;
-        position: relative;
-        top: -2.5em;
-    }
-    
-    /* send email button */
-    .sendEmail{ /* Send email button */
-        font-size: 0.6em;
-        height: 3em;
-        padding: 0 20px 0 20px;
-        left: -1.5em;
-    }
-    .call_action{
-        display: flex;
-        width: 100%;
-        align-items: center;
-        position: absolute;
-        bottom: -2.5em;
-    }
-    /* link to skype */
-    .callOnSkype{
-        font-size: 4vw;
-        position: absolute;
-        right: -5em;
-        transform: translate(9%,-5%);
-    }
-    .SkypeIcon{
-        width: 28px;
-    }
+    height: 11.5em;
+}
+.formInput{
+    width: 92%;
+    font-size: 20px;
+}
 
+.name{
+    width: 44.5%;
+}
+.email{
+    width: 44.5%;
+}
+.body{
+    height: 6em;
+}
+
+.sendEmail{
+    font-size: 0.55em;
+    padding: 5px 10px;
+}
+
+.callOnSkype{
+    font-size: 12px;
+}
+.SkypeIcon{
+    width: 20px;
 }
 
 
+#JohnMullerImage{
+    width: 40%;
+    height: 45vh;
+    left: 0.3em;
+    top: 1em;
+}
+
+#copyRight{
+    text-align: center;
+
+}
+
+.logoFooter{
+    display: none;
+}
+
+}
+
+/* mobile Size medium */
 @media screen and (max-width:375px) {
-    .getInTouchForm{
-        width: 100%;
-        height: 13em;
+
+    #copyRight{
+        text-align: center;
+        top: 1.5em;
+    }
+    .Social-fixed-aside img{
+        width: 22px;
+    }
+    #navBtnGetInTouch{
+    left: 25%;
+    }
+    #JohnMullerImage{
+        width: 50%;
+        height: 50%;
+    }
+    .navLinksList{
+        transform: translateY(-100%);
     }
 
-    .sendEmail{ /* Send email button */
-        font-size: 0.6em;
-        height: 2.5em;
-        padding: 0 15px 0 15px;
-        left: -1.5em;
+    .navLinks{
+        font-size: 1.1em;
+    }
+
+    .formInput{
+        width: 96%;
+    }
+
+    .email{
+        width: 46%;
+    }
+
+    .name{
+        width: 46%;
+    }
+    .sendEmail{
+        background: transparent;
+        font-size: 0.75em;
+        border-radius: 0;
+        padding: 0 0;
+        transform: scale(0.9);
+        width: 60%;
+        transition: all  1s linear 
+
+    }
+    .sendEmail:hover{
+        background: transparent;
+        transform: scale(1);
+        animation: normal /* Not declared */;
+        font-weight: bolder;
+        transition: all  1s linear ;
+    }
+
+    .sendEmail::before{
+        content: "";
+        background: var(--Mode--Primary-Color);
+        color: #cfcfcf;
+        width: 80px;
+        height: 17px;
+        padding: 0 0 10px 0;
+        position: absolute;
+        top: 1.15em;
+        left:-0.5em;
+        z-index: -1;
+        border-radius: 2px;
+        box-shadow: 0 0 5px #f8875f;
+        transition: all  0.5s linear ;
+
+
+    }
+
+    .sendEmail:hover::before{
+        background-color: var(--Dark-Mode-secondary);
+        transition: all  0.5s linear ;
+        box-shadow: 0 0 5px #f5f5f5;
+
     }
 
     .callOnSkype{
-        font-size: 3.5vw;
-        position: absolute;
-        right: -5em;
-        top: -3.3em;
+        font-size: 0;
+        position: relative;
+        top: 10px;
     }
+
+    .SkypeIcon{
+        width: 25px;
+    }
+
+    .SkypeIcon:hover, .callOnSkype:hover .SkypeIcon{
+        content: url("../Assets/Images/Icons/socail Media/skypeIconWhite.png");
+        transition: all 1s linear;
+    }
+
+    .SkypeIconBack::before{
+        content: "";
+        width:  180px;
+        height: 160px;
+        position: absolute;
+        top:-100%;
+        left: -100%;
+        transform: translate(-65%,-55%);
+        background-color: rgb(255, 255, 255);
+        border-radius: 1rem;
+        clip-path: circle(10px at 89% 91%);
+        -webkit-clip-path: circle(10px at 89% 91%);
+        transition: all 2s  linear;
+    }
+    
+    .SkypeIconBack:hover::before, .callOnSkype:hover .SkypeIconBack::before{
+        background-color: #099bdf;
+        clip-path: circle(100px at 89% 91%);
+        -webkit-clip-path: circle(220px at 89% 91%);
+        transition: all 3s  linear;
+    }
+}
+
+
+/* mobile Size small */
+@media screen and (max-width:320px) {
+
 
 }
 
-    
-    
-    
- /* 
- //
- // All key frames 
- //
-  */
 
-  /* navigation bar key frames animation  */
+
+
+/* 
+//
+// All key frames 
+//
+*/
+
+/* navigation bar key frames animation  */
 @-webkit-keyframes navAnim{
 
-    from{
-    opacity: 0;
-    transform: scale(2);
-    }
-    to{
-        opacity: 1;
-    transform: scale(1);
-    }
+from{
+opacity: 0;
+transform: scale(2);
 }
-    @keyframes navAnim{
+to{
+    opacity: 1;
+transform: scale(1);
+}
+}
+@keyframes navAnim{
 
-    from{
-    opacity: 0;
-    transform: scale(2);
-    }
-    to{
-        opacity: 1;
-    transform: scale(1);
-    }
+from{
+opacity: 0;
+transform: scale(2);
+}
+to{
+    opacity: 1;
+transform: scale(1);
+}
 }
 
 /* circuit background effect */
 @-webkit-keyframes circuitAnim{
-    0% {
-        transform: rotateY(-45deg);
-        transform: translateZ(180px) rotate(10deg);
-        opacity: 1;
+0% {
+    transform: rotateY(-45deg);
+    transform: translateZ(180px) rotate(10deg);
+    opacity: 1;
 }
 
 100% {
-        transform: rotateY(-50deg);
-        transform: translateZ(180px) rotate(1800000deg);
-        opacity: 0;
+    transform: rotateY(-50deg);
+    transform: translateZ(180px) rotate(1800000deg);
+    opacity: 0;
 }
 }
 
-   @keyframes circuitAnim  {
-    0% {
-              transform: rotateY(-45deg);
-              transform: translateZ(180px) rotate(10deg);
-      opacity: 1;
-    }
+    @keyframes circuitAnim  {
+0% {
+            transform: rotateY(-45deg);
+            transform: translateZ(180px) rotate(1deg);
+}
 
-    100% {
-              transform: rotateY(-50deg);
-              transform: translateZ(180px) rotate(1800000deg);
-      opacity: 0;
-    }
-  }
+100% {
+            transform: rotateY(-50deg);
+            transform: translateZ(180px) rotate(360deg);
+}
+}
 
-  /* Navigation bar Links */
-  @-webkit-keyframes navLinksFadeAnim{
-    from{
-        transform: translateY(-800%);
-        opacity: 0;
-    }
-    to{
-        transform: translateY(0%);
-        opacity: 1;
-        position: relative;
-        top: 32em;
+/* Navigation bar Links */
+@-webkit-keyframes navLinksFadeAnim{
+from{
+    transform: translateY(-800%);
+    opacity: 0;
+}
+to{
+    transform: translateY(0%);
+    opacity: 1;
+    position: relative;
+    top: 32em;
 
-    }
+}
 }
     @keyframes navLinksFadeAnim{
+from{
+    transform: translateY(-800%);
+    opacity: 0;
+}
+to{
+    transform: translateY(0%);
+    opacity: 1;
+    position: relative;
+    top: 32em;
+}
+}
+
+@-webkit-keyframes AsideLinksFadeAnim{
     from{
-        transform: translateY(-800%);
+        transform: translateX(250%);
         opacity: 0;
     }
     to{
-        transform: translateY(0%);
-        opacity: 1;
-        position: relative;
-        top: 32em;
+        transform: translateX(-275%);
+        opacity: 0.7;
     }
-  }
+    }
 
-  /* buttons animation */
+    @keyframes AsideLinksFadeAnim{
+        from{
+            transform: translateX(250%);
+            opacity: 0;
+        }
+        to{
+            transform: translateX(-275%);
+            opacity: 0.7;
+        }
+        }
+
+/* buttons animation */
 @-webkit-keyframes btnAnim {
-    0% {
-              transform: scale(1);
-    }
-    50% {
-              transform: scale(1.1);
-    }
-    100% {
-              transform: scale(1);
-    }
-  }
+0% {
+            transform: scale(1);
+}
+50% {
+            transform: scale(1.1);
+}
+100% {
+            transform: scale(1);
+}
+}
 
-   @keyframes btnAnim { 
-    0% {
-              transform: scale(1);
-    }
-    50% {
-              transform: scale(1.1);
-    }
-    100% {
-              transform: scale(1);
-    }
-  }
+@keyframes btnAnim { 
+0% {
+            transform: scale(1);
+}
+50% {
+            transform: scale(1.1);
+}
+100% {
+            transform: scale(1);
+}
+}
 
 
-    /* images rounded animation */
+/* images rounded animation */
 @-webkit-keyframes imgAnim {
-    0% {
-              transform: translate(81%, 56%);
-    }
-    100% {
-              
-              transform: translate(81%, 53%);
-    }
-  }
+0% {
+            transform: translate(81%, 56%);
+}
+100% {
+            
+            transform: translate(81%, 54%);
+}
+}
 
-   @keyframes imgAnim { 
-    0% {
-             
-              transform: translate(81%, 56%);
-    }
+@keyframes imgAnim { 
+0% {
+            
+            transform: translate(0%, 2%);
+}
+100% {
+            
+            transform: translate(0%, -3%);
+}
+}
 
-    100% {
-             
-              transform: translate(81%, 53%);
-    }
-  }
-  
 

@@ -8,6 +8,7 @@ const mainNav = document.querySelector('.mainNav');
 // Title Name 
 
 // social aside links 
+const socialAsideLinks = document.querySelectorAll('.Social-fixed-aside a');
 const socialAside = document.querySelector('.Social-fixed-aside');
 const titleName = document.querySelector('.titleName');
 // navigation bar pages links 
@@ -16,6 +17,8 @@ const navLinks =document.querySelectorAll('.navLinksList li');
 const getInTouchHeaderBtn = document.querySelector('#navBtnGetInTouch');
 
 const footer = document.querySelector('.mainFooter');
+const copyRightText = document.querySelector('#copyRight');
+
 
 
 
@@ -48,12 +51,39 @@ navBtn.addEventListener('click', ()=>{
      titleName.classList.toggle('JSApplyTitleName');
 
 
-     // mobile size display social links aside
-     socialAside.classList.toggle('JSlinksVisible');
+     // tablet and mobile size display social links aside fade in animation
+     socialAside.classList.toggle('JSlinksVisible'); // display the list holder
+     socialAsideLinks.forEach((link, index) =>{ // fade in each link individually 
+      if(link.style.animation)
+      {
+        link.style.animation =''
+      }
+      else
+      {
+        link.style.animation = `AsideLinksFadeAnim 0.5s linear forwards ${index / 3 + 1.2}s`
+        link.style.animationDelay =`${index / 4 + 0.1}s`;
+      }
+    });
      // change title name color when the main nav is intersecting 
      titleName.classList.toggle('headerIntersectingNav');
+
      
 });
+
+window.addEventListener('resize', ()=>{
+   
+  if(screen.width <= 350)
+  {
+    copyRightText.textContent = "© 2021–Today / Copyright John Muller";
+    copyRightText.style = `text-align:center; transform:translate(20%, -20%);`;
+  }
+  else
+  {
+    // not declared 
+    copyRightText.textContent = "© 2021–Today / Copyright John Muller . All rights reserved. ";
+    copyRightText.style = `text-align:center;`;
+  }
+  });
 
 
 getInTouchHeaderBtn.addEventListener('click', ()=>{
