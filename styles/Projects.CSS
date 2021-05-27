@@ -1118,13 +1118,16 @@ transform: skew(0deg);
 header{
     gap: 5em;
 }
+
 .getInTouchHead{
     transform: translateY(30%);
 }
+
 .getInTouchForm{
     width: 100%;
     height: 11.5em;
 }
+
 .formInput{
     width: 92%;
     font-size: 20px;
@@ -1133,9 +1136,11 @@ header{
 .name{
     width: 44.5%;
 }
+
 .email{
     width: 44.5%;
 }
+
 .body{
     height: 6em;
 }
@@ -1148,14 +1153,14 @@ header{
 .callOnSkype{
     font-size: 12px;
 }
+
 .SkypeIcon{
     width: 20px;
 }
 
-
 #JohnMullerImage{
-    width: 40%;
-    height: 45vh;
+    width: 50%;
+    height: 55vh;
     left: 0.3em;
     top: 1em;
 }
@@ -1172,11 +1177,12 @@ header{
 }
 
 /* mobile Size medium */
-@media screen and (max-width:375px) {
+@media screen and (max-width:400px) {
 
     #copyRight{
         text-align: center;
         top: 1.5em;
+
     }
     .Social-fixed-aside img{
         width: 22px;
@@ -1188,14 +1194,13 @@ header{
     padding: 0.45em 0.75em;
     }
     #JohnMullerImage{
-        width: 50%;
+        width: 60%;
         height: 50%;
     }
 
     #navCodeBy{
         font-size: 11px;
     }
-
 
     .navLinksList{
         transform: translateY(-100%);
@@ -1286,14 +1291,36 @@ header{
         border-radius: 1rem;
         clip-path: circle(10px at 89% 91%);
         -webkit-clip-path: circle(10px at 89% 91%);
-        transition: all 2s  linear;
+        transition: all 1.1s  linear;
     }
-    
+
     .SkypeIconBack:hover::before, .callOnSkype:hover .SkypeIconBack::before{
         background-color: #099bdf;
         clip-path: circle(100px at 89% 91%);
         -webkit-clip-path: circle(220px at 89% 91%);
-        transition: all 3s  linear;
+        transition: all 1s  linear;
+    }
+
+    .SkypeIconBack:hover::after, .callOnSkype:hover .SkypeIconBack::after{
+        display: block;
+        transition: all 0.5s ease;
+
+    }
+    .SkypeIconBack::after{
+        content: "start an online meeting with me on skype, teams or any collaboration tool would you like  😃🌸";
+        color: #ffffff;
+        position: absolute;
+        font-size: 10px;
+        width: 12em;
+        height: 150px;
+        left:-100%;
+        top: -70%;
+        word-wrap: break-word;
+        transform: translate(-70%,-50%);
+        line-height: 20px;
+        display: none;
+        transition: all 0.5s ease;
+
     }
 }
 
@@ -1419,6 +1446,7 @@ header{
 .callOnSkype{
     font-size: 14px;
 }
+
 .SkypeIcon{
     width:22px;
 }
@@ -1429,15 +1457,16 @@ header{
     gap: 0;
     justify-content: center;
 }
+
 .logoFooter{
     width: 40px;
     top: -15px;
     left: 1em;
 }
+
 #copyRight{
     font-size: 12px;
 }
-
 
 }
 
