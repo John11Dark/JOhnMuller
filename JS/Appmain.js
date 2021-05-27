@@ -103,7 +103,7 @@ const options = {
 };
 
 // Entry header || Top part 
-const observer = new IntersectionObserver (function(entries, observer)
+/* const observer = new IntersectionObserver (function(entries, observer)
 {
 entries.forEach(entry => {
       if (!entry.isIntersecting){
@@ -118,8 +118,8 @@ entries.forEach(entry => {
 
 },
 options);
-observer.observer(footer);
-
+observer.observer(footer); */
+/* 
 const OnScroll = new IntersectionObserver (function(entries, OnScroll) {
 
   entries.forEach(entry => {
@@ -134,7 +134,7 @@ appearOptions);
 
 FadeOnScroll.forEach(fadeOn => {
     OnScroll.observe(fadeOn);
-}) 
+})  */
 
 
 
