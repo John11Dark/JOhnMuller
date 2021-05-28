@@ -21,8 +21,17 @@ const copyRightText = document.querySelector('#copyRight');
 
 
 
+// function 
+window.onscroll = function () {
+  scrollRotate();
+};
 
-
+function scrollRotate() {
+  // logo back circuit 
+  const LogoRotate = document.querySelector('#Logo_x5F_circuits');
+  let offsetY = window.pageYOffset/35; 
+  LogoRotate.style = ` transform:rotate(${offsetY}deg); transform-origin: 40% 40%;`;
+}
 // When burger btn click 
 navBtn.addEventListener('click', ()=>{
   
@@ -63,7 +72,7 @@ navBtn.addEventListener('click', ()=>{
       }
       else
       {
-        if(screen.width <= 450)
+        if(screen.width <= 500)
         {
         link.style.animation = `AsideLinksFadeAnim 0.5s linear forwards ${index / 3 + 1.2}s`
         link.style.animationDelay =`${index / 4 + 0.1}s`;
@@ -101,6 +110,38 @@ getInTouchHeaderBtn.addEventListener('click', ()=>{
 const options = {
   rootMargin:"-10px 0px 0px 0px"
 };
+
+
+// Timer count down 
+const countDown = () => {
+  
+  let countDate = new Date('June 15, 2021 00:00:00').getTime();
+  let Now = new Date().getTime();
+  let Gap = countDate - Now;
+
+  let second = 1000;
+  let minute = second * 60;
+  let hour   = minute * 60;
+  let day    = hour * 24;
+
+  let textday    = Math.floor(Gap/ day);
+  let texthour   = Math.floor((Gap % day)   / hour);
+  let textminute = Math.floor((Gap % hour)  / minute);
+  let textsecond = Math.floor((Gap % minute)/ second);
+
+  document.querySelector('#Day1').innerText = textday;
+  document.querySelector('#Hour1').innerText = texthour;
+  document.querySelector('#Minute1').innerText  = textminute;
+  document.querySelector('#Second1').innerText  = textsecond;
+  document.querySelector('svg [node-id="itemdat-1"]').closest('svg').
+  querySelector('text').textContent=textsecond;
+};
+
+
+setInterval(countDown, 1000);
+
+
+
 
 // Entry header || Top part 
 /* const observer = new IntersectionObserver (function(entries, observer)

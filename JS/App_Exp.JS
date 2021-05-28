@@ -67,8 +67,9 @@ navLinks.forEach((link, index) =>{
 
 
 
+
 // Entry header || Top part 
-const observer = new IntersectionObserver (function(entries, observer)
+/* const observer = new IntersectionObserver (function(entries, observer)
 {
 entries.forEach(entry => {
       if (!entry.isIntersecting){
@@ -110,4 +111,4 @@ FadeOnScroll.forEach(fadeOn => {
 }) 
 
 
-
+ */

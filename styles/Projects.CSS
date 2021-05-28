@@ -1,43 +1,73 @@
-:root{
-
+:root {
 /*COLORS*/
---Mode--Primary-Color: orangered ;
---Mode--secondary-Color: gray ;
---Mode--tertiary-Color: #110322;   
---Dark-Mode-Primary : black; 
---Dark-Mode-secondary : #fff; 
---Dark-Mode-secondaryItems : #f6f6f6; 
+--Mode--Primary-Color: orangered;
+--Mode--secondary-Color: gray;
+--Mode--tertiary-Color: #110322;
+--Dark-Mode-Primary: black;
+--Dark-Mode-secondary: #fff;
+--Dark-Mode-secondaryItems: #f6f6f6;
 /* FONTS */
---Primary-Font1:  'Roboto', sans-serif;
---Primary-Font:  "Gill Sans", "Gill Sans MT", Calibri, sans-serif ;
---secondary-Font: 'Montserrat', sans-serif;
---tertiary-Font: 'Poppins', sans-serif;;
-
+--Primary-Font1: "Roboto", sans-serif;
+--Primary-Font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+--secondary-Font: "Montserrat", sans-serif;
+--tertiary-Font: "Poppins", sans-serif;
 }
+#SkypeBody{
+    fill:#00AFF0;
+    }
 
+    #SkypeLetter{
+    fill: #fff;
+    }
+    
 *,
-*::before, 
-*::after{
+*::before,
+*::after {
 box-sizing: border-box;
 object-fit: contain;
 }
 
-html,body{
+input,textarea{
+    padding: 10px;
+    font-family: var(--tertiary-Font);
+    font-weight: normal;
+    outline: none;
+}
+html,
+body {
 scroll-behavior: smooth;
 box-sizing: border-box;
 -webkit-font-smoothing: antialiased;
 }
 
-body{
+body {
 font-family: var(--tertiary-Font);
 font-weight: 600;
 font-size: 1.5em;
 line-height: 2em;
-background: #ffffff ;
+background: #ffffff;
 width: 100%;
+box-sizing: border-box;
 }
 
-p{ 
+main{
+    display: grid;
+    grid-template-columns: 7.5% 85% 7.5%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background: linear-gradient(10deg, white,#e6e6e6c9, #dbdbdbb4)no-repeat;  
+}
+
+section{
+    height: 95%;
+    width: 100%;
+    grid-column: 2/3;
+    margin: 1em;
+}
+
+p {
 font-size: 1.15em;
 font-family: var(--secondary-Font);
 color: var(--Mode--secondary-Color);
@@ -51,26 +81,24 @@ h4,
 p {
 margin: 0;
 word-wrap: break-word;
-
 }
 
 h1,
 h3,
-h4{
+h4 {
 margin-bottom: 0.25rem;
 font-family: var(--Primary-Font);
 }
 
-a{ 
-text-decoration: none; 
+a {
+text-decoration: none;
 color: #110322;
 letter-spacing: 1px;
-
 }
 
-button{
+button {
 border: none;
-border-radius: 2.5rem ;
+border-radius: 2.5rem;
 font-family: var(--tertiary-Font);
 margin: 15px;
 text-align: center;
@@ -80,30 +108,29 @@ transition: 1.25s all ease;
 outline: none;
 }
 
-
-
 /* 
 //
 // Header and navigation bar
 //
 */
 
-#headerBackground{
+#headerBackground {
 position: fixed;
 top: 0;
 width: 100%;
-height: 10vh;
+height: 12vh;
 z-index: 240;
-background-color: #ffffff;
+background: linear-gradient(1deg, #e9e9e9, #dbdada , #dbdbdbf3)no-repeat;
+box-shadow: 0 0 10px silver;
 }
 
-header{
+header {
 position: fixed;
 top: 0;
 width: 100%;
 height: 10vh;
 display: flex;
-justify-content:space-around ;
+justify-content: space-around;
 align-items: center;
 background-color: transparent;
 transition: all 1.5s linear;
@@ -111,12 +138,16 @@ z-index: 250; /*maybe in the future i will add new items so i make the header is
 }
 
 /* /#/ logo /#/ */
-.linkHomePage{
+.linkHomePage {
 transform: translateY(15%);
 }
 
+.Logo {
+height: 4em;
+}
+
 /* /#/ Title name (My name Center) /#/ */
-.titleName{
+.titleName {
 color: var(--Mode--tertiary-Color);
 font-size: 2.2em;
 transform: translateY(25%);
@@ -124,56 +155,55 @@ transition: all 2s linear;
 }
 
 /* apply JS after menu is interacting  */
-.headerIntersectingNav.titleName{
+.headerIntersectingNav.titleName {
 color: var(--Mode--Primary-Color);
 transition: all 2.5s linear;
 }
-
 
 /*
 //
 //Navigation bar
 //
 */
-.navBurgerBtn{ /*Burger button*/
+.navBurgerBtn {
+/*Burger button*/
 cursor: pointer;
-transform: translate(10%,30%);
+transform: translate(10%, 30%);
 height: 1.5em;
 }
 
 /* when mouse hover change color */
-.navBurgerBtn:hover .navLine{
+.navBurgerBtn:hover .navLine {
 background-color: var(--Dark-Mode-secondary);
 }
 
-.navBurgerBtn:hover .navLine.Top{
+.navBurgerBtn:hover .navLine.Top {
 position: relative;
 left: 5px;
 }
 
-.navBurgerBtn:hover .navLine.Bottom{
+.navBurgerBtn:hover .navLine.Bottom {
 position: relative;
 right: 5px;
 }
 
 /*close button When hover JS */
-.hoverClickJS.navBurgerBtn:hover .navLine.Top{
+.hoverClickJS.navBurgerBtn:hover .navLine.Top {
 position: relative;
 left: -2.5px;
-transform: translate(-10%,-10%);  
+transform: translate(-10%, -10%);
 transition: 0.3s ease-in;
-
 }
 
-.hoverClickJS.navBurgerBtn:hover .navLine.Bottom{
+.hoverClickJS.navBurgerBtn:hover .navLine.Bottom {
 position: relative;
-transform: translate(10%,10%);
+transform: translate(10%, 10%);
 right: -2.5px;
 transition: 0.3s ease-out;
-
 }
 
-.navLine{ /*Burger button normal*/
+.navLine {
+/*Burger button normal*/
 width: 1.5em;
 height: 1.2px;
 border-radius: 2.5rem;
@@ -183,23 +213,22 @@ transition: all 0.8s ease-out;
 }
 
 /* close button JS */
-.closeBtnJS .navLine.Top{
-transform: rotate(-45deg) translate(-5px,5px );
+.closeBtnJS .navLine.Top {
+transform: rotate(-45deg) translate(-5px, 5px);
 transition: transform 0.3s ease-in-out;
 }
 
 .closeBtnJS .navLine.Middle {
 display: none;
-} 
+}
 
-.closeBtnJS .navLine.Bottom{
+.closeBtnJS .navLine.Bottom {
 transform: rotate(45deg) translate(-2.5px, 0px);
 transition: transform 0.3s ease-in-out;
-}        
-        
+}
 
 /* Main navigation abr full screen */
-.mainNav{
+.mainNav {
 position: fixed;
 height: 100vh;
 width: 100%;
@@ -208,39 +237,39 @@ overflow: hidden;
 z-index: 249; /* Layer under the navigation bar*/
 background-color: var(--Mode--tertiary-Color);
 animation: navAnim 1s forwards ease-out;
-transition: all 1.5s ease-out; 
-clip-path: circle(32px at 87.60% 6.85%);
--webkit-clip-path:circle(32px at 87.60% 6.85%);
+transition: all 1.5s ease-out;
+clip-path: circle(32px at 87.6% 6.85%);
+-webkit-clip-path: circle(32px at 87.35% 6.85%);
 }
 
 /* Scale effect JS  */
-.mainNav.clipJSApply{
-clip-path: circle(3000px at 87.60% 6.8%);
--webkit-clip-path:circle(3000px at 87.60% 6.8%);
+.mainNav.clipJSApply {
+clip-path: circle(3000px at 87.6% 6.8%);
+-webkit-clip-path: circle(3000px at 87.6% 6.8%);
 transition: all 2s ease-in;
 }
 
 /* back circuit */
-.circuitBack.Nav{
-width: 35em;
+.circuitBack.Nav {
+width: 20em;
 position: absolute;
-right: -5em;
+right: 2em;
 top: 10%;
 z-index: 3;
-animation:  infinite circuitAnim 10s  linear; 
+animation: infinite circuitAnim 10s linear;
 }
 
 /* my image while coding */
-.navImageOfMeCoding{
+.navImageOfMeCoding {
 width: 100%;
 z-index: 1;
 transform: skew(-10deg);
-object-fit:cover;
+object-fit: cover;
 }
 
 /* Color burn blonde mode */
-.navColorTopBlondeMode{
-background: linear-gradient(80deg, #110322a4, #110322ec, #110322cb );
+.navColorTopBlondeMode {
+background: linear-gradient(80deg, #110322a4, #110322ec, #110322cb);
 position: absolute;
 top: 0;
 right: 0;
@@ -250,10 +279,10 @@ z-index: 2;
 }
 
 /* page Links */
-.navLinksList{
+.navLinksList {
 position: absolute;
 top: 50%;
-transform: translate(0%,-50%);
+transform: translate(0%, -50%);
 list-style: none;
 display: flex;
 gap: 5em;
@@ -265,7 +294,7 @@ width: 100%;
 }
 
 /* direct Links */
-.navLinks{
+.navLinks {
 position: relative;
 top: -20em;
 font-size: 1.6em;
@@ -274,15 +303,17 @@ text-transform: uppercase;
 display: flex;
 transform: scale(1);
 opacity: 0.7;
+font-weight: 100;
 }
 
 /* direct Links on mouse hover*/
-.navLinks:hover{
+.navLinks:hover {
 opacity: 1;
 transform: scale(1.1);
 }
 
-.navLinks:before { /* Underline hover */
+.navLinks:before {
+/* Underline hover */
 content: "";
 position: absolute;
 width: 100%;
@@ -294,18 +325,20 @@ transform: scaleX(0);
 transition: 0.3s linear;
 }
 .navLinks:hover:before,
-.navLinks:focus:before { /* Underline hover */
+.navLinks:focus:before {
+/* Underline hover */
 transform: scaleX(1);
-transition: 0.5s; 
+transition: 0.5s;
 }
 /* current page */
-#navLink2{ /* active */
+#navLink2 {
+/* active */
 opacity: 1;
 transform: scale(1.1);
 text-shadow: 0 0 4px var(--Mode--Primary-Color);
 }
 
-/* #navLink2::before{ /* Underline active *//*
+/* #navLink2::before{ /* Underline active */ /*
 content: "";
 position: absolute;
 width: 100%;
@@ -317,7 +350,7 @@ transform: scaleX(1);
 } */
 
 /* navigation bar footer */
-#navCodeBy{
+#navCodeBy {
 position: absolute;
 color: wheat;
 z-index: 4;
@@ -327,7 +360,7 @@ right: 1em;
 }
 
 /* get in touch button navigation bar */
-#navBtnGetInTouch{
+#navBtnGetInTouch {
 position: absolute;
 top: 70%;
 left: 45%;
@@ -340,14 +373,12 @@ border-radius: 3rem;
 transition: all 0.5s ease-out;
 }
 
-#navBtnGetInTouch:hover{
+#navBtnGetInTouch:hover {
 background-color: var(--Mode--Primary-Color);
 color: var(--Dark-Mode-secondary);
 transition: all 0.5s ease-out;
-animation :  btnAnim 0.5s ease-in-out
+animation: btnAnim 0.5s ease-in-out;
 }
-
-
 
 /* 
 //
@@ -356,27 +387,32 @@ animation :  btnAnim 0.5s ease-in-out
 */
 
 /* aside Links/icons holder */
-.Social-fixed-aside{
+.Social-fixed-aside {
 position: fixed;
 display: flex;
 flex-direction: column;
-right: 1em;
+gap: 0em;
+right: 0.5em;
 top: 50%;
 transform: translateY(-50%);
 z-index: 255;
 }
 
 /* icons */
-.Links_SMedia{
-margin-top:1em ;
-opacity: 0.7;
+.aside.SVGIcons{
+margin-top: 1em ;
+opacity: 0.3;
 transform: scale(0.8);
+fill: var(--Mode--Primary-Color);
+transition: linear 110s ease-out;
+height: 2em;
+
 }
 
 /* Icons Hover */
-.Links_SMedia:hover{
-opacity: 1;
+.aside:hover.SVGIcons {
 transform: scale(1);
+opacity: 1;
 
 }
 
@@ -386,10 +422,60 @@ transform: scale(1);
 //
 */
 
-section{
-/* height: 400vh;
- */}
+/* Timer Count down */
+.comingSoonCountDown{
+height: 70%;
+width: 80%;
+position: relative;
+top: 10em;
+left: 50%;
+transform: translate(-50%,-10%);
+display: flex;
+flex-direction: column;
+align-items: center;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+border: 2px solid silver;
+border-radius: 10px;
+margin-bottom: 20em;
+}
 
+.ComingSoonTitle{
+    margin-top: 1em;
+    font-size: clamp(6vw,2em,1.2em );
+    font-weight: bolder;
+    text-align: center;
+    color: var(--Mode--Primary-Color);
+    transition: all 2s linear ;
+}
+
+.timerHolder{
+    position: relative;
+    top: 10%;
+    left: 5%;
+    transform: translate(-5%,-10%);
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    gap: 1em;
+    text-align: center;
+    padding: 0.5em;
+}
+.timerText{
+font-family: var(--tertiary-Font);
+color: var(--Mode--tertiary-Color);
+font-size: 1.85em;
+}
+
+.timerText.str{
+    font-size: clamp(2vw,0.8em,0.5em);
+    font-weight: 100;
+    color: var(--Mode--secondary-Color);
+}
+
+.CountDwonEffect{
+height: 60vh;
+margin: 1em;
+}
 
 
 /*
@@ -397,30 +483,29 @@ section{
 // Footer all items #bottom
 //
 */
-.mainFooter{
+.mainFooter {
 width: 100%;
 height: 100vh;
-background:linear-gradient(30deg, #060408, #060408e1, #0000006c);
+background: linear-gradient(30deg, #060408, #060408e1, #0000006c);
 overflow: hidden;
 display: flex;
 z-index: 240;
 position: absolute;
 justify-content: space-around;
 align-items: center;
-} 
+}
 
 /* background animation  */
-.circuitBack.Footer{
+.circuitBack.Footer {
 position: absolute;
 left: -1em;
 top: 2%;
 width: 22em;
-animation:  infinite circuitAnim 10s  linear; 
+animation: infinite circuitAnim 10s linear;
 }
 
-
 /* My Image Footer */
-#JohnMullerImage{
+#JohnMullerImage {
 height: 70vh;
 width: 50%;
 position: relative;
@@ -431,22 +516,21 @@ pointer-events: none;
 }
 
 /* get in touch holder */
-.getInTouchHead{
+.getInTouchHead {
 position: relative;
 display: flex;
 flex-wrap: wrap;
-width:  min(48%, 35em);
+width: min(48%, 35em);
 height: fit-content;
 z-index: 5;
 }
 
-
 /* get in touch form */
-.getInTouchForm{
+.getInTouchForm {
 display: flex;
 flex-wrap: wrap;
-gap: .5em;
-width: min(92%,46em);
+gap: 0.5em;
+width: min(92%, 46em);
 height: 15.8em;
 margin: 1em;
 position: relative;
@@ -454,41 +538,40 @@ left: 5em;
 }
 
 /* Input form boxes */
-.formInput{
+.formInput {
 width: 95%;
 height: 2em;
 border-radius: 10px;
-outline: none;
 font-size: 24px;
 color: #dadada;
 background-color: #2c2c2c;
 border: 2px solid #424242;
-font-family: var(--tertiary-Font);
-padding-left: 10px;
 }
 
-.formInput:focus{
+.formInput:focus {
 border-bottom: 3.2px solid var(--Mode--Primary-Color);
 transition: all 0.3s linear;
 box-shadow: 0 0 10px #8080807e;
-
 }
 
-.email{ /* Sender email  */
+.email {
+/* Sender email  */
 width: 46.5%;
-border-radius: 10px .5em 10px 10px;
+border-radius: 10px 0.5em 10px 10px;
 }
 
-.name{ /* Sender name */
+.name {
+/* Sender name */
 width: 46.5%;
-border-radius: .5em 10px 10px 10px;
+border-radius: 0.5em 10px 10px 10px;
 }
 
-.Subject{
+.Subject {
 position: relative;
 top: -1.25em;
 }
-.body{ /* message body */
+.body {
+/* message body */
 height: 8em;
 overflow-x: hidden;
 resize: none;
@@ -497,7 +580,7 @@ top: -2.5em;
 }
 
 /* buttons flex holder */
-.call_action{ 
+.call_action {
 position: absolute;
 bottom: -0.5em;
 left: -0.8em;
@@ -505,11 +588,11 @@ width: 100%;
 display: flex;
 align-items: center;
 justify-content: space-around;
-
 }
 
 /* send email button */
-.sendEmail{ /* Send email button */
+.sendEmail {
+/* Send email button */
 color: whitesmoke;
 background: var(--Mode--Primary-Color);
 font-size: 0.8em;
@@ -517,43 +600,53 @@ padding: 0 30px 0 30px;
 height: 3.1em;
 }
 
-.sendEmail:hover{
-animation: btnAnim 1s  ease-in-out;
+.sendEmail:hover {
+animation: btnAnim 1s ease-in-out;
 background-color: var(--Dark-Mode-secondary);
 color: var(--Mode--Primary-Color);
 }
 
 /* link to skype */
-.callOnSkype{
+.callOnSkype {
 color: var(--Dark-Mode-secondary);
 text-align: center;
 cursor: alias;
 font-size: 22px;
-transform: scale(1); 
-transition: 0.3s ease-in;  
+transform: scale(1);
+transition: 0.3s ease-in;
+font-weight: 100;
 }
 
-.callOnSkype:hover{
-color:#099bdf;
+.callOnSkype:hover {
+color: #099bdf;
 transform: scale(1.1);
-transition: 0.5s linear;   
+transition: 0.5s linear;
 }
 
-.SkypeIcon{
-width: 35px;
-transition: all 2s linear;
-}
-
-.SkypeIcon:hover, .callOnSkype:hover .SkypeIcon{
-    content: url("../Assets/Images/Icons/socail Media/skypeIconWhite.png");
+.SkypeIcon {
+    width: 35px;
+    height: 1em;
+    transform: scale(1.3);
     transition: all 2s linear;
 }
 
 
+.SkypeBody:hover, 
+.callOnSkype:hover .SkypeBody:hover {
+transition: all 2s linear;
+fill: #fff;
+}
+
+.SkypeIcon:hover .SkypeLetter, 
+.callOnSkype:hover .SkypeLetter {
+transition: all 2s linear;
+fill: #fff;
+}
+
 
 /* Footer in footer*/
 
-.overflow /*footer  */{
+.overflow /*footer  */ {
 overflow: hidden;
 width: 100%;
 height: 8em;
@@ -563,48 +656,49 @@ bottom: 0;
 z-index: 0;
 }
 
-.footerInFooter{
+.footerInFooter {
 position: absolute;
 bottom: 0;
 width: 100%;
 height: 2.5em;
 background-color: var(--Mode--Primary-Color);
-display :flex;
+display: flex;
 justify-content: space-around;
 align-items: center;
 gap: 3em;
 }
 
 /* Icons */
-.socialLinksFooter{
+.socialLinksFooter {
 list-style: none;
 display: flex;
 gap: 5px;
 position: relative;
 }
 
-.SocailMediaIcons{
- width: 45px;
- display: flex;
- align-items: center;
- justify-content: center;
- transform:scale(0.95);
- opacity: 0.8;
+.SocailMediaIcons {
+width: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+transform: scale(0.95);
+opacity: 0.8;
 }
 
-.SocailMediaIcons:hover{
- transform:scale(1.1);
- opacity: 1;
+.SocailMediaIcons:hover {
+transform: scale(1.1);
+opacity: 1;
 }
 
-#copyRight{
+#copyRight {
 color: #cfcfcf;
 font-size: 22px;
+font-weight: 100;
 letter-spacing: 0.5px;
-transform: translate(10%,0%);
+transform: translate(10%, 0%);
 }
 
-.logoFooter{
+.logoFooter {
 position: relative;
 top: -1.5em;
 left: 1.5em;
@@ -617,254 +711,245 @@ width: 145px;
 //
 */
 
-/* monitor from 1880 and up */ 
-@media screen and (min-width:1880px) {
-    .mainNav{
-    clip-path: circle(31px at 86.40% 6.45%);
-    -webkit-clip-path:circle(31px at 86.40% 6.45%);
+/* monitor from 1880 and up */
+@media screen and (min-width: 1880px) {
+.mainNav {
+clip-path: circle(31px at 86.2% 6.45%);
+-webkit-clip-path: circle(31px at 86.2% 6.45%);
 }
 
-.circuitBack.Nav{
-    width: 50em;
+.circuitBack.Nav {
+width: 25em;
 }
 
-.circuitBack.Footer{
-    top: 3em;
-    left: 1em;
-    width: 30em;
+.circuitBack.Footer {
+top: 3em;
+left: 1em;
+width: 30em;
 }
 
-#JohnMullerImage{
-    width: min(50vw,22em);
+#JohnMullerImage {
+width: min(50vw, 22em);
 }
 
 /* get in touch form */
-.getInTouchForm{
-    width: 85%;
-    height: 17.2em;
+.getInTouchForm {
+width: 85%;
+height: 17.2em;
 }
 
 /* Input form boxes */
-.formInput{
-    width: 95%;
-    height: 2.3em;
-    font-size: 25px;
-}
-
-.email{ /* Sender email  */
-    width: 46.8%;
-}
-
-.name{ /* Sender name */
-    width: 46.8%;
-}
-
-.body{ /* message body */
-    height: 8em;
-}
-
-.call_action{ 
-    width: 80%;
-}
-}
-
-
-        /*  laptop small  */
-@media screen and (max-width:1270px) {
-
-    .mainNav{
-    clip-path: circle(30px at 88% 6.64%);
-    -webkit-clip-path:circle(30px at 88% 6.64%);
-    }
-
-    .mainNav.clipJSApply{
-    clip-path: circle(2000px at 89.3% 6.65%);
-    -webkit-clip-path:circle(2000px at 89.3% 6.65%);
-    }
-    
-    .navLinks{
-    font-size: 1.4em;
-    }
-
-    #navBtnGetInTouch{
-    top: 75%;
-    left: 40%;
-    }
-    
-    .circuitBack.Footer{
-    top: 5em;
-    }
-    
-    #JohnMullerImage{
-    width: min(45%, 15em);
-    left: -2em;
-    }
-    
-    .getInTouchHead{
-    width: min(75%,30em);
-    left: -2em;
-    }
-
-    .getInTouchForm{
-    width: 85%;
-    }
-
-    .footerInFooter{
-        height: 2em ;
-    }
-    
-    #copyRight{
-        font-size: 20px;
-    }
-    .logoFooter{
-        width: 130px;
-    }
-
-    .SocailMediaIcons{
-        width: 40px;
-    }
-    
-   
-    
-    
-    
-    
+.formInput {
+width: 95%;
+height: 2.3em;
+font-size: 25px;
 
 }
 
-        /*  laptop MS medium surface  */
-@media screen and (max-width:1180px) {
-
-    .mainNav{
-    clip-path: circle(30px at 88.35% 6.64%);
-    -webkit-clip-path:circle(30px at 88.35% 6.64%);
-    }
-
-    .mainNav.clipJSApply {
-    clip-path: circle(1500px at 88.35% 6.64%);
-    -webkit-clip-path:circle(1500px at 88.35% 6.64%);
-    }
-    
-    .navLinksList{
-        gap: 2.4em;
-        top: 40%;
-    }
-
-    .navLinks{
-    font-size: 1.3em;
-    }
-
-    .circuitBack.Footer{
-    top: 5.5em;
-    left: -2em;
-    }
-    
-    #JohnMullerImage{
-    width: min(45%, 15em);
-    }
-    
-    .getInTouchHead{
-        left: -0.5em;
-    }
-
-    .getInTouchForm{
-    width: 80%;
-    height: 14.7em;
-    }
-
-    .formInput{
-        font-size: 22px;
-    }
-
-    .footerInFooter{
-        height: 1.5em ;
-    }
-
-    .SocailMediaIcons{
-    display: none;
-    }
+.email {
+/* Sender email  */
+width: 46.8%;
 }
 
-        /*  laptop MS Small surface  */
-@media screen and (max-width:1024px){
+.name {
+/* Sender name */
+width: 46.8%;
+}
 
-    .mainNav{
-        clip-path: circle(30px at 89% 6.4%);
-        -webkit-clip-path: circle(30px at 89% 6.4%);
-        
-    }
+.body {
+/* message body */
+height: 8em;
+}
 
-    #JohnMullerImage{
-        width: min(40%,12em);
-        left: -3.5em;
-    }
+.call_action {
+width: 80%;
+}
+}
 
-   .getInTouchForm{
-       left: 1em;
-   }
+/*  laptop small  */
+@media screen and (max-width: 1270px) {
+.mainNav {
+clip-path: circle(30px at 87.8% 6.64%);
+-webkit-clip-path: circle(30px at 87.8% 6.64%);
+}
 
-   .circuitBack.Footer{
-        display: none;
-   }
+.mainNav.clipJSApply {
+clip-path: circle(2000px at 89.3% 6.65%);
+-webkit-clip-path: circle(2000px at 89.3% 6.65%);
+}
 
-   .sendEmail{
-       font-size: 0.75em;
-       height: 2.8em;
-       padding: 0 20px;
-   }
+.navLinks {
+font-size: 1.4em;
+}
 
-   .call_action{
-       width: 95%;
-   }
+#navBtnGetInTouch {
+top: 75%;
+left: 40%;
+}
 
-   .callOnSkype{
-       font-size: 20px;
-   }
+.circuitBack.Footer {
+top: 5em;
+}
 
-   .SkypeIcon{
-       width: 29px;
-   }
-  
-   .footerInFooter{
-       gap:0em;
-   }
+#JohnMullerImage {
+width: min(45%, 15em);
+left: -2em;
+}
+
+.getInTouchHead {
+width: min(75%, 30em);
+left: -2em;
+}
+
+.getInTouchForm {
+width: 85%;
+}
+
+.footerInFooter {
+height: 2em;
+}
+
+#copyRight {
+font-size: 20px;
+}
+.logoFooter {
+width: 130px;
+}
+
+.SocailMediaIcons {
+width: 40px;
+}
+}
+
+/*  laptop MS medium surface  */
+@media screen and (max-width: 1180px) {
+.mainNav {
+clip-path: circle(30px at 88.15% 6.64%);
+-webkit-clip-path: circle(30px at 88.15% 6.64%);
+}
+
+.mainNav.clipJSApply {
+clip-path: circle(1500px at 88.35% 6.64%);
+-webkit-clip-path: circle(1500px at 88.35% 6.64%);
+}
+
+.navLinksList {
+gap: 2.4em;
+top: 40%;
+}
+
+.navLinks {
+font-size: 1.3em;
+}
+
+.circuitBack.Footer {
+top: 5.5em;
+left: -2em;
+}
+
+#JohnMullerImage {
+width: min(45%, 15em);
+}
+
+.getInTouchHead {
+left: -0.5em;
+}
+
+.getInTouchForm {
+width: 80%;
+height: 14.7em;
+}
+
+.formInput {
+font-size: 22px;
+}
+
+.footerInFooter {
+height: 1.5em;
+}
+
+.SocailMediaIcons {
+display: none;
+}
+}
+
+/*  laptop MS Small surface  */
+@media screen and (max-width: 1024px) {
+.mainNav {
+clip-path: circle(30px at 88.9% 6.4%);
+-webkit-clip-path: circle(30px at 88.9% 6.4%);
+}
+
+#JohnMullerImage {
+width: min(40%, 12em);
+left: -3.5em;
+}
+
+.getInTouchForm {
+left: 1em;
+}
+
+.circuitBack.Footer {
+display: none;
+}
+
+.sendEmail {
+font-size: 0.75em;
+height: 2.8em;
+padding: 0 20px;
+}
+
+.call_action {
+width: 95%;
+}
+
+.callOnSkype {
+font-size: 20px;
+}
+
+.SkypeIcon {
+transform: scale(1);
+}
+
+.footerInFooter {
+gap: 0em;
+}
 }
 
 /* I Pad size and surface laptops */
-@media screen and (max-width:860px) {
-
-.mainNav{
+@media screen and (max-width: 860px) {
+.mainNav {
 clip-path: circle(30px at 88.5% 6.64%);
--webkit-clip-path:circle(30px at 88.5% 6.64%);
+-webkit-clip-path: circle(30px at 88.5% 6.64%);
 }
 
-.mainNav.clipJSApply{
+.mainNav.clipJSApply {
 clip-path: circle(1100px at 89.1% 6.64%);
--webkit-clip-path:circle(1100px at 89.1% 6.64%);
+-webkit-clip-path: circle(1100px at 89.1% 6.64%);
 }
 
-.circuitBack{
+.circuitBack {
 display: none;
 }
 
 /* page Links  */
-.navLinksList{
-transform: translate(-5%,-50%);
+.navLinksList {
+transform: translate(-5%, -50%);
 flex-direction: column;
 gap: 3em;
 }
 
 /* direct Links */
-.navLinks{
+.navLinks {
 font-size: 1.45em;
 }
 
-#navCodeBy{
+#navCodeBy {
 bottom: 2px;
 font-size: 14px;
 }
 
-#navBtnGetInTouch{
+#navBtnGetInTouch {
 position: absolute;
 top: 85%;
 left: 33%;
@@ -872,663 +957,624 @@ font-size: 1em;
 padding: 0.8em 1.4em 0.8em 1.4em;
 }
 
-.Logo{
-width:3.5em;
+.Logo {
+width: 3.5em;
 position: relative;
-top:8px;  
+top: 8px;
 }
 
-.titleName{
+.titleName {
 font-size: 1.75em;
 }
 
-.mainFooter{
-    flex-direction: column;
+.mainFooter {
+flex-direction: column;
 }
 
-#JohnMullerImage{
-width:  27vw;
+#JohnMullerImage {
+width: 27vw;
 left: 1em;
 top: 1.5em;
 }
 
-.getInTouchHead{
-width:90%;
+.getInTouchHead {
+width: 90%;
 height: 15em;
 transform: translateY(25%);
 }
 
-.getInTouchForm{
+.getInTouchForm {
 width: 80%;
-height: 14.70em;
+height: 14.7em;
 left: 3em;
 }
 
-.formInput{
+.formInput {
 width: 96%;
 height: 2.2em;
 font-size: 23px;
 }
 
-.email{ 
+.email {
 width: 46.8%;
 }
 
-.name{ 
+.name {
 width: 46.8%;
 }
 
-.body{
+.body {
 height: 7em;
 }
 
-.footerInFooter{
-    background-color: transparent;
-    gap: 0;
-    justify-content: center;
-    z-index: 8;
+.footerInFooter {
+background-color: transparent;
+gap: 0;
+justify-content: center;
+z-index: 8;
 }
 
-#copyRight{
-    font-size: 13px;
+#copyRight {
+font-size: 13px;
 }
 
-.logoFooter{
-   width: 45px;
-   top: -8px;
-   left: 1.8em; 
+.logoFooter {
+width: 45px;
+top: -8px;
+left: 1.8em;
+}
 }
 
+/* tablet XLarge size  */
+@media screen and (max-width: 768px) {
+.mainNav {
+clip-path: circle(30px at 89.1% 6.64%);
+-webkit-clip-path: circle(30px at 89.1% 6.64%);
 }
 
-    /* tablet XLarge size  */
-@media screen and (max-width:768px){
-    .mainNav{
-    clip-path: circle(30px at 89.1% 6.64%);
-    -webkit-clip-path:circle(30px at 89.1% 6.64%);
-     }
-
-     #navBtnGetInTouch{
-        left: 30%;
-        }
-    #JohnMullerImage{
-    width:  32%;
-    left: 1em;
-    top: 2.5em;
-    z-index: -5;
-    }
-    
-    .getInTouchHead{
-    transform: translateY(30%);
-    }
-
-        
+#navBtnGetInTouch {
+left: 30%;
+}
+#JohnMullerImage {
+width: 32%;
+left: 1em;
+top: 2.5em;
+z-index: -5;
 }
 
-    /* tablet Large size  */
-@media screen and (max-width:635px){
-    .mainNav{
-      clip-path: circle(30px at 90.1% 6.64%);
-      -webkit-clip-path:circle(30px at 90.1% 6.64%);
-    }
-
-    #navBtnGetInTouch{
-    left: 29%;
-    }
-
-    .getInTouchHead{
-        width: 100%;
-    }
-
-    #JohnMullerImage{
-        width: 35%;
-    }
-
-    .Social-fixed-aside {
-        right: 0.2em;
-    }
-
-    .Social-fixed-aside img{
-        width: 30px;
-    }
-
-    .sendEmail{
-        font-size: 0.68em;
-        padding: 0 15px;  
-    }
-
-    .callOnSkype{
-        font-size: 16px;
-    }
-
-
-
-
-
-
+.getInTouchHead {
+transform: translateY(30%);
+}
 }
 
-   /* tablet Medium size  */
-@media screen and (max-width:500px){
-    .mainNav{
-      clip-path: circle(30px at 91% 6.64%);
-      -webkit-clip-path:circle(30px at 91% 6.64%);
-    }
-    #navBtnGetInTouch{
-        left: 22%;
-        }
-    .titleName{
-        font-size: 1.5em;
-    }
-
-    .getInTouchHead{
-        width: 100%;
-    }
-    .getInTouchForm{
-        width: 100%;
-        left: 1em;
-    }
-
-    #JohnMullerImage{
-        width: 50%;
-    }
-
-    .Social-fixed-aside {
-        display: none;
-    }
-
-    .Social-fixed-aside img{
-        width: 30px;
-        opacity: 0.7;
-        transform: translateX(250%);
-    }
-
-    .JSlinksVisible.Social-fixed-aside {
-        display: flex;
-    }
-
-    #copyRight{
-        font-size: 11px;
-    }    
-    .logoFooter{
-        width: 35px;
-        top: 0;
-        left: 1.5em;
-    }
-    .sendEmail{
-        font-size: 0.68em;
-        padding: 0 15px;  
-    }
-
-    .callOnSkype{
-        font-size: 16px;
-    }
+/* tablet Large size  */
+@media screen and (max-width: 635px) {
+.mainNav {
+clip-path: circle(30px at 90.1% 6.64%);
+-webkit-clip-path: circle(30px at 90.1% 6.64%);
 }
 
-   /* tablet small size  */
-@media screen and (max-width: 450px){
-    
-    #navBtnGetInTouch{
-        left: 22%;
-        font-size: 0.95em;
-        padding: 0.5em 1.3em;
-        }
-    #JohnMullerImage{
-        width: 52%;
-        top: 1.75em;
-        left: 0.8em;
-    }
-    .titleName{
-        font-size: 1.35em;
-    }
-    #copyRight{
-        position: relative;
-        font-size: 10px;
-    }
-    .sendEmail{
-        font-size: 0.65em;
-        padding: 0 13px;  
-    }
 
-    .callOnSkype{
-        font-size: 14px;
-    }
-
-    .Social-fixed-aside img {
-        width: 27px;
-    }
-
+.aside.SVGIcons{
+    transform: scale(0.75);
+}
+#navBtnGetInTouch {
+left: 29%;
 }
 
-    /* Mobile size large */
-@media screen and (max-width:425px) {
+.getInTouchHead {
+width: 100%;
+}
 
+#JohnMullerImage {
+width: 35%;
+}
 
-.navImageOfMeCoding{
+.Social-fixed-aside {
+right: 0.2em;
+}
+
+.Social-fixed-aside img {
+width: 30px;
+}
+
+.sendEmail {
+font-size: 0.68em;
+padding: 0 15px;
+}
+
+.callOnSkype {
+font-size: 16px;
+}
+}
+
+/* tablet Medium size  */
+@media screen and (max-width: 500px) {
+.mainNav {
+clip-path: circle(30px at 91% 6.64%);
+-webkit-clip-path: circle(30px at 91% 6.64%);
+}
+#navBtnGetInTouch {
+left: 22%;
+}
+.titleName {
+font-size: 1.5em;
+}
+
+.getInTouchHead {
+width: 100%;
+}
+.getInTouchForm {
+width: 100%;
+left: 1em;
+}
+
+#JohnMullerImage {
+width: 50%;
+}
+
+.Social-fixed-aside {
+display: flex;
+}
+
+.aside {
+width: 30px;
+opacity: 0.7;
+position: relative;
+left: 2em;
+}
+
+.JSlinksVisible.Social-fixed-aside {
+display: flex;
+}
+
+#copyRight {
+font-size: 11px;
+}
+.logoFooter {
+width: 35px;
+top: 0;
+left: 1.5em;
+}
+.sendEmail {
+font-size: 0.68em;
+padding: 0 15px;
+}
+
+.callOnSkype {
+font-size: 16px;
+}
+}
+
+/* tablet small size  */
+@media screen and (max-width: 450px) {
+#navBtnGetInTouch {
+left: 22%;
+font-size: 0.95em;
+padding: 0.5em 1.3em;
+}
+#JohnMullerImage {
+width: 52%;
+top: 1.75em;
+left: 0.8em;
+}
+.titleName {
+font-size: 1.35em;
+}
+#copyRight {
+position: relative;
+font-size: 10px;
+}
+.sendEmail {
+font-size: 0.65em;
+padding: 0 13px;
+}
+
+.callOnSkype {
+font-size: 14px;
+}
+
+.Social-fixed-aside img {
+width: 27px;
+}
+}
+
+/* Mobile size large */
+@media screen and (max-width: 425px) {
+.navImageOfMeCoding {
 transform: skew(0deg);
 }
 
-#navBtnGetInTouch{
-    font-size: 0.85em;
-    padding: 0.5em 1.05em;
-    left :28%;
+#navBtnGetInTouch {
+font-size: 0.85em;
+padding: 0.5em 1.05em;
+left: 28%;
 }
 
-.mainNav{
-    clip-path: circle(0px at 87.5% 6.6%);
-    -webkit-clip-path:circle(0px at 87.5% 6.6%);
+.mainNav {
+clip-path: circle(0px at 87.5% 6.6%);
+-webkit-clip-path: circle(0px at 87.5% 6.6%);
 }
 
-.titleName{
-    display: none;
+.titleName {
+display: none;
 }
 
-header{
-    gap: 5em;
+header {
+gap: 5em;
 }
 
-.getInTouchHead{
-    transform: translateY(30%);
+.getInTouchHead {
+transform: translateY(30%);
 }
 
-.getInTouchForm{
-    width: 100%;
-    height: 11.5em;
+.getInTouchForm {
+width: 100%;
+height: 11.5em;
 }
 
-.formInput{
-    width: 92%;
-    font-size: 20px;
+.formInput {
+width: 92%;
+font-size: 20px;
 }
 
-.name{
-    width: 44.5%;
+.name {
+width: 44.5%;
 }
 
-.email{
-    width: 44.5%;
+.email {
+width: 44.5%;
 }
 
-.body{
-    height: 6em;
+.body {
+height: 6em;
 }
 
-.sendEmail{
-    font-size: 0.55em;
-    padding: 5px 10px;
+.sendEmail {
+font-size: 0.55em;
+padding: 5px 10px;
 }
 
-.callOnSkype{
-    font-size: 12px;
+.callOnSkype {
+font-size: 12px;
 }
 
-.SkypeIcon{
-    width: 20px;
+
+
+#JohnMullerImage {
+width: 70%;
+left: 0.3em;
+top: 1em;
 }
 
-#JohnMullerImage{
-    width: 70%;
-    left: 0.3em;
-    top: 1em;
+#copyRight {
+text-align: center;
 }
 
-#copyRight{
-    text-align: center;
-
+.logoFooter {
+display: none;
 }
-
-.logoFooter{
-    display: none;
-}
-
 }
 
 /* mobile Size medium */
-@media screen and (max-width:410px) {
-
-    #copyRight{
-        text-align: center;
-        top: 1.5em;
-
-    }
-    .Social-fixed-aside img{
-        width: 22px;
-    }
-    #navBtnGetInTouch{
-    left: 25%;
-    top: 80%;
-    font-size: 0.85em;
-    padding: 0.45em 0.75em;
-    }
-    #JohnMullerImage{
-        width: 60%;
-        height: 50%;
-    }
-
-    #navCodeBy{
-        font-size: 11px;
-    }
-
-    .navLinksList{
-        transform: translateY(-100%);
-    }
-
-    .navLinks{
-        font-size: 1.1em;
-    }
-
-    .formInput{
-        width: 96%;
-    }
-
-    .email{
-        width: 46%;
-    }
-
-    .name{
-        width: 46%;
-    }
-    .sendEmail{
-        background: transparent;
-        font-size: 0.75em;
-        border-radius: 0;
-        padding: 0 0;
-        transform: scale(0.9);
-        width: 60%;
-        transition: all  1s linear 
-
-    }
-    .sendEmail:hover{
-        background: transparent;
-        transform: scale(1);
-        animation: normal /* Not declared */;
-        font-weight: bolder;
-        transition: all  1s linear ;
-    }
-
-    .sendEmail::before{
-        content: "";
-        background: var(--Mode--Primary-Color);
-        color: #cfcfcf;
-        width: 80px;
-        height: 17px;
-        padding: 0 0 10px 0;
-        position: absolute;
-        top: 1.15em;
-        left:-0.5em;
-        z-index: -1;
-        border-radius: 2px;
-        box-shadow: 0 0 5px #f8875f;
-        transition: all  0.5s linear ;
-
-
-    }
-
-    .sendEmail:hover::before{
-        background-color: var(--Dark-Mode-secondary);
-        transition: all  0.5s linear ;
-        box-shadow: 0 0 5px #f5f5f5;
-
-    }
-
-    .callOnSkype{
-        font-size: 0;
-        position: relative;
-        top: 10px;
-    }
-
-    .SkypeIcon{
-        width: 25px;
-    }
-
-    .SkypeIcon:hover, .callOnSkype:hover .SkypeIcon{
-        content: url("../Assets/Images/Icons/socail Media/skypeIconWhite.png");
-        transition: all 1s linear;
-    }
-
-    .SkypeIconBack::before{
-        content: "";
-        width:  180px;
-        height: 160px;
-        position: absolute;
-        top:-100%;
-        left: -100%;
-        transform: translate(-65%,-55%);
-        background-color: rgb(255, 255, 255);
-        border-radius: 1rem;
-        clip-path: circle(10px at 89% 91%);
-        -webkit-clip-path: circle(10px at 89% 91%);
-        transition: all 1.1s  linear;
-    }
-
-    .SkypeIconBack:hover::before, .callOnSkype:hover .SkypeIconBack::before{
-        background-color: #099bdf;
-        clip-path: circle(100px at 89% 91%);
-        -webkit-clip-path: circle(220px at 89% 91%);
-        transition: all 1s  linear;
-    }
-
-    .SkypeIconBack:hover::after, .callOnSkype:hover .SkypeIconBack::after{
-        display: block;
-        transition: all 0.5s ease;
-
-    }
-    .SkypeIconBack::after{
-        content: "start an online meeting with me on skype, teams or any collaboration tool would you like  😃🌸";
-        color: #ffffff;
-        position: absolute;
-        font-size: 10px;
-        width: 12em;
-        height: 150px;
-        left:-100%;
-        top: -70%;
-        word-wrap: break-word;
-        transform: translate(-70%,-50%);
-        line-height: 20px;
-        display: none;
-        transition: all 0.5s ease;
-
-    }
+@media screen and (max-width: 410px) {
+#copyRight {
+text-align: center;
+top: 1.5em;
+}
+.aside.SVGIcons {
+transform:scale(0.7);
+}
+#navBtnGetInTouch {
+left: 25%;
+top: 80%;
+font-size: 0.85em;
+padding: 0.45em 0.75em;
+}
+#JohnMullerImage {
+width: 60%;
+height: 50%;
 }
 
+#navCodeBy {
+font-size: 11px;
+}
+
+.navLinksList {
+transform: translateY(-100%);
+}
+
+.navLinks {
+font-size: 1.1em;
+}
+
+.formInput {
+width: 96%;
+}
+
+.email {
+width: 46%;
+}
+
+.name {
+width: 46%;
+}
+.sendEmail {
+background: transparent;
+font-size: 0.75em;
+border-radius: 0;
+padding: 0 0;
+transform: scale(0.9);
+width: 60%;
+transition: all 1s linear;
+}
+.sendEmail:hover {
+background: transparent;
+transform: scale(1);
+animation: normal /* Not declared */;
+font-weight: bolder;
+transition: all 1s linear;
+}
+
+.sendEmail::before {
+content: "";
+background: var(--Mode--Primary-Color);
+color: #cfcfcf;
+width: 80px;
+height: 17px;
+padding: 0 0 10px 0;
+position: absolute;
+top: 1.15em;
+left: -0.5em;
+z-index: -1;
+border-radius: 2px;
+box-shadow: 0 0 5px #f8875f;
+transition: all 0.5s linear;
+}
+
+.sendEmail:hover::before {
+background-color: var(--Dark-Mode-secondary);
+transition: all 0.5s linear;
+box-shadow: 0 0 5px #f5f5f5;
+}
+
+.callOnSkype {
+font-size: 0;
+position: relative;
+top: 10px;
+}
+
+.SkypeIcon {
+    transform: scale(1.1);
+}
+
+.SkypeIconBack::before {
+content: "";
+width: 180px;
+height: 160px;
+position: absolute;
+top: -100%;
+left: -100%;
+transform: translate(-65%, -55%);
+background-color: rgb(255, 255, 255);
+border-radius: 1rem;
+clip-path: circle(10px at 89% 91%);
+-webkit-clip-path: circle(10px at 89% 91%);
+transition: all 1.1s linear;
+}
+
+.SkypeIconBack:hover::before,
+.callOnSkype:hover .SkypeIconBack::before {
+background-color: #099bdf;
+clip-path: circle(100px at 89% 91%);
+-webkit-clip-path: circle(220px at 89% 91%);
+transition: all 1s linear;
+}
+
+.SkypeIconBack:hover::after,
+.callOnSkype:hover .SkypeIconBack::after {
+display: block;
+transition: all 0.5s ease;
+}
+.SkypeIconBack::after {
+content: "start an online meeting with me on skype, teams or any collaboration tool would you like  😃🌸";
+color: #ffffff;
+position: absolute;
+font-size: 10px;
+width: 12em;
+height: 150px;
+left: -100%;
+top: -70%;
+word-wrap: break-word;
+transform: translate(-70%, -50%);
+line-height: 20px;
+display: none;
+transition: all 0.5s ease;
+}
+}
 
 /* mobile Size small */
-@media screen and (max-width:320px) {
-
-
+@media screen and (max-width: 320px) {
 }
 
-@media screen and (max-height:450px) {
-.titleName{
-    font-size: 1.6em;
+@media screen and (max-height: 450px) {
+.titleName {
+font-size: 1.6em;
 }
 
-.Logo{
-    width: 85px;
-    position: relative;
-    top: 10px;
+.Logo {
+width: 85px;
+position: relative;
+top: 10px;
 }
 
-.mainNav{
-    clip-path: circle(28px at 87.9% 8.2%);
-    -webkit-clip-path: circle(28px at 87.9% 8.2%);
+.mainNav {
+clip-path: circle(28px at 87.9% 8.2%);
+-webkit-clip-path: circle(28px at 87.9% 8.2%);
 }
 
-.circuitBack.Nav{
-    display: block;
-        right: -1em;
-        top: 4em;
-        width: 15em;
+.circuitBack.Nav {
+display: block;
+right: 1em;
+top: 4em;
+width: 10em;
 }
 
-.navLinksList{
-    top:-2em;
-    gap: 1em;
+.navLinksList {
+top: -2em;
+gap: 1em;
 }
 
-.navLinks{
-    font-size: 1.1em;
+.navLinks {
+font-size: 1.1em;
 }
 
-#navBtnGetInTouch{
-    top: 70%;
-    font-size: 0.9em;
-    padding: 0.55em 1.2em;
+#navBtnGetInTouch {
+top: 70%;
+font-size: 0.9em;
+padding: 0.55em 1.2em;
 }
-#navCodeBy{
-    font-size: 12px;
-}
-
-
-.Links_SMedia{
-    margin-top:0.1em ;
-    transform:translateX(70%);
+#navCodeBy {
+font-size: 12px;
 }
 
-.Social-fixed-aside img{
-    width: 25px;
+.Links_SMedia {
+margin-top: 0.1em;
+transform: translateX(70%);
 }
 
-#JohnMullerImage{
-    left: -1em;
-    top: 0;
-}
-.getInTouchHead{
-    height: 10em;
-    width: 85%; 
-    transform: translateY(10%);
-}
-.getInTouchForm{
-    width: 90%;
-    height: 9em;
+.Social-fixed-aside img {
+width: 25px;
 }
 
-.formInput{
-    height: 2em;
-    font-size: 16px;
+#JohnMullerImage {
+left: -1em;
+top: 0;
 }
-.body{
-    height: 5.5em;
+.getInTouchHead {
+height: 10em;
+width: 85%;
+transform: translateY(10%);
 }
-
-.sendEmail{
-    background: transparent;
-    font-size: 0.9em;
-    border-radius: 0;
-    padding: 0 2px;
-    transform: scale(0.9);
-    transition: all  1s linear 
-
-}
-.sendEmail:hover{
-    background: transparent;
-    transform: scale(1);
-    animation: normal /* Not declared */;
-    font-weight: bolder;
-    transition: all  1s linear ;
+.getInTouchForm {
+width: 90%;
+height: 9em;
 }
 
-.sendEmail::before{
-    content: "";
-    background: var(--Mode--Primary-Color);
-    color: #cfcfcf;
-    width: 80px;
-    height: 17px;
-    padding: 0 0 10px 0;
-    position: absolute;
-    top: 1.25em;
-    left:-0.6em;
-    z-index: -1;
-    border-radius: 2px;
-    box-shadow: 0 0 5px #f8875f;
-    transition: all  0.5s linear ;
-
-
+.formInput {
+height: 2em;
+font-size: 16px;
+}
+.body {
+height: 5.5em;
 }
 
-.sendEmail:hover::before{
-    background-color: var(--Dark-Mode-secondary);
-    transition: all  0.5s linear ;
-    box-shadow: 0 0 5px #f5f5f5;
-
+.sendEmail {
+background: transparent;
+font-size: 0.9em;
+border-radius: 0;
+padding: 0 2px;
+transform: scale(0.9);
+transition: all 1s linear;
+}
+.sendEmail:hover {
+background: transparent;
+transform: scale(1);
+animation: normal /* Not declared */;
+font-weight: bolder;
+transition: all 1s linear;
 }
 
-.callOnSkype{
-    font-size: 14px;
-}
-
-.SkypeIcon{
-    width:22px;
-}
-
-.footerInFooter{
-    background-color: transparent;
-    height: 1em;
-    gap: 0;
-    justify-content: center;
-}
-
-.logoFooter{
-    width: 40px;
-    top: -10px;
-    margin-right: 0.5em;
-}
-
-#copyRight{
-    font-size: 12px;
-}
-
-}
-
-@media screen and (max-width:750px) and (max-height:350px) {
-   
-    
-    .Logo{
-        width: 75px;
-        position: relative;
-        top: 10px;
-    }
-    
-    .mainNav{
-        clip-path: circle(27px at 88.1% 8.2%);
-        -webkit-clip-path: circle(27px at 88.5% 8.4%);
-    }
-
-    .navLinksList{
-        top:-2em;
-        gap: 2em;
-        flex-direction: row;
-    }
-
-    #navBtnGetInTouch{
-        top: 72%;
-        left: 35%;
-        font-size: 0.8em;
-        padding: 0.50em 1.15em;
-    }
-
-    #navCodeBy{
-        font-size: 12px;
-    }
-    .mainFooter{
-        flex-direction: row;
-    }
-
-    #JohnMullerImage{
-        width: 50%;
-        left: -1em;
-        top: 0;
-    }
-
-    .getInTouchHead{
-        height: 10em;
-        width: 85%; 
-        left: -2em;
-        transform: translateY(10%);
-    }
+.sendEmail::before {
+content: "";
+background: var(--Mode--Primary-Color);
+color: #cfcfcf;
+width: 80px;
+height: 17px;
+padding: 0 0 10px 0;
+position: absolute;
+top: 1.25em;
+left: -0.6em;
+z-index: -1;
+border-radius: 2px;
+box-shadow: 0 0 5px #f8875f;
+transition: all 0.5s linear;
 }
     
+.sendEmail:hover::before {
+background-color: var(--Dark-Mode-secondary);
+transition: all 0.5s linear;
+box-shadow: 0 0 5px #f5f5f5;
+}
 
+.callOnSkype {
+font-size: 14px;
+}
+
+
+.footerInFooter {
+background-color: transparent;
+height: 1em;
+gap: 0;
+justify-content: center;
+}
+
+.logoFooter {
+width: 40px;
+top: -10px;
+margin-right: 0.5em;
+}
+
+#copyRight {
+font-size: 12px;
+}
+}
+
+@media screen and (max-width: 750px) and (max-height: 350px) {
+.Logo {
+width: 75px;
+position: relative;
+top: 10px;
+}
+
+.mainNav {
+clip-path: circle(27px at 88.1% 8.2%);
+-webkit-clip-path: circle(27px at 88.5% 8.4%);
+}
+
+.navLinksList {
+top: -2em;
+gap: 2em;
+flex-direction: row;
+}
+
+#navBtnGetInTouch {
+top: 72%;
+left: 35%;
+font-size: 0.8em;
+padding: 0.5em 1.15em;
+}
+
+#navCodeBy {
+font-size: 12px;
+}
+.mainFooter {
+flex-direction: row;
+}
+
+#JohnMullerImage {
+width: 50%;
+left: -1em;
+top: 0;
+}
+
+.getInTouchHead {
+height: 10em;
+width: 85%;
+left: -2em;
+transform: translateY(10%);
+}
+}
 
 /* 
 //
@@ -1537,151 +1583,171 @@ header{
 */
 
 /* navigation bar key frames animation  */
-@-webkit-keyframes navAnim{
-
-from{
+@-webkit-keyframes navAnim {
+from {
 opacity: 0;
 transform: scale(2);
 }
-to{
-    opacity: 1;
+to {
+opacity: 1;
 transform: scale(1);
 }
 }
-@keyframes navAnim{
-
-from{
+@keyframes navAnim {
+from {
 opacity: 0;
 transform: scale(2);
 }
-to{
-    opacity: 1;
+to {
+opacity: 1;
 transform: scale(1);
 }
 }
 
 /* circuit background effect */
-@-webkit-keyframes circuitAnim{
+@-webkit-keyframes circuitAnim {
 0% {
-    transform: rotateY(-45deg);
-    transform: translateZ(180px) rotate(10deg);
-    opacity: 1;
+transform: rotateY(-45deg);
+transform: translateZ(180px) rotate(10deg);
+opacity: 1;
 }
 
 100% {
-    transform: rotateY(-50deg);
-    transform: translateZ(180px) rotate(1800000deg);
-    opacity: 0;
+transform: rotateY(-50deg);
+transform: translateZ(180px) rotate(1800000deg);
+opacity: 0;
 }
 }
 
-    @keyframes circuitAnim  {
+@keyframes circuitAnim {
 0% {
-            transform: rotateY(-45deg);
-            transform: translateZ(180px) rotate(1deg);
+transform: rotateY(-45deg);
+transform: translateZ(180px) rotate(1deg);
 }
 
 100% {
-            transform: rotateY(-50deg);
-            transform: translateZ(180px) rotate(360deg);
+transform: rotateY(-50deg);
+transform: translateZ(180px) rotate(360deg);
 }
 }
 
 /* Navigation bar Links */
-@-webkit-keyframes navLinksFadeAnim{
-from{
-    transform: translateY(-800%);
-    opacity: 0;
+@-webkit-keyframes navLinksFadeAnim {
+from {
+transform: translateY(-800%);
+opacity: 0;
 }
-to{
-    transform: translateY(0%);
-    opacity: 1;
-    position: relative;
-    top: 32em;
+to {
+transform: translateY(0%);
+opacity: 1;
+position: relative;
+top: 32em;
+}
+}
+@keyframes navLinksFadeAnim {
+from {
+transform: translateY(-800%);
+opacity: 0;
+}
+to {
+transform: translateY(0%);
+opacity: 1;
+position: relative;
+top: 32em;
+}
+}
 
+@-webkit-keyframes AsideLinksFadeAnim {
+from {
+transform: translateX(250%);
+opacity: 0;
 }
-}
-    @keyframes navLinksFadeAnim{
-from{
-    transform: translateY(-800%);
-    opacity: 0;
-}
-to{
-    transform: translateY(0%);
-    opacity: 1;
-    position: relative;
-    top: 32em;
+to {
+transform: translateX(-130%);
+opacity: 0.7;
 }
 }
 
-@-webkit-keyframes AsideLinksFadeAnim{
-    from{
-        transform: translateX(250%);
-        opacity: 0;
-    }
-    to{
-        transform: translateX(-275%);
-        opacity: 0.7;
-    }
-    }
-
-    @keyframes AsideLinksFadeAnim{
-        from{
-            transform: translateX(250%);
-            opacity: 0;
-        }
-        to{
-            transform: translateX(-275%);
-            opacity: 0.7;
-        }
-        }
+@keyframes AsideLinksFadeAnim {
+from {
+transform: translateX(250%);
+opacity: 0;
+}
+to {
+transform: translateX(-130%);
+opacity: 0.7;
+}
+}
 
 /* buttons animation */
 @-webkit-keyframes btnAnim {
 0% {
-            transform: scale(1);
+transform: scale(1);
 }
 50% {
-            transform: scale(1.1);
+transform: scale(1.1);
 }
 100% {
-            transform: scale(1);
+transform: scale(1);
 }
 }
 
-@keyframes btnAnim { 
+@keyframes btnAnim {
 0% {
-            transform: scale(1);
+transform: scale(1);
 }
 50% {
-            transform: scale(1.1);
+transform: scale(1.1);
 }
 100% {
-            transform: scale(1);
+transform: scale(1);
 }
 }
-
 
 /* images rounded animation */
 @-webkit-keyframes imgAnim {
 0% {
-            transform: translate(81%, 56%);
+transform: translate(81%, 56%);
 }
 100% {
-            
-            transform: translate(81%, 54%);
+transform: translate(81%, 54%);
 }
 }
 
-@keyframes imgAnim { 
+@keyframes imgAnim {
 0% {
-            
-            transform: translate(0%, 2%);
+transform: translate(0%, 2%);
 }
 100% {
-            
-            transform: translate(0%, -3%);
+transform: translate(0%, -3%);
 }
 }
 
+/* Svg icons */
 
+.SVGIcons {
+width: 35px;
+opacity: 0.8;
+}
+
+.Instagram:hover {
+fill: url(#SVGID_2);
+}
+.Facebook:hover {
+fill: #013699;
+}
+.Linkedin:hover {
+fill: #072050;
+}
+.whatsapp:hover {
+fill: #7ad06d;
+}
+.Github:hover {
+fill: #212121;
+}
+.twitter:hover {
+fill: #099bdf;
+}
+.email:hover {
+fill: whitesmoke;
+}
