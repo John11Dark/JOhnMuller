@@ -11,8 +11,6 @@ $Message =$_POST['body'];
 $email_to = "john.muller8000@gmail.com";
 $body = $Message;
 
-
-
 mail($to,$subject,$body);
 
 ?>
