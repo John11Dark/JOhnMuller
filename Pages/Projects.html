@@ -15,10 +15,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet"></head>
 
 <body>
+
     <!-- Header background to hide the content behind the navigation bar  -->
     <div id="headerBackground"></div>
-
-    
     <header>
 
              
@@ -63,39 +62,37 @@
                   <a target="_blank" area-label="Instagram" title="John Muller Instagram account " id="Social-Links"    class="Links_SMedia"    href="https://www.instagram.com/1johndark/">             	<svg  alt="John Muller on Instagram   " class=" aside SVGIcons Instagram"  id="InstagramIcon">  <use xlink:href="#INSTAGRAMICON"> </use></svg>   </a>																													  																					
     </aside>
 
-
-    <main>
+	<main >
         <section>  
-			
+
 			<div class="comingSoonCountDown">
 				<h1 class="ComingSoonTitle"> Coming Soon! </h1>
 				
 				<div class="timerHolder">
 
 				<div class="Timer Day">
-					<h2 class="timerText intDays" id="Day1"> 45</h2>
+					<h2 class="timerText intDays" id="Day1">00</h2>
 					<p  class="timerText str stringdays"> Day</p>
 				</div>
 
 				<div class="Timer Hours">
-					<h2 class="timerText intHour" id="Hour1"> 45</h2>
+					<h2 class="timerText intHour" id="Hour1">00</h2>
 					<p  class="timerText str stringHour"> Hour</p>
 				</div>
 
 				<div class="Timer Minutes" >
-					<h2 class="timerText intMinute" id="Minute1"> 45</h2>
+					<h2 class="timerText intMinute" id="Minute1">00</h2>
 					<p  class="timerText str stringMinute"> Minute</p>
 				</div>
 
 				<div class="Timer Seconds">
-					<h2 class="timerText intSecond" id="Second1"> 45</h2>
+					<h2 class="timerText intSecond" id="Second1">00</h2>
 					<p  class="timerText str stringSecond"> Second </p>
 				</div>
 				</div>
-				<img class="CountDwonEffect" src="../Assets/Images/Pictures/calendarCountdown.svg" alt="">
-<!-- 				<svg class="CountDwonEffect"><use xlink:href="#COUNTDOWNSVG"></use></svg>
- -->			</div>
-
+				<img class="CountDownEffect" src="../Assets/Images/Pictures/calendarCountdown.svg" alt="">
+ 				</div>
+<!-- 
 			<div class="PowerPoint" hidden>
 				<article>
 				<h1></h1>
@@ -106,10 +103,11 @@
 				<button>Download </button>
 
 
-			</div>
+			</div> -->
         </section>
     </main>
-
+  
+	<!-- Footer and get in touch form -->
     <footer id="mainFooter" class="mainFooter">
 
         <img class="circuitBack Footer" src="../Assets/Images/Pictures/BackImage.svg" aria-hidden="true">
@@ -117,10 +115,10 @@
         <!-- get in touch form --> 
         <div class="getInTouchHead">
 <!--    <h1 class="formTitle">Get in touch </h1> -->           
-        <form action="mailto:johnMuller8000@gmail.com" class="getInTouchForm" id="getInTouchForm">
+        <form action="../PHP/Email.php" method="POST" class="getInTouchForm" id="getInTouchForm">
                 <input type="text" class="formInput name" name="Name" id="Name" placeholder="Name" required>
-                <input type="text" class="formInput email" name="Email" id="Email" placeholder="Email" required>
-                <input list="Subjects" class="formInput Subject" name="Subject" id="Subject" placeholder="Subject">
+                <input type="email" class="formInput email" name="Email" id="Email" placeholder="Email" required>
+                <input list="Subjects" class="formInput Subject" name="Subject" id="Subject" placeholder="Subject" required>
                     <datalist id="Subjects">
                         <option value="Hire for a Project">
                         <option value="For an interview">
@@ -128,7 +126,7 @@
                         <option value="Feedback about portfolio">
                         <option value="Project Pricing">
                     </datalist>
-                <textarea type="text" class="formInput body" name="body" id="body" placeholder="Write a message"></textarea>
+                <textarea type="text" class="formInput body" name="body" id="body" placeholder="Write a message" required></textarea>
                <div class="call_action">
                 <button class="sendEmail" >Send Message</button>
                 <a title="start an online meeting with me on skype, teams or any collaboration tool would you like  😃🌸"
@@ -159,12 +157,22 @@
     </div>
      </footer>
 
+	<!--Main java Script link -->
     <script src="../JS/Appmain.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    
-
+	<!-- all svg Code  -->
 	<div class="SVGs_Code_wrapper">
 <!-- SVG  -->
-
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1072.12" y1="457.3644" x2="951.64" y2="723.2844">
+	<stop  offset="3.597120e-03" style="stop-color:#F15A24;stop-opacity:0.7"/>
+	<stop  offset="0.2172" style="stop-color:#EE5827;stop-opacity:0.7214"/>
+	<stop  offset="0.406" style="stop-color:#E45332;stop-opacity:0.7404"/>
+	<stop  offset="0.5852" style="stop-color:#D54B44;stop-opacity:0.7584"/>
+	<stop  offset="0.7587" style="stop-color:#BE3E5E;stop-opacity:0.7758"/>
+	<stop  offset="0.9265" style="stop-color:#A22F7E;stop-opacity:0.7926"/>
+	<stop  offset="1" style="stop-color:#93278F;stop-opacity:0.8"/>
+</linearGradient>
 <!-- Svg logo -->
 <svg xmlns="http://www.w3.org/2000/svg">
 <symbol  id="logoSVG"  viewBox="0 0 24 24">

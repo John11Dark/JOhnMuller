@@ -5,6 +5,7 @@ const Header = document.querySelector('header'); // main header
 const navBtn = document.querySelector('.navBurgerBtn');
 // navigation full screen
 const mainNav = document.querySelector('.mainNav'); 
+const timerText = document.querySelector('.timerText');
 // Title Name 
 
 // social aside links 
@@ -124,17 +125,27 @@ const countDown = () => {
   let hour   = minute * 60;
   let day    = hour * 24;
 
-  let textday    = Math.floor(Gap/ day);
-  let texthour   = Math.floor((Gap % day)   / hour);
-  let textminute = Math.floor((Gap % hour)  / minute);
-  let textsecond = Math.floor((Gap % minute)/ second);
+  let textDay    = Math.floor(Gap/ day);
+  let textHour   = Math.floor((Gap % day)   / hour);
+  let textMinute = Math.floor((Gap % hour)  / minute);
+  let textSecond = Math.floor((Gap % minute)/ second);
 
-  document.querySelector('#Day1').innerText = textday;
-  document.querySelector('#Hour1').innerText = texthour;
-  document.querySelector('#Minute1').innerText  = textminute;
-  document.querySelector('#Second1').innerText  = textsecond;
-  document.querySelector('svg [node-id="itemdat-1"]').closest('svg').
-  querySelector('text').textContent=textsecond;
+  document.querySelector('#Day1').innerText     = textDay;
+  document.querySelector('#Hour1').innerText    = textHour;
+  document.querySelector('#Minute1').innerText  = textMinute;
+  document.querySelector('#Second1').innerText  = textSecond;
+
+ 
+
+  if (textMinute % 2 == 0 )
+  {
+    document.querySelector('.ComingSoonTitle').style = `color:#110322;`;
+
+  } 
+  else
+  {
+    document.querySelector('.ComingSoonTitle').style = ``;
+  }
 };
 
 

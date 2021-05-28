@@ -441,7 +441,7 @@ margin-bottom: 20em;
 
 .ComingSoonTitle{
     margin-top: 1em;
-    font-size: clamp(6vw,2em,1.2em );
+    font-size: clamp(4.4vw,2em,1.2em );
     font-weight: bolder;
     text-align: center;
     color: var(--Mode--Primary-Color);
@@ -452,29 +452,29 @@ margin-bottom: 20em;
     position: relative;
     top: 10%;
     left: 5%;
-    transform: translate(-5%,-10%);
+    transform: translate(-8%,-10%);
     display: flex;
     justify-content: space-around;
-    width: 60%;
-    gap: 1em;
+    width: 45%;
+    gap: 0.8em;
     text-align: center;
-    padding: 0.5em;
+    padding: 0.4em;
 }
 .timerText{
 font-family: var(--tertiary-Font);
 color: var(--Mode--tertiary-Color);
-font-size: 1.85em;
+font-size: 1.4em;
 }
 
 .timerText.str{
-    font-size: clamp(2vw,0.8em,0.5em);
+    font-size: clamp(1.4vw,0.65em,0.4em);
     font-weight: 100;
     color: var(--Mode--secondary-Color);
 }
 
-.CountDwonEffect{
-height: 60vh;
-margin: 1em;
+.CountDownEffect{
+height: 50vh;
+margin: 3em 1em 0 1em;
 }
 
 
@@ -711,12 +711,15 @@ width: 145px;
 //
 */
 
+
+
 /* monitor from 1880 and up */
 @media screen and (min-width: 1880px) {
 .mainNav {
 clip-path: circle(31px at 86.2% 6.45%);
 -webkit-clip-path: circle(31px at 86.2% 6.45%);
 }
+
 
 .circuitBack.Nav {
 width: 25em;
@@ -766,6 +769,30 @@ width: 80%;
 }
 }
 
+@media screen and (min-width: 1550px) {
+    .mainNav {
+        clip-path: circle(31px at 876.5% 6.45%);
+        -webkit-clip-path: circle(31px at 86.5% 6.45%);
+        }
+}
+
+@media screen and (max-width: 1500px) {
+    .mainNav {
+        clip-path: circle(31px at 86.8% 6.45%);
+        -webkit-clip-path: circle(31px at 87.1% 6.45%);
+        }
+        .comingSoonCountDown{
+            height: 65%;
+        }
+}
+
+@media screen and (max-width: 1400px) {
+    .mainNav {
+        clip-path: circle(31px at 86.8% 6.45%);
+        -webkit-clip-path: circle(31px at 87.5% 6.45%);
+        }
+        
+}
 /*  laptop small  */
 @media screen and (max-width: 1270px) {
 .mainNav {
@@ -828,6 +855,12 @@ clip-path: circle(30px at 88.15% 6.64%);
 -webkit-clip-path: circle(30px at 88.15% 6.64%);
 }
 
+.comingSoonCountDown{
+    height: 60%;
+}
+.CountDownEffect{
+    transform: scale(0.9);
+}
 .mainNav.clipJSApply {
 clip-path: circle(1500px at 88.35% 6.64%);
 -webkit-clip-path: circle(1500px at 88.35% 6.64%);
@@ -878,6 +911,13 @@ display: none;
 .mainNav {
 clip-path: circle(30px at 88.9% 6.4%);
 -webkit-clip-path: circle(30px at 88.9% 6.4%);
+}
+
+.comingSoonCountDown{
+    height: 55%;
+}
+.CountDownEffect{
+    width: 60vw;
 }
 
 #JohnMullerImage {
@@ -1035,6 +1075,25 @@ clip-path: circle(30px at 89.1% 6.64%);
 #navBtnGetInTouch {
 left: 30%;
 }
+
+#headerBackground {
+    height:10vh ;
+}
+.ComingSoonTitle{
+transform: scale(1.8);
+margin: 2em 0.5em -1em 0.5em;
+}
+.timerHolder{
+    width: 80%;
+    transform: translate(-5%, -10%) scale(1.1);
+margin: 0em 0.5em -2em 0.5em;
+
+}
+
+.comingSoonCountDown{
+    height: 45%;
+}
+
 #JohnMullerImage {
 width: 32%;
 left: 1em;
@@ -1055,6 +1114,38 @@ clip-path: circle(30px at 90.1% 6.64%);
 }
 
 
+
+
+.ComingSoonTitle{
+transform: scale(1.9);
+width: 100%;
+}
+.timerHolder{
+width: 90%;
+transform: translate(-5%, -10%) scale(1.05);
+}
+main{
+    display: grid;
+    width: 50%;
+}
+
+section{
+width: 90%;    
+}
+.comingSoonCountDown{
+    height: 45%;
+    box-shadow: none;
+    border: none;
+    width: 90%;
+    margin: 0;
+}
+    
+.timerHolder{
+width: 90%;
+transform: translate(-5%, -10%) scale(1.05);
+
+}
+    
 .aside.SVGIcons{
     transform: scale(0.75);
 }
