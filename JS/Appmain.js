@@ -31,7 +31,7 @@ function scrollRotate() {
   // logo back circuit 
   const LogoRotate = document.querySelector('#Logo_x5F_circuits');
   let offsetY = window.pageYOffset/35; 
-  LogoRotate.style = ` transform:rotate(${offsetY}deg); transform-origin: 40% 40%;`;
+  LogoRotate.style = ` transform:rotate(${offsetY}deg); transform-origin: center;`;
 }
 // When burger btn click 
 navBtn.addEventListener('click', ()=>{
