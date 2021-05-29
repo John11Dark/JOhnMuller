@@ -705,6 +705,15 @@ left: 1.5em;
 width: 145px;
 }
 
+.LineBottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00AFF0;
+    z-index: 300;
+}
+
 /* 
 //
 // different screen sizes 

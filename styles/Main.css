@@ -1,574 +1,2009 @@
-:root{
-    /*COLORS*/
-    --Primary-Color: #F25757 ;
-    --secondary-Color: #ABC1D0 ;
-    --tertiary-Color: #ff7f50; 
-    --title-Clr-:#5f9ea0; 
+:root {
+/*COLORS*/
+--Mode--Primary-Color: orangered;
+--Mode--secondary-Color: gray;
+--Mode--tertiary-Color: #110322;
+--Dark-Mode-Primary: black;
+--Dark-Mode-secondary: #fff;
+--Dark-Mode-secondaryItems: #f6f6f6;
+--Primary-ColorM: #F25757 ;
+--secondary-ColorM: #ABC1D0 ;
+--tertiary-ColorM: #ff7f50; 
+--title-Clr-M:#5f9ea0; 
+/* FONTS */
+--Primary-Font1: "Roboto", sans-serif;
+--Primary-Font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+--secondary-Font: "Montserrat", sans-serif;
+--tertiary-Font: "Poppins", sans-serif;
+}
+#SkypeBody{
+    fill:#00AFF0;
+    }
 
-    /* FONTS */
-    --Primary-Font: font-family: 'Roboto', sans-serif;
-    --secondary-Font: font-family:'Akaya Telivigala',cursive; 
+#SkypeLetter{
+fill: #fff;
+}
+    
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+object-fit: contain;
+}
+
+input,textarea{
+    padding: 10px;
+    font-family: var(--tertiary-Font);
+    font-weight: normal;
+    outline: none;
+}
+
+html,
+body {
+scroll-behavior: smooth;
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background: #b4b4b4da;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #585858; 
+    border-radius: 2.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6e6e6e; 
+}
+
+
+
+
+body {
+font-family: var(--tertiary-Font);
+font-weight: 600;
+font-size: 1.5em;
+line-height: 2em;
+background: #ebebeb no-repeat;  
+width: 100%;
+box-sizing: border-box;
+overflow-x: hidden;
+
+}
+
+
+main{
+    z-index: 50;
+    position: absolute;
+    top: 48em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: linear-gradient(10deg, black,#000000f1,black );
+    box-shadow: 0 0 50px 50px  black;
     
 }
 
-img {
-    max-width: 100%;
-    object-fit: contain;
-}
-*,
-*::before,
-*::after{
-    box-sizing: border-box;
+p {
+font-size: 1.15em;
+color: var(--Mode--secondary-Color);
+line-height: 1.5em;
+font-weight: 100;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 1.5em;
-    line-height: 2em;
-    background: linear-gradient( 7deg ,rgb(0, 0, 0),rgb(8, 8, 8)) no-repeat;
-    width: 100%;
-    height: 100vh;
-}
-
-p{ 
-    font-size: 1.15em;
-    font-family:'Akaya Telivigala',cursive;
-    color: white;
-    line-height: 1.9em;
-}
 body,
 h1,
 h3,
 h4,
 p {
-   margin: 0;
+margin: 0;
+word-wrap: break-word;
 }
+
 h1,
 h3,
-h4
- {
-   margin-bottom: 0.25rem;
+h4 {
+margin-bottom: 0.25rem;
+font-family: var(--Primary-Font);
 }
-a { text-decoration: none; color: black; }
+
+a {
+text-decoration: none;
+color: #110322;
+letter-spacing: 1px;
+}
+
 button{
-    font-size: 2em;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 900;
-    text-align: center;
-    cursor: pointer;
-    transition: 1.25s all ease;
-    outline: none;
-}
-main{ 
-    align-self: center;
-}
-header{
-    position:  fixed;
-    z-index: 3;
-    margin: 2% 12% 0% 12%;
-    width: min(95%, 50em);
-    display: flex;
-    align-items: center;
-  
+border: none;
+border-radius: 2.5rem;
+font-family: var(--tertiary-Font);
+margin: 15px;
+text-align: center;
+cursor: pointer;
+padding: 5px 5px;
+transition: 1.25s all ease;
+outline: none;
 }
 
-.lines_menu{
-  
-    margin-left: 47em;
-    cursor: pointer;
-    transition: 2.2s;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: rgba(255, 157, 0, 0.972) solid 1px;
+/* 
+//
+// Header and navigation bar
+//
+*/
+
+#headerBackground {
+position: fixed;
+top: 0;
+width: 100%;
+height: 12vh;
+z-index: 240;
+background: linear-gradient(1deg, #e9e9e9, #dbdada , #dbdbdbf3)no-repeat;
+box-shadow: 0 0 10px silver;
 }
 
-.lines_menu > div{ /*Navigation bar button*/
-    width: 25px;
-    height: 2.1px;
-    background-color:var(--tertiary-Color);
-    margin: 9.25px;
-    position: relative;
-    top:8px;
-    left: 0.85px;    
-}
-
-.lines_menu:hover .divein {
-    background-color: black;
-}
-
-.lines_menu:hover  {
-    background-color: var(--tertiary-Color);
-    border-color: black 2px;
-}
-
-.Socail-fixed-aside{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    right: 0em;
-    margin-right:1vw ;
-    top: 15vw;
-    z-index: 10;
-
-}
-.Socail-fixed-aside img{
-    height: 32px;
-    margin-bottom: 1em ;
-}
-
-.Socail-fixed-aside img:hover {
-
-    opacity: .4;
-}
-
-
-
-
-
-/* AfterClick JS VAR to do Close btn */
-.AfterClick {
-    position: fixed;
-    margin-left: 56em;
-    transition: 4s;
-}
-
-
-
-.AfterClick #line1{
-    transform: rotate(-45deg) translate(-5px,6px);
-    background-color: var(--tertiary-Color);
-    transition: 2s;
-    }
-    
-    
-    .AfterClick #line3{
-        transform: rotate(45deg) translate(-5px,-6px);
-        background-color: var(--tertiary-Color);
-        transition: 2s;
-    }
-    label { cursor: pointer;}
-
-    /*********************************************<><><><><>----- navigation bar design -----<><><><><><********************************/
-   
-    .bottom-100vh{ display: none;}
-    #Name-nav{
-       position: absolute;
-       left: 30em;
-       color: white;
-       text-transform: uppercase;
-       font-size: 1em;
-   }
-    #logoJM{
-        position: absolute;
-        font-size: 50em;
-        top: 400px;
-        left: 400px;
-        z-index: -1;
-        color: gray;
-        opacity: .04;
-    }
-    .Personal-img{
-        z-index: 0;
-        position: absolute;
-        left: 0em;
-        width:750px;
-        height: 100vh;
-        background-color: white;
-        opacity: .50;
-    }
-    
-    .bottom-100vh{
-        position: fixed;
-        top: 50%;
-        right: 50%;
-        transform: translate(50% , -50%);
-        background-color: #131311;
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        opacity: .98;
-    }
-    .LinksOFpage {
-        display: inline-flex;
-        position: relative;
-        left: 3%;
-        top: 14em;
-        margin-left:2em ;
-        text-transform: uppercase;
-    }
-    .LinksOFpage > a{
-        color: #bbbbbb;
-        font-size: 2.8em;
-        font-weight: bolder;
-    }
-
-    .LinksOFpage:hover > a{
-        opacity: .50;
-        color: var(--tertiary-Color);
-        position: relative;
-        transition: 2s linear ;
-        
-    }
-  
-    .LinksOFpage > a:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 4px;
-        top: 0.90em;
-        left: 0;
-        background: #f5f5f5;
-        border-radius: 5px;
-        transform: scaleX(0);
-        transition: 1.2s linear;
-      }
-      .LinksOFpage > a:hover:before,
-      .LinksOFpage > a:focus:before {
-        visibility: visible;
-        transform: scaleX(1);
-        transition: 2s ; 
-      }
-      
-      /* Jave Script On Navigation Bar */
-      .MenuShow{
-        display: block;
-         
-       }
-    #Currently-active > a{
-        color: white;
-        text-decoration: none;
-    }
-
-    .nav-buttons{
-        
-        position: absolute;
-        top: 65%;
-        left: 40%;
-    }
-
-    .nav-buttons > button{
-        position: relative;
-        border: 2.5px solid;
-        padding: 6px 2em;   
-        
-
-
-    }
-    .nav-buttons :nth-child(1) {
-        left: -1.1em;
-        top: 2.2em;
-        background-color: white;
-        color: var(--tertiary-Color);
-        padding: 6px 1em;     
-        transform: skewX(15deg);
-        transform: skewY(-3.5deg);
-        border-radius: 35px 0px 40px 55px;
-
-
-
-    }
-    .nav-buttons :nth-child(2) {
-        left: -5em;
-        top: 0em;
-        background-color: var(--tertiary-Color);
-        color: white;
-        transform: skewX(10deg);
-        transform: skewY(-5deg);
-        border-radius: 40px 35px 55px 0px;
-
-        
-    }
-
-    /****************************************<><><><><><><><><><><>About me form design<><><><>><><><><><><><><><**************************************/
-    .about-me-form{
-        display: none;
-    }
-         
-    .about-me-form{
-        z-index: 10;
-        position: fixed;
-        width: min(65% , 55em);
-        height: 70vh;
-        transform: translateY(20%);
-        background-color: rgba(196, 193, 193, 0.986);
-        border: solid 2px var(--tertiary-Color);
-        font-size: 1em;
-        border-radius: 25px;       
-
-
-    }  
-    .btn-close{
-        position: absolute;
-        right: 1em;
-        top: 10px;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        font-size: 1.6em;
-        text-align: center;
-        transition:  1s;
-        color: whitesmoke;
-        background: var(--tertiary-Color);
-        transform: rotate(100deg);
-        cursor: pointer;
-    }
-    .btn-close:hover{
-            color: var(--tertiary-Color);
-            background: none;
-            transform: rotate(-300deg);
-            transition:  1s;
-    }
-    #AboutMeImg{
-        width: 12em;
-        position: absolute;
-        top: -12.5em;
-        left: 22.5em;
-
-    }
-    #Abou-tMe-Name{
-        transform: translate(35%, 140%);
-        font-size: 3em;
-        font-family: 'Berkshire Swash', cursive;
-        color: var(--tertiary-Color);
-        letter-spacing: 5px;
-        text-shadow: black 2px 3px;
-    }
-    #Title{
-        display: flex;
-        transform: translate(40%, 150%);
-        font-size: 1em;
-        color: var(--title-Clr-);
-        letter-spacing: 1.5px;   
-    }
-    #Aboutme-text{
-        width: 80%;
-        text-align: center;
-        position: relative;
-        top: 3em;
-        left: 2em;
-        margin-left: 3em;
-        margin-right:3em ;
-        font-size: 1.2em;
-        
-
-
-    }
-    #InfoMe{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        position: relative;
-        left: 5em;
-        top: 3em;
-    }
-    
-
-    .Sdetails{
-    position: relative;                
-    display: flex;  
-    top: 2em;
-    align-items: center;
-    line-height: 2.76em;
-    margin-right: 1em;  
-    width: 25%;
-
-
-    }    
-    span > .icons{
-        height: 39px;   
-        margin-left: 1em;
-        margin-right: 1em;  
-
-    } 
-    span > .icons:hover {
-        opacity: .75;
-    }
-
-    span > h3 {
-        font-size: 21px;
-
-    }  
-
-     /* Jave script on about me Form  */
-     .About-Me-AfterClick{
-        display:block;
-    }
-
-    .Btn-Close-AfterClick
-    {
-        display: none;
-    }
-    
-  
-    /* CV form  */
-
-    .btn-close-Cv{
-        position: absolute;
-        right: 0.5em;
-        top: 15px;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        font-size: 1.6em;
-        text-align: center;
-        transition:  1s;
-        color: whitesmoke;
-        background: var(--tertiary-Color);
-        transform: rotate(100deg);
-        cursor: pointer;
-    }
-   
-    .btn-close-Cv:hover{
-            color: var(--tertiary-Color);
-            background: none;
-            transform: rotate(-300deg);
-            transition:  1s;
-    }
-
-
-    .CV-Form{
-        position: fixed;
-        transform: translate(-50% , -50%);
-        left: 50%;
-        top: 50%;
-        z-index: 10;    
-        display: flex;
-        flex-direction: column;
-        gap: 1.2em;
-        background-color: #f5f5f5;
-        height: 20em;
-        width: 20em; 
-        border-radius:25px ;
-        border: solid 2px var(--tertiary-Color);
-    }
-    .CV-Form {
-        display: none;
-    }
-    .CV-Form > h1 {
-        position: absolute;
-        top: 1em;
-        left:2em;  
-
-    }
-    .CV-buttons{
-        width: 70%;
-        height: 2.8em;
-        font-size: 2.1em;
-        align-self: center;
-        position: relative;
-        top: 3em;
-        background-color: var(--tertiary-Color);
-        color: var(--title-Clr-);
-        text-align:center;
-        padding: 0px 0px 5px 5px;
-        border-radius: 10px 20px 60px 10px;
-    }
-    #Pdf{
-            border-radius: 60px 20px 10px 10px;     
-            background-color: var(--title-Clr-);
-            color: var(--tertiary-Color);
-
-
-    }
-    .CV-buttons > img  {
-        height: 100px;
-        position: relative;
-        top: 20px;
-    }
-  
-     /* Jave script For CV  Form  */
-  
-     .About-Me-AfterClickCV{
-        display:block;
-    }
-
-    .Btn-Close-AfterClickCV
-    {
-        display: none;
-    }
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /****************************************<><><><><><><><><><><>Body design<><><><>><><><><><><><><><**************************************/
-
-#top_starter {/*Section*/
-padding: 5vw 0;
-margin-inline: auto;
-width: min(90%, 50em);
+header {
+position: fixed;
+top: 0;
+width: 100%;
+height: 10vh;
 display: flex;
 justify-content: space-around;
-
+align-items: center;
+background-color: transparent;
+transition: all 1.5s linear;
+z-index: 250; /*maybe in the future i will add new items so i make the header is in the very top */
 }
 
-#top_starter div {
-    width: min(85%, 50em);
-    transform: translate(10% , 25%);
-    
+/* /#/ logo /#/ */
+.linkHomePage {
+transform: translateY(15%);
 }
-#Top_img{
-    width: 22em;
-    position: relative;
-    left: 0em;
-    top: -5em;
-    float: left;
-    shape-outside:ellipse(20% 50%) ;
-    margin-right: 1rem;
 
-    
+.Logo {
+height: 4em;
 }
-#Name_title{
-    opacity: .75;
-    color: rgb(146, 139, 139);
-    font-size: 3.2em;
-    position: relative;
-    top: 1.8em;
-    right: 1.4em;
-    z-index: 1;
 
-
+/* /#/ Title name (My name Center) /#/ */
+.titleName {
+color: var(--Mode--tertiary-Color);
+font-size: 2.2em;
+transform: translateY(25%);
+transition: all 2s linear;
 }
-#Name_title::before {
-content:"JM";
+
+/* apply JS after menu is interacting  */
+.headerIntersectingNav.titleName {
+color: var(--Mode--Primary-Color);
+transition: all 2.5s linear;
+}
+
+/*
+//
+//Navigation bar
+//
+*/
+.navBurgerBtn {
+/*Burger button*/
+cursor: pointer;
+transform: translate(10%, 30%);
+height: 1.5em;
+}
+
+/* when mouse hover change color */
+.navBurgerBtn:hover .navLine {
+background-color: var(--Dark-Mode-secondary);
+}
+
+.navBurgerBtn:hover .navLine.Top {
+position: relative;
+left: 5px;
+}
+
+.navBurgerBtn:hover .navLine.Bottom {
+position: relative;
+right: 5px;
+}
+
+/*close button When hover JS */
+.hoverClickJS.navBurgerBtn:hover .navLine.Top {
+position: relative;
+left: -2.5px;
+transform: translate(-10%, -10%);
+transition: 0.3s ease-in;
+}
+
+.hoverClickJS.navBurgerBtn:hover .navLine.Bottom {
+position: relative;
+transform: translate(10%, 10%);
+right: -2.5px;
+transition: 0.3s ease-out;
+}
+
+.navLine {
+/*Burger button normal*/
+width: 1.5em;
+height: 1.2px;
+border-radius: 2.5rem;
+margin-top: 0.4em;
+background-color: var(--Mode--Primary-Color);
+transition: all 0.8s ease-out;
+}
+
+/* close button JS */
+.closeBtnJS .navLine.Top {
+transform: rotate(-45deg) translate(-5px, 5px);
+transition: transform 0.3s ease-in-out;
+}
+
+.closeBtnJS .navLine.Middle {
+display: none;
+}
+
+.closeBtnJS .navLine.Bottom {
+transform: rotate(45deg) translate(-2.5px, 0px);
+transition: transform 0.3s ease-in-out;
+}
+
+/* Main navigation abr full screen */
+.mainNav {
+position: fixed;
+height: 100vh;
+width: 100%;
+display: flex;
+overflow: hidden;
+z-index: 249; /* Layer under the navigation bar*/
+background-color: var(--Mode--tertiary-Color);
+animation: navAnim 1s forwards ease-out;
+transition: all 1.5s ease-out;
+clip-path: circle(32px at 87.6% 6.85%);
+-webkit-clip-path: circle(32px at 87.35% 6.85%);
+}
+
+/* Scale effect JS  */
+.mainNav.clipJSApply {
+clip-path: circle(3000px at 87.6% 6.8%);
+-webkit-clip-path: circle(3000px at 87.6% 6.8%);
+transition: all 2s ease-in;
+}
+
+/* back circuit */
+.circuitBack.Nav {
+width: 20em;
 position: absolute;
-left: -0.43em;
-font-size: 16em;
-top: 39px;
-opacity: .1;
-margin-bottom: -20em;
+right: 2em;
+top: 10%;
+z-index: 3;
+animation: infinite circuitAnim 10s linear;
+}
 
+/* my image while coding */
+.navImageOfMeCoding {
+width: 100%;
+z-index: 1;
+transform: skew(-10deg);
+object-fit: cover;
+}
+
+/* Color burn blonde mode */
+.navColorTopBlondeMode {
+background: linear-gradient(80deg, #110322a4, #110322ec, #110322cb);
+position: absolute;
+top: 0;
+right: 0;
+height: 100vh;
+width: 100%;
+z-index: 2;
+}
+
+/* page Links */
+.navLinksList {
+position: absolute;
+top: 50%;
+transform: translate(0%, -50%);
+list-style: none;
+display: flex;
+gap: 5em;
+text-align: center;
+align-items: center;
+justify-content: center;
+z-index: 4;
+width: 100%;
+}
+
+/* direct Links */
+.navLinks {
+position: relative;
+top: -20em;
+font-size: 1.6em;
+color: var(--Mode--Primary-Color);
+text-transform: uppercase;
+display: flex;
+transform: scale(1);
+opacity: 0.7;
+font-weight: 100;
+}
+
+/* direct Links on mouse hover*/
+.navLinks:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.navLinks:before {
+/* Underline hover */
+content: "";
+position: absolute;
+width: 100%;
+height: 4px;
+top: 1.3em;
+left: 0;
+background: var(--Mode--Primary-Color);
+transform: scaleX(0);
+transition: 0.3s linear;
+}
+.navLinks:hover:before,
+.navLinks:focus:before {
+/* Underline hover */
+transform: scaleX(1);
+transition: 0.5s;
+}
+/* current page */
+#navLink2 {
+/* active */
+opacity: 1;
+transform: scale(1.1);
+text-shadow: 0 0 4px var(--Mode--Primary-Color);
+}
+
+/* #navLink2::before{ /* Underline active */ /*
+content: "";
+position: absolute;
+width: 100%;
+height: 4px;
+top: 1.3em;
+left: 0;
+background: var(--Mode--Primary-Color);
+transform: scaleX(1);
+} */
+
+/* navigation bar footer */
+#navCodeBy {
+position: absolute;
+color: wheat;
+z-index: 4;
+bottom: 0;
+font-size: 18px;
+right: 1em;
+}
+
+/* get in touch button navigation bar */
+#navBtnGetInTouch {
+position: absolute;
+top: 70%;
+left: 45%;
+z-index: 4;
+font-size: 1em;
+padding: 0.75em 1.55em 0.75em 1.55em;
+background-color: var(--Dark-Mode-secondary);
+color: var(--Mode--Primary-Color);
+border-radius: 3rem;
+transition: all 0.5s ease-out;
+}
+
+#navBtnGetInTouch:hover {
+background-color: var(--Mode--Primary-Color);
+color: var(--Dark-Mode-secondary);
+transition: all 0.5s ease-out;
+animation: btnAnim 0.5s ease-in-out;
+}
+
+/* 
+//
+// social Media Links aside 
+//
+*/
+
+/* aside Links/icons holder */
+.Social-fixed-aside {
+position: fixed;
+display: flex;
+flex-direction: column;
+gap: 0em;
+right: 0.5em;
+top: 50%;
+transform: translateY(-50%);
+z-index: 255;
+}
+
+/* icons */
+.aside.SVGIcons{
+margin-top: 1em ;
+opacity: 0.3;
+transform: scale(0.8);
+fill: var(--Mode--Primary-Color);
+transition: linear 110s ease-out;
+height: 2em;
 
 }
-#Name_paragraph{
-    width: 19em;
-    font-size: 1.4em;
-    text-align:justify;
-    position: relative;
-    top: 4.8em;
-    right: 3em;
 
+/* Icons Hover */
+.aside:hover.SVGIcons {
+transform: scale(1);
+opacity: 1;
+
+}
+
+/*
+//
+// Section all items Center
+//
+*/
+
+.headerPositionSticky{
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+}
+
+.headerImage{
+width: 100%;
+height: 100vh;
+object-fit: cover;
+z-index: -1;
+}
+
+
+.blendColorTop{
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(30deg,rgb(0, 0, 0),70%, transparent  );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.headerImageTitle{
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    width: 70%;
+    transform: translate(-90%,-90%);
+    z-index: 10;
+    color: #daedf5;    
+    font-family: var(--tertiary-Font);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.collectionImagesofMe{
+    display: flex;
+    margin:  0.2em 1em 2.5em 1em;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    box-shadow: 0 0 50px 50px black;
+    background-color:black;
+}
+
+.imagesOfME{
+height: 400px;
+width: 220px;
+border-radius: 12px;
+object-fit: cover;
+}
+
+.aboutMeCenter{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+
+}
+
+.imageBlendModeHolder{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    height: 80vh;
+    width: 90%;
+}
+.imageOfMeArticle{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blondeColorArticle{
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+background: linear-gradient(#000000c0, transparent,#000000cb)no-repeat;
+box-shadow: 0 0 20px 20px black;
+}
+
+.aboutMeParagraph{
+width: 70%;
+text-align: justify;
+height: fit-content;
+color: white;
+font-family: var(--secondary-Font);
+font-size: 1em;
+}
+.ParagraphBackClr{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 1000px  black;
+    background-color: #00000070;
+    z-index: 25;
+
+}
+
+.projectsCollection{
+    display: flex;
+    flex-wrap: wrap;
+    margin:  2em 1em 2.5em 1em;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    box-shadow: 0 0 50px 50px black;
+    background-color:black;
+}
+
+/*
+//
+// Footer all items #bottom
+//
+*/
+.mainFooter {
+width: 100%;
+height: 100vh;
+background: linear-gradient(30deg, #060408, #060408e1, #0000006c);
+overflow: hidden;
+display: flex;
+z-index: 240;
+position: relative;
+justify-content: space-around;
+align-items: center;
+}
+
+/* background animation  */
+.circuitBack.Footer {
+position: absolute;
+left: -1em;
+top: 2%;
+width: 22em;
+animation: infinite circuitAnim 10s linear;
+}
+
+/* My Image Footer */
+#JohnMullerImage {
+height: 70vh;
+width: 50%;
+position: relative;
+top: -2em;
+animation: alternate imgAnim 2s linear infinite;
+z-index: 5;
+pointer-events: none;
+}
+
+/* get in touch holder */
+.getInTouchHead {
+position: relative;
+display: flex;
+flex-wrap: wrap;
+width: min(48%, 35em);
+height: fit-content;
+z-index: 5;
+}
+
+/* get in touch form */
+.getInTouchForm {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5em;
+width: min(92%, 46em);
+height: 15.8em;
+margin: 1em;
+position: relative;
+left: 5em;
+}
+
+/* Input form boxes */
+.formInput {
+width: 95%;
+height: 2em;
+border-radius: 10px;
+font-size: 24px;
+color: #dadada;
+background-color: #2c2c2c;
+border: 2px solid #424242;
+}
+
+.formInput:focus {
+border-bottom: 3.2px solid var(--Mode--Primary-Color);
+transition: all 0.3s linear;
+box-shadow: 0 0 10px #8080807e;
+}
+
+.email {
+/* Sender email  */
+width: 46.5%;
+border-radius: 10px 0.5em 10px 10px;
+}
+
+.name {
+/* Sender name */
+width: 46.5%;
+border-radius: 0.5em 10px 10px 10px;
+}
+
+.Subject {
+position: relative;
+top: -1.25em;
+}
+.body {
+/* message body */
+height: 8em;
+overflow-x: hidden;
+resize: none;
+position: relative;
+top: -2.5em;
+}
+
+/* buttons flex holder */
+.call_action {
+position: absolute;
+bottom: -0.5em;
+left: -0.8em;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+/* send email button */
+.sendEmail {
+/* Send email button */
+color: whitesmoke;
+background: var(--Mode--Primary-Color);
+font-size: 0.8em;
+padding: 0 30px 0 30px;
+height: 3.1em;
+}
+
+.sendEmail:hover {
+animation: btnAnim 1s ease-in-out;
+background-color: var(--Dark-Mode-secondary);
+color: var(--Mode--Primary-Color);
+}
+
+/* link to skype */
+.callOnSkype {
+color: var(--Dark-Mode-secondary);
+text-align: center;
+cursor: alias;
+font-size: 22px;
+transform: scale(1);
+transition: 0.3s ease-in;
+font-weight: 100;
+}
+
+.callOnSkype:hover {
+color: #099bdf;
+transform: scale(1.1);
+transition: 0.5s linear;
+}
+
+.SkypeIcon {
+    width: 35px;
+    height: 1em;
+    transform: scale(1.3);
+    transition: all 2s linear;
+}
+
+
+.SkypeBody:hover, 
+.callOnSkype:hover .SkypeBody:hover {
+transition: all 2s linear;
+fill: #fff;
+}
+
+.SkypeIcon:hover .SkypeLetter, 
+.callOnSkype:hover .SkypeLetter {
+transition: all 2s linear;
+fill: #fff;
+}
+
+
+/* Footer in footer*/
+
+.overflow /*footer  */ {
+overflow: hidden;
+width: 100%;
+height: 8em;
+position: absolute;
+left: 0;
+bottom: 0;
+z-index: 0;
+}
+
+.footerInFooter {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 2.5em;
+background-color: var(--Mode--Primary-Color);
+display: flex;
+justify-content: space-around;
+align-items: center;
+gap: 3em;
+}
+
+/* Icons */
+.socialLinksFooter {
+list-style: none;
+display: flex;
+gap: 5px;
+position: relative;
+}
+
+.SocailMediaIcons {
+width: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+transform: scale(0.95);
+opacity: 0.8;
+}
+
+.SocailMediaIcons:hover {
+transform: scale(1.1);
+opacity: 1;
+}
+
+#copyRight {
+color: #cfcfcf;
+font-size: 22px;
+font-weight: 100;
+letter-spacing: 0.5px;
+transform: translate(10%, 0%);
+}
+
+.logoFooter {
+position: relative;
+top: -1.5em;
+left: 1.5em;
+width: 145px;
+}
+
+.LineBottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(0deg, var(--Mode--Primary-Color), #ffffff93);
+    z-index: 300;
+    animation: alternate LineBottomAnim 3s infinite linear;
+}
+
+
+
+
+/* 
+//
+// different screen sizes 
+//
+*/
+
+
+
+/* monitor from 1880 and up */
+@media screen and (min-width: 1880px) {
+.mainNav {
+clip-path: circle(31px at 86.2% 6.45%);
+-webkit-clip-path: circle(31px at 86.2% 6.45%);
+}
+
+
+.circuitBack.Nav {
+width: 25em;
+}
+
+.circuitBack.Footer {
+top: 3em;
+left: 1em;
+width: 30em;
+}
+
+#JohnMullerImage {
+width: min(50vw, 22em);
+}
+
+/* get in touch form */
+.getInTouchForm {
+width: 85%;
+height: 17.2em;
+}
+
+/* Input form boxes */
+.formInput {
+width: 95%;
+height: 2.3em;
+font-size: 25px;
+
+}
+
+.email {
+/* Sender email  */
+width: 46.8%;
+}
+
+.name {
+/* Sender name */
+width: 46.8%;
+}
+
+.body {
+/* message body */
+height: 8em;
+}
+
+.call_action {
+width: 80%;
+}
+}
+
+
+@media screen and (max-width: 1500px) {
+    .mainNav {
+        clip-path: circle(31px at 86.8% 6.45%);
+        -webkit-clip-path: circle(31px at 87.1% 6.45%);
+        }
+        .comingSoonCountDown{
+            height: 65%;
+        }
+}
+
+@media screen and (max-width: 1400px) {
+    .mainNav {
+        clip-path: circle(31px at 86.8% 6.45%);
+        -webkit-clip-path: circle(31px at 87.5% 6.45%);
+        }
         
 }
-body{
-    overflow-x: hidden;
+/*  laptop small  */
+@media screen and (max-width: 1270px) {
+.mainNav {
+clip-path: circle(30px at 87.8% 6.64%);
+-webkit-clip-path: circle(30px at 87.8% 6.64%);
+}
+
+.mainNav.clipJSApply {
+clip-path: circle(2000px at 89.3% 6.65%);
+-webkit-clip-path: circle(2000px at 89.3% 6.65%);
+}
+
+.navLinks {
+font-size: 1.4em;
+}
+
+#navBtnGetInTouch {
+top: 75%;
+left: 40%;
+}
+
+.circuitBack.Footer {
+top: 5em;
+}
+
+#JohnMullerImage {
+width: min(45%, 15em);
+left: -2em;
+}
+
+.getInTouchHead {
+width: min(75%, 30em);
+left: -2em;
+}
+
+.getInTouchForm {
+width: 85%;
+}
+
+.footerInFooter {
+height: 2em;
+}
+
+#copyRight {
+font-size: 20px;
+}
+.logoFooter {
+width: 130px;
+}
+
+.SocailMediaIcons {
+width: 40px;
+}
+}
+
+/*  laptop MS medium surface  */
+@media screen and (max-width: 1180px) {
+.mainNav {
+clip-path: circle(30px at 88.15% 6.64%);
+-webkit-clip-path: circle(30px at 88.15% 6.64%);
+}
+
+.comingSoonCountDown{
+    height: 60%;
+}
+.CountDownEffect{
+    transform: scale(0.9);
+}
+.mainNav.clipJSApply {
+clip-path: circle(1500px at 88.35% 6.64%);
+-webkit-clip-path: circle(1500px at 88.35% 6.64%);
+}
+
+.navLinksList {
+gap: 2.4em;
+top: 40%;
+}
+
+.navLinks {
+font-size: 1.3em;
+}
+
+.circuitBack.Footer {
+top: 5.5em;
+left: -2em;
+}
+
+#JohnMullerImage {
+width: min(45%, 15em);
+}
+
+.getInTouchHead {
+left: -0.5em;
+}
+
+.getInTouchForm {
+width: 80%;
+height: 14.7em;
+}
+
+.formInput {
+font-size: 22px;
+}
+
+.footerInFooter {
+height: 1.5em;
+}
+
+.SocailMediaIcons {
+display: none;
+}
+}
+
+/*  laptop MS Small surface  */
+@media screen and (max-width: 1024px) {
+.mainNav {
+clip-path: circle(30px at 88.9% 6.4%);
+-webkit-clip-path: circle(30px at 88.9% 6.4%);
+}
+
+.comingSoonCountDown{
+    height: 55%;
+}
+.CountDownEffect{
+    width: 60vw;
+}
+
+#JohnMullerImage {
+width: min(40%, 12em);
+left: -3.5em;
+}
+
+.getInTouchForm {
+left: 1em;
+}
+
+.circuitBack.Footer {
+display: none;
+}
+
+.sendEmail {
+font-size: 0.75em;
+height: 2.8em;
+padding: 0 20px;
+}
+
+.call_action {
+width: 95%;
+}
+
+.callOnSkype {
+font-size: 20px;
+}
+
+.SkypeIcon {
+transform: scale(1);
+}
+
+.footerInFooter {
+gap: 0em;
+}
+}
+
+/* I Pad size and surface laptops */
+@media screen and (max-width: 860px) {
+.mainNav {
+clip-path: circle(30px at 88.5% 6.64%);
+-webkit-clip-path: circle(30px at 88.5% 6.64%);
+}
+
+.mainNav.clipJSApply {
+clip-path: circle(1100px at 89.1% 6.64%);
+-webkit-clip-path: circle(1100px at 89.1% 6.64%);
+}
+
+.circuitBack {
+display: none;
+}
+
+/* page Links  */
+.navLinksList {
+transform: translate(-5%, -50%);
+flex-direction: column;
+gap: 3em;
+}
+
+/* direct Links */
+.navLinks {
+font-size: 1.45em;
+}
+
+#navCodeBy {
+bottom: 2px;
+font-size: 14px;
+}
+
+#navBtnGetInTouch {
+position: absolute;
+top: 85%;
+left: 33%;
+font-size: 1em;
+padding: 0.8em 1.4em 0.8em 1.4em;
+}
+
+.Logo {
+width: 3.5em;
+position: relative;
+top: 8px;
+}
+
+.titleName {
+font-size: 1.75em;
+}
+
+.mainFooter {
+flex-direction: column;
+}
+
+#JohnMullerImage {
+width: 27vw;
+left: 1em;
+top: 1.5em;
+}
+
+.getInTouchHead {
+width: 90%;
+height: 15em;
+transform: translateY(25%);
+}
+
+.getInTouchForm {
+width: 80%;
+height: 14.7em;
+left: 3em;
+}
+
+.formInput {
+width: 96%;
+height: 2.2em;
+font-size: 23px;
+}
+
+.email {
+width: 46.8%;
+}
+
+.name {
+width: 46.8%;
+}
+
+.body {
+height: 7em;
+}
+
+.footerInFooter {
+background-color: transparent;
+gap: 0;
+justify-content: center;
+z-index: 8;
+}
+
+#copyRight {
+font-size: 13px;
+}
+
+.logoFooter {
+width: 45px;
+top: -8px;
+left: 1.8em;
+}
+}
+
+/* tablet XLarge size  */
+@media screen and (max-width: 768px) {
+.mainNav {
+clip-path: circle(30px at 89.1% 6.64%);
+-webkit-clip-path: circle(30px at 89.1% 6.64%);
+}
+
+#navBtnGetInTouch {
+left: 30%;
+}
+
+#headerBackground {
+    height:10vh ;
+}
+.ComingSoonTitle{
+transform: scale(1.8);
+margin: 2em 0.5em -1em 0.5em;
+}
+.timerHolder{
+    width: 80%;
+    transform: translate(-5%, -10%) scale(1.1);
+margin: 0em 0.5em -2em 0.5em;
+
+}
+
+.comingSoonCountDown{
+    height: 45%;
+}
+
+#JohnMullerImage {
+width: 32%;
+left: 1em;
+top: 2.5em;
+z-index: -5;
+}
+
+.getInTouchHead {
+transform: translateY(30%);
+}
+}
+
+/* tablet Large size  */
+@media screen and (max-width: 635px) {
+.mainNav {
+clip-path: circle(30px at 90.1% 6.64%);
+-webkit-clip-path: circle(30px at 90.1% 6.64%);
 }
 
 
 
 
+.ComingSoonTitle{
+transform: scale(1.9);
+width: 100%;
+}
+.timerHolder{
+width: 90%;
+transform: translate(-5%, -10%) scale(1.05);
+}
+main{
+    display: grid;
+    width: 50%;
+}
 
+section{
+width: 90%;    
+}
+.comingSoonCountDown{
+    height: 45%;
+    box-shadow: none;
+    border: none;
+    width: 90%;
+    margin: 0;
+}
+    
+.timerHolder{
+width: 90%;
+transform: translate(-5%, -10%) scale(1.05);
+
+}
+    
+.aside.SVGIcons{
+    transform: scale(0.75);
+}
+#navBtnGetInTouch {
+left: 29%;
+}
+
+.getInTouchHead {
+width: 100%;
+}
+
+#JohnMullerImage {
+width: 35%;
+}
+
+.Social-fixed-aside {
+right: 0.2em;
+}
+
+.Social-fixed-aside img {
+width: 30px;
+}
+
+.sendEmail {
+font-size: 0.68em;
+padding: 0 15px;
+}
+
+.callOnSkype {
+font-size: 16px;
+}
+}
+
+/* tablet Medium size  */
+@media screen and (max-width: 500px) {
+.mainNav {
+clip-path: circle(30px at 91% 6.64%);
+-webkit-clip-path: circle(30px at 91% 6.64%);
+}
+#navBtnGetInTouch {
+left: 22%;
+}
+.titleName {
+font-size: 1.5em;
+}
+
+.getInTouchHead {
+width: 100%;
+}
+.getInTouchForm {
+width: 100%;
+left: 1em;
+}
+
+#JohnMullerImage {
+width: 50%;
+}
+
+.Social-fixed-aside {
+display: flex;
+}
+
+.aside {
+width: 30px;
+opacity: 0.7;
+position: relative;
+left: 2em;
+}
+
+.JSlinksVisible.Social-fixed-aside {
+display: flex;
+}
+
+#copyRight {
+font-size: 11px;
+}
+.logoFooter {
+width: 35px;
+top: 0;
+left: 1.5em;
+}
+.sendEmail {
+font-size: 0.68em;
+padding: 0 15px;
+}
+
+.callOnSkype {
+font-size: 16px;
+}
+}
+
+/* tablet small size  */
+@media screen and (max-width: 450px) {
+#navBtnGetInTouch {
+left: 22%;
+font-size: 0.95em;
+padding: 0.5em 1.3em;
+}
+#JohnMullerImage {
+width: 52%;
+top: 1.75em;
+left: 0.8em;
+}
+.titleName {
+font-size: 1.35em;
+}
+#copyRight {
+position: relative;
+font-size: 10px;
+}
+.sendEmail {
+font-size: 0.65em;
+padding: 0 13px;
+}
+
+.callOnSkype {
+font-size: 14px;
+}
+
+.Social-fixed-aside img {
+width: 27px;
+}
+}
+
+/* Mobile size large */
+@media screen and (max-width: 425px) {
+.navImageOfMeCoding {
+transform: skew(0deg);
+}
+
+#navBtnGetInTouch {
+font-size: 0.85em;
+padding: 0.5em 1.05em;
+left: 28%;
+}
+
+.mainNav {
+clip-path: circle(0px at 87.5% 6.6%);
+-webkit-clip-path: circle(0px at 87.5% 6.6%);
+}
+
+.titleName {
+display: none;
+}
+
+header {
+gap: 5em;
+}
+
+.getInTouchHead {
+transform: translateY(30%);
+}
+
+.getInTouchForm {
+width: 100%;
+height: 11.5em;
+}
+
+.formInput {
+width: 92%;
+font-size: 20px;
+}
+
+.name {
+width: 44.5%;
+}
+
+.email {
+width: 44.5%;
+}
+
+.body {
+height: 6em;
+}
+
+.sendEmail {
+font-size: 0.55em;
+padding: 5px 10px;
+}
+
+.callOnSkype {
+font-size: 12px;
+}
+
+
+
+#JohnMullerImage {
+width: 70%;
+left: 0.3em;
+top: 1em;
+}
+
+#copyRight {
+text-align: center;
+}
+
+.logoFooter {
+display: none;
+}
+}
+
+/* mobile Size medium */
+@media screen and (max-width: 410px) {
+#copyRight {
+text-align: center;
+top: 1.5em;
+}
+.aside.SVGIcons {
+transform:scale(0.7);
+}
+#navBtnGetInTouch {
+left: 25%;
+top: 80%;
+font-size: 0.85em;
+padding: 0.45em 0.75em;
+}
+#JohnMullerImage {
+width: 60%;
+height: 50%;
+}
+
+#navCodeBy {
+font-size: 11px;
+}
+
+.navLinksList {
+transform: translateY(-100%);
+}
+
+.navLinks {
+font-size: 1.1em;
+}
+
+.formInput {
+width: 96%;
+}
+
+.email {
+width: 46%;
+}
+
+.name {
+width: 46%;
+}
+.sendEmail {
+background: transparent;
+font-size: 0.75em;
+border-radius: 0;
+padding: 0 0;
+transform: scale(0.9);
+width: 60%;
+transition: all 1s linear;
+}
+.sendEmail:hover {
+background: transparent;
+transform: scale(1);
+animation: normal /* Not declared */;
+font-weight: bolder;
+transition: all 1s linear;
+}
+
+.sendEmail::before {
+content: "";
+background: var(--Mode--Primary-Color);
+color: #cfcfcf;
+width: 80px;
+height: 17px;
+padding: 0 0 10px 0;
+position: absolute;
+top: 1.15em;
+left: -0.5em;
+z-index: -1;
+border-radius: 2px;
+box-shadow: 0 0 5px #f8875f;
+transition: all 0.5s linear;
+}
+
+.sendEmail:hover::before {
+background-color: var(--Dark-Mode-secondary);
+transition: all 0.5s linear;
+box-shadow: 0 0 5px #f5f5f5;
+}
+
+.callOnSkype {
+font-size: 0;
+position: relative;
+top: 10px;
+}
+
+.SkypeIcon {
+    transform: scale(1.1);
+}
+
+.SkypeIconBack::before {
+content: "";
+width: 180px;
+height: 160px;
+position: absolute;
+top: -100%;
+left: -100%;
+transform: translate(-65%, -55%);
+background-color: rgb(255, 255, 255);
+border-radius: 1rem;
+clip-path: circle(10px at 89% 91%);
+-webkit-clip-path: circle(10px at 89% 91%);
+transition: all 1.1s linear;
+}
+
+.SkypeIconBack:hover::before,
+.callOnSkype:hover .SkypeIconBack::before {
+background-color: #099bdf;
+clip-path: circle(100px at 89% 91%);
+-webkit-clip-path: circle(220px at 89% 91%);
+transition: all 1s linear;
+}
+
+.SkypeIconBack:hover::after,
+.callOnSkype:hover .SkypeIconBack::after {
+display: block;
+transition: all 0.5s ease;
+}
+.SkypeIconBack::after {
+content: "start an online meeting with me on skype, teams or any collaboration tool would you like  😃🌸";
+color: #ffffff;
+position: absolute;
+font-size: 10px;
+width: 12em;
+height: 150px;
+left: -100%;
+top: -70%;
+word-wrap: break-word;
+transform: translate(-70%, -50%);
+line-height: 20px;
+display: none;
+transition: all 0.5s ease;
+}
+}
+
+/* mobile Size small */
+@media screen and (max-width: 320px) {
+}
+
+@media screen and (max-height: 450px) {
+.titleName {
+font-size: 1.6em;
+}
+
+.Logo {
+width: 85px;
+position: relative;
+top: 10px;
+}
+
+.mainNav {
+clip-path: circle(28px at 87.9% 8.2%);
+-webkit-clip-path: circle(28px at 87.9% 8.2%);
+}
+
+.circuitBack.Nav {
+display: block;
+right: 1em;
+top: 4em;
+width: 10em;
+}
+
+.navLinksList {
+top: -2em;
+gap: 1em;
+}
+
+.navLinks {
+font-size: 1.1em;
+}
+
+#navBtnGetInTouch {
+top: 70%;
+font-size: 0.9em;
+padding: 0.55em 1.2em;
+}
+#navCodeBy {
+font-size: 12px;
+}
+
+.Links_SMedia {
+margin-top: 0.1em;
+transform: translateX(70%);
+}
+
+.Social-fixed-aside img {
+width: 25px;
+}
+
+#JohnMullerImage {
+left: -1em;
+top: 0;
+}
+.getInTouchHead {
+height: 10em;
+width: 85%;
+transform: translateY(10%);
+}
+.getInTouchForm {
+width: 90%;
+height: 9em;
+}
+
+.formInput {
+height: 2em;
+font-size: 16px;
+}
+.body {
+height: 5.5em;
+}
+
+.sendEmail {
+background: transparent;
+font-size: 0.9em;
+border-radius: 0;
+padding: 0 2px;
+transform: scale(0.9);
+transition: all 1s linear;
+}
+.sendEmail:hover {
+background: transparent;
+transform: scale(1);
+animation: normal /* Not declared */;
+font-weight: bolder;
+transition: all 1s linear;
+}
+
+.sendEmail::before {
+content: "";
+background: var(--Mode--Primary-Color);
+color: #cfcfcf;
+width: 80px;
+height: 17px;
+padding: 0 0 10px 0;
+position: absolute;
+top: 1.25em;
+left: -0.6em;
+z-index: -1;
+border-radius: 2px;
+box-shadow: 0 0 5px #f8875f;
+transition: all 0.5s linear;
+}
+    
+.sendEmail:hover::before {
+background-color: var(--Dark-Mode-secondary);
+transition: all 0.5s linear;
+box-shadow: 0 0 5px #f5f5f5;
+}
+
+.callOnSkype {
+font-size: 14px;
+}
+
+
+.footerInFooter {
+background-color: transparent;
+height: 1em;
+gap: 0;
+justify-content: center;
+}
+
+.logoFooter {
+width: 40px;
+top: -10px;
+margin-right: 0.5em;
+}
+
+#copyRight {
+font-size: 12px;
+}
+}
+
+@media screen and (max-width: 750px) and (max-height: 350px) {
+.Logo {
+width: 75px;
+position: relative;
+top: 10px;
+}
+
+.mainNav {
+clip-path: circle(27px at 88.1% 8.2%);
+-webkit-clip-path: circle(27px at 88.5% 8.4%);
+}
+
+.navLinksList {
+top: -2em;
+gap: 2em;
+flex-direction: row;
+}
+
+#navBtnGetInTouch {
+top: 72%;
+left: 35%;
+font-size: 0.8em;
+padding: 0.5em 1.15em;
+}
+
+#navCodeBy {
+font-size: 12px;
+}
+.mainFooter {
+flex-direction: row;
+}
+
+#JohnMullerImage {
+width: 50%;
+left: -1em;
+top: 0;
+}
+
+.getInTouchHead {
+height: 10em;
+width: 85%;
+left: -2em;
+transform: translateY(10%);
+}
+}
+
+/* 
+//
+// All key frames 
+//
+*/
+
+/* navigation bar key frames animation  */
+@-webkit-keyframes navAnim {
+from {
+opacity: 0;
+transform: scale(2);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+@keyframes navAnim {
+from {
+opacity: 0;
+transform: scale(2);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+/* circuit background effect */
+@-webkit-keyframes circuitAnim {
+0% {
+transform: rotateY(-45deg);
+transform: translateZ(180px) rotate(10deg);
+opacity: 1;
+}
+
+100% {
+transform: rotateY(-50deg);
+transform: translateZ(180px) rotate(1800000deg);
+opacity: 0;
+}
+}
+
+@keyframes circuitAnim {
+0% {
+transform: rotateY(-45deg);
+transform: translateZ(180px) rotate(1deg);
+}
+
+100% {
+transform: rotateY(-50deg);
+transform: translateZ(180px) rotate(360deg);
+}
+}
+
+/* Navigation bar Links */
+@-webkit-keyframes navLinksFadeAnim {
+from {
+transform: translateY(-800%);
+opacity: 0;
+}
+to {
+transform: translateY(0%);
+opacity: 1;
+position: relative;
+top: 32em;
+}
+}
+@keyframes navLinksFadeAnim {
+from {
+transform: translateY(-800%);
+opacity: 0;
+}
+to {
+transform: translateY(0%);
+opacity: 1;
+position: relative;
+top: 32em;
+}
+}
+
+@-webkit-keyframes AsideLinksFadeAnim {
+from {
+transform: translateX(250%);
+opacity: 0;
+}
+to {
+transform: translateX(-130%);
+opacity: 0.7;
+}
+}
+
+@keyframes AsideLinksFadeAnim {
+from {
+transform: translateX(250%);
+opacity: 0;
+}
+to {
+transform: translateX(-130%);
+opacity: 0.7;
+}
+}
+
+/* buttons animation */
+@-webkit-keyframes btnAnim {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
+100% {
+transform: scale(1);
+}
+}
+
+@keyframes btnAnim {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
+100% {
+transform: scale(1);
+}
+}
+
+/* images rounded animation */
+@-webkit-keyframes imgAnim {
+0% {
+transform: translate(81%, 56%);
+}
+100% {
+transform: translate(81%, 54%);
+}
+}
+
+@keyframes imgAnim {
+0% {
+transform: translate(0%, 2%);
+}
+100% {
+transform: translate(0%, -3%);
+}
+}
+
+
+        
+@-webkit-keyframes TextAnim {
+0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+}
+40% {
+    opacity: 0.6;
+}
+100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+}
+}
+@keyframes TextAnim {
+0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+}
+40% {
+    opacity: 0.6;
+}
+100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+}
+}
+
+/*Footer line */
+@-webkit-keyframes LineBottomAnim {
+    0% {
+        background-position: 100% 50%;
+        transform: scaleX(0);
+        }
+        10%{
+        opacity: 1;
+        }
+        90% {
+        background-position: 0% 50%;
+        transform: scaleX(1);
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    @keyframes LineBottomAnim {
+    0% {
+        background-position: 100% 50%;
+        transform: scaleX(0);
+    }
+    10%{
+        opacity: 1;
+    }
+    90% {
+        background-position: 0% 50%;
+        transform: scaleX(1);
+    }
+    100%{
+        opacity: 0;
+    }
+    }
+
+
+/* Svg icons */
+
+.SVGIcons {
+width: 35px;
+opacity: 0.8;
+}
+
+.Instagram:hover {
+fill: url(#SVGID_2);
+}
+.Facebook:hover {
+fill: #013699;
+}
+.Linkedin:hover {
+fill: #072050;
+}
+.whatsapp:hover {
+fill: #7ad06d;
+}
+.Github:hover {
+fill: #212121;
+}
+.twitter:hover {
+fill: #099bdf;
+}
+.email:hover {
+fill: whitesmoke;
+}
