@@ -1,7 +1,7 @@
 //  Header
-const headerBG = document.querySelector('#headerBackground') // header background
-const Header = document.querySelector('header'); // main header 
-// navigation bar burger button 
+ const Header = document.querySelector('header'); // main header 
+  const befScrollTop = -1;
+ // navigation bar burger button 
 const navBtn = document.querySelector('.navBurgerBtn');
 // navigation full screen
 const mainNav = document.querySelector('.mainNav'); 
@@ -23,22 +23,33 @@ const copyRightText = document.querySelector('#copyRight');
 
 
 // function 
-window.onscroll = function () {
-  scrollRotate();
-};
-
-function scrollRotate() {
-  // logo back circuit 
+window.onscroll = ('onscroll', ()=> {// logo back circuit 
   const LogoRotate = document.querySelector('#Logo_x5F_circuits');
   let offsetY = window.pageYOffset/35; 
   LogoRotate.style = ` transform:rotate(${offsetY}deg); transform-origin: center;`;
-}
+}); 
+
+window.addEventListener('scroll', ()=>{
+
+  let curScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  if (curScrollTop > befScrollTop )
+  {
+    Header.style = `opacity: 0;`;
+  }
+  else (curScrollTop < befScrollTop)
+  {
+    Header.style = `opacity: 1;`;
+  }
+});
+
 // When burger btn click 
 navBtn.addEventListener('click', ()=>{
   
 
     // navigation Links animation 
 
+    Header.style = `opacity: 1;`;
 
     navLinks.forEach((link, index) =>{
       if(link.style.animation){
