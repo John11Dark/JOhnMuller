@@ -591,3 +591,154 @@ class Parallax {
 }
 
 module.exports = Parallax
+
+
+
+//// check out 
+let timeline = new TimelineMax({
+  repeat: -1,
+  yoyo: true
+}),
+feTurb = document.querySelector('#feturbulence');
+
+timeline.add(
+TweenMax.to(feTurb, 15, {
+  onUpdate: function() {
+    let bfX = this.progress() * 0.005 + 0.015, //base frequency x
+      bfY = this.progress() * 0.05 + 0.1; //base frequency y
+    feTurb.setAttribute('baseFrequency', `${bfX} ${bfY}`);
+  }
+}), 0
+);
+
+
+const  MenuFormO = () =>{
+const btnNav = document.querySelector('.lines_menu')
+const nav = document.querySelector('.bottom-100vh')
+
+const navLinks = document.querySelectorAll('.links li');
+
+    btnNav.addEventListener('click', ()=>{
+
+
+        //when toggle the nav button 
+
+        nav.classList.toggle('MenuShow');
+
+       
+        //animation on links 
+        navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = ''; 
+
+        } else {
+            link.style.animation = `LinksFadeIn 0.5s ease forwards ${index / 7 + 1.45}s`;
+        }
+
+        
+    });    
+    
+      //after toggle the nav button 
+      btnNav.classList.toggle('AfterClick');
+});
+
+
+
+
+
+
+
+
+}
+
+
+        // When i click on the CV button 
+        
+        const PnlCV =() =>{  
+            const CvButton = document.querySelector('.Cv-btn')
+            const btnCloseCv= document.querySelector('.btn-close-Cv') 
+            const CVFormP= document.querySelector('.CV-Form')
+         
+            CvButton.addEventListener('click', ()=>{
+                CVFormP.classList.toggle('About-Me-AfterClickCV');
+            });
+            
+            btnCloseCv.addEventListener('click', ()=>{
+                CVFormP.classList.toggle('Btn-Close-AfterClickCV')
+            }); 
+        } 
+
+        //When About me button toggle 
+        const AboutFormS =() =>{  
+            const AboutButton = document.querySelector('.About-me-btn')
+            const btnClose= document.querySelector('.btn-close') 
+            const AboutForm= document.querySelector('.about-me-form')
+            AboutButton.addEventListener('click', ()=>{
+
+                AboutForm.classList.toggle('About-Me-AfterClick');
+            });
+
+            btnClose.addEventListener('click', ()=>{
+
+                AboutForm.classList.toggle('Btn-Close-AfterClick')
+            }); 
+        }
+
+        
+
+
+
+MenuFormO();
+PnlCV();
+AboutFormS();
+Entry header || Top part 
+const observer = new IntersectionObserver (function(entries, observer)
+{
+entries.forEach(entry => {
+     if (!entry.isIntersecting){
+       headerBG.style.display = `none`;
+       titleName.classList.toggle('headerIntersectingNav');
+
+     }else{
+         header.style.display = `block`; 
+         titleName.classList.remove('headerIntersectingNav');
+     }
+ });
+
+},
+options);
+observer.observer(footer); 
+/* 
+const OnScroll = new IntersectionObserver (function(entries, OnScroll) {
+
+ entries.forEach(entry => {
+     if (!entry.isIntersecting){
+             return; 
+         }else{ entry.target.classList.add("HeaderBackColor");
+         onscroll.unobserve(entry.target);
+     }
+ });
+},
+appearOptions);
+
+FadeOnScroll.forEach(fadeOn => {
+   OnScroll.observe(fadeOn);
+})  */
+
+
+
+
+
+/* function sendEmail(){
+ let username = document.querySelector('#Name');
+ let Email = document.querySelector('#Email');
+ let Subject = document.querySelector('#Subject');
+ let TextBody = document.querySelector('#Body');
+
+ if (isNotEmpty(Subject) && isNotEmpty(Body)){
+
+ }
+ function isNotEmpty(caller) {
+   if (caller.val() == "")
+ }
+} */

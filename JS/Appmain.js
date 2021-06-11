@@ -1,10 +1,11 @@
 //  Header
  const Header = document.querySelector('header'); // main header 
-  const befScrollTop = -1;
+ let befScrollTop = 0;
  // navigation bar burger button 
 const navBtn = document.querySelector('.navBurgerBtn');
 // navigation full screen
 const mainNav = document.querySelector('.mainNav'); 
+const mainNavAnim = document.querySelector('.mainNavAnim');
 const timerText = document.querySelector('.timerText');
 // Title Name 
 
@@ -21,26 +22,41 @@ const footer = document.querySelector('.mainFooter');
 const copyRightText = document.querySelector('#copyRight');
 
 
+/* const imagesProjectList = document.getElementsByClassName('') 
+ *//* const elements = document.getElementsByClassName('.collectionOfProjects '[0,9]);
 
-// function 
+ elements.addEventListener('click', ()=>{
+   elements[0].style = `transform:scale(5);`;
+ }) */
+
+
+// on scroll rotate Logo circuit 
 window.onscroll = ('onscroll', ()=> {// logo back circuit 
   const LogoRotate = document.querySelector('#Logo_x5F_circuits');
   let offsetY = window.pageYOffset/35; 
   LogoRotate.style = ` transform:rotate(${offsetY}deg); transform-origin: center;`;
 }); 
 
+
 window.addEventListener('scroll', ()=>{
 
   let curScrollTop = window.scrollY || document.documentElement.scrollTop;
 
-  if (curScrollTop > befScrollTop )
+  if ( befScrollTop < curScrollTop)
   {
-    Header.style = `opacity: 0;`;
+    Header.style = `opacity: 0.2;`;
+    Header.addEventListener('hover', ()=>{
+      Header.style = `opacity: 1;`;
+    });
   }
-  else (curScrollTop < befScrollTop)
+  else 
   {
     Header.style = `opacity: 1;`;
   }
+  console.log(befScrollTop);
+  console.log(curScrollTop);
+  befScrollTop = curScrollTop;
+
 });
 
 // When burger btn click 
@@ -69,7 +85,7 @@ navBtn.addEventListener('click', ()=>{
        //
      navBtn.classList.toggle('hoverClickJS');
      mainNav.classList.toggle('clipJSApply');
-
+     mainNavAnim.classList.toggle('clipJSApply')
 
      // tablet size 
      titleName.classList.toggle('JSApplyTitleName');
@@ -97,6 +113,7 @@ navBtn.addEventListener('click', ()=>{
      
 });
 
+// mobile screen 
 window.addEventListener('resize', ()=>{
    
   if(screen.width <= 350)
@@ -112,22 +129,18 @@ window.addEventListener('resize', ()=>{
   }
   });
 
-
+// navigation bar get in touch button  
 getInTouchHeaderBtn.addEventListener('click', ()=>{
 
   navBtn.click(); // PerformClick to close the navigation bar 
 
 });
 
-const options = {
-  rootMargin:"-10px 0px 0px 0px"
-};
-
 
 // Timer count down 
 const countDown = () => {
   
-  let countDate = new Date('June 15, 2021 00:00:00').getTime();
+  let countDate = new Date('June 16, 2021 00:00:00').getTime();
   let Now = new Date().getTime();
   let Gap = countDate - Now;
 
@@ -159,60 +172,6 @@ const countDown = () => {
   }
 };
 
-
-setInterval(countDown, 1000);
-
-
-
-
-// Entry header || Top part 
-/* const observer = new IntersectionObserver (function(entries, observer)
-{
-entries.forEach(entry => {
-      if (!entry.isIntersecting){
-        headerBG.style.display = `none`;
-        titleName.classList.toggle('headerIntersectingNav');
-
-      }else{
-          header.style.display = `block`; 
-          titleName.classList.remove('headerIntersectingNav');
-      }
-  });
-
-},
-options);
-observer.observer(footer); */
-/* 
-const OnScroll = new IntersectionObserver (function(entries, OnScroll) {
-
-  entries.forEach(entry => {
-      if (!entry.isIntersecting){
-              return; 
-          }else{ entry.target.classList.add("HeaderBackColor");
-          onscroll.unobserve(entry.target);
-      }
-  });
-},
-appearOptions);
-
-FadeOnScroll.forEach(fadeOn => {
-    OnScroll.observe(fadeOn);
-})  */
-
-
-
-
-
-/* function sendEmail(){
-  let username = document.querySelector('#Name');
-  let Email = document.querySelector('#Email');
-  let Subject = document.querySelector('#Subject');
-  let TextBody = document.querySelector('#Body');
-
-  if (isNotEmpty(Subject) && isNotEmpty(Body)){
-
-  }
-  function isNotEmpty(caller) {
-    if (caller.val() == "")
-  }
-} */
+// timer count down interval every 1 sec to 
+ setInterval(countDown, 1000);
+ 

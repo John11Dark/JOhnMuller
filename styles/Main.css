@@ -10,25 +10,22 @@
 --secondary-ColorM: #ABC1D0 ;
 --tertiary-ColorM: #ff7f50; 
 --title-Clr-M:#5f9ea0; 
+scroll-behavior: smooth;
 /* FONTS */
 --Primary-Font1: "Roboto", sans-serif;
 --Primary-Font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 --secondary-Font: "Montserrat", sans-serif;
 --tertiary-Font: "Poppins", sans-serif;
 }
-#SkypeBody{
-    fill:#00AFF0;
-    }
 
-#SkypeLetter{
-fill: #fff;
-}
-    
+
 *,
 *::before,
 *::after {
 box-sizing: border-box;
 object-fit: contain;
+outline: none;
+scroll-behavior: smooth;
 }
 
 input,textarea{
@@ -58,17 +55,14 @@ box-sizing: border-box;
     background: #6e6e6e; 
 }
 
-
-
-
 body {
 font-family: var(--tertiary-Font);
 font-weight: 600;
 font-size: 1.5em;
 line-height: 2em;
 background: #000 no-repeat;  
-width: 100%;
-box-sizing: border-box;
+width: 100vw;
+min-height: 100vh;
 overflow-x: hidden;
 
 }
@@ -77,14 +71,14 @@ overflow-x: hidden;
 main{
     z-index: 50;
     position: absolute;
-    top: 48em;
+    top: 49em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     background: linear-gradient(10deg, black,#000000f1,black );
-    box-shadow: 0 0 50px 50px  black;
+    box-shadow: 0 0 50px 75px  #000000ce;
     
 }
 
@@ -137,7 +131,7 @@ outline: none;
 
 #headerBackground {
 position: fixed;
-top: 0;
+top: 0; 
 width: 100%;
 height: 12vh;
 z-index: 240;
@@ -157,10 +151,7 @@ background-color: transparent;
 z-index: 250; /*maybe in the future i will add new items so i make the header is in the very top */
 transition: all 1s linear;
 }
-header:hover{
-    opacity: 1;
-    
-}
+
 .headerJS{
     opacity: 0.1;
     transition-duration: 1s;
@@ -200,7 +191,7 @@ transition: all 2.5s linear;
 /*Burger button*/
 cursor: pointer;
 transform: translate(10%, 30%);
-height: 1.5em;
+height: 1.6em;
 }
 
 /* when mouse hover change color */
@@ -239,6 +230,8 @@ width: 1.75em;
 height: 2px;
 border-radius: 3rem;
 margin-top: 0.4em;
+position: relative;
+top: -3px;
 background-color: var(--Mode--Primary-Color);
 transition: all 0.8s ease-out;
 box-shadow: 0 0 10px -1px #000000 ;
@@ -268,13 +261,23 @@ display: flex;
 overflow: hidden;
 z-index: 249; /* Layer under the navigation bar*/
 background-color: transparent;
-animation: navAnim 1s forwards ease-out;
 transition: all 1.5s ease-out;
 box-shadow: inset 0 0 50px 10px black;
 clip-path: circle(0px at 87.6% 6.85%);
 -webkit-clip-path: circle(0px at 87.35% 6.85%);
 }
 
+.mainNavAnim{
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: opacity 2.2s linear;
+}
+
+.mainNavAnim.clipJSApply{
+transition: opacity linear 2s ;
+opacity: 1;
+}
 /* Scale effect JS  */
 .mainNav.clipJSApply {
 clip-path: circle(3000px at 87.6% 6.8%);
@@ -295,6 +298,7 @@ animation: infinite circuitAnim 10s linear;
 /* my image while coding */
 .navImageOfMeCoding {
 width: 100%;
+height: 100%;
 z-index: 1;
 transform: skew(-10deg);
 object-fit: cover;
@@ -364,7 +368,7 @@ transform: scaleX(1);
 transition: 0.5s;
 }
 /* current page */
-#navLink2 {
+#navLink1 {
 /* active */
 opacity: 1;
 transform: scale(1.1);
@@ -516,7 +520,15 @@ place-items: center;
 gap: 0.5em;
 opacity: 0;
 position: absolute;
+transform: scale(0.5);
 }
+
+.fadeInJS{
+    opacity: 1;
+    transform: scale(1.05);
+    transform-origin: bottom;
+    transition: all 1s linear;
+    }
 .charTitle{
 display: flex;
 align-items: center;
@@ -545,14 +557,6 @@ height: 70px;
     font-weight: lighter;
     letter-spacing: 1.1px;
     overflow: hidden; 
-    border-right: .15em solid orange; 
-    white-space: nowrap; 
-    margin: 0 auto; 
-    letter-spacing: .15em; 
-    animation: 
-    typing 3.5s steps(40, end),
-    blinkCaret .75s step-end infinite;
-
 }
 .charParagraph::before{
     content: open-quote;
@@ -566,7 +570,6 @@ height: 70px;
 }
 
 .characterOne{
-opacity: 1;
 width: 100%;
 position: absolute;
 left: 0;
@@ -574,12 +577,11 @@ top: 0;
 z-index: 50;
 
 }
-
-
+  
 /* images of me */
 .collectionImagesOfMe{
     display: flex;
-    margin:  8em 1em 4em 1em;
+    margin:  9em 1em 4em 1em;
     width: 100%;
     height: 90vh;
     gap: 1.3em;
@@ -593,6 +595,7 @@ z-index: 50;
 .imagesOfME{
 height: 400px;
 width: 220px;
+padding: 7px;
 border-radius: 12px;
 object-fit: cover;
 opacity: 0.5;
@@ -601,12 +604,16 @@ transition: all 0.2s linear;
 cursor: pointer;
 transform-origin:center ;
 outline: none;
+transform: translateZ(-100%);
 }
 
 .imagesOfME:hover{
 transform: scale(1.1);
 opacity: 1;
 transition: all 0.3s linear;
+padding: 0px;
+transform: translateZ(100%);
+box-shadow: 0 0 20px 20px black ;
 }
 
 .imagesOfME:focus{
@@ -614,7 +621,7 @@ position: absolute;
 height: 80vh;
 width: 80%;
 box-shadow: 0 0 250px 25px #060408cb;
-z-index: 55;
+z-index: 255;
 opacity: 1;
 }
 
@@ -686,6 +693,32 @@ font-size: 1em;
 
 }
 
+.MCAST{
+    font-weight: bolder;
+    font-style: normal;
+    color: #a0a0a0;
+    cursor: alias;
+    position: relative;
+}
+
+.MCAST:hover::after{
+    content: "Malta Collage Art and Design";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20em;
+    background-color: #000000;
+    text-align: center;
+    color: var(--Mode--Primary-Color);
+}
+
+.read{
+color: #a4e1f7;
+cursor: pointer;
+font-size: 18px;
+display: none;
+}
+
 /* collection of my own projects */
 .projectsCollection{
     margin:  0em 1em 5em 1em;
@@ -695,22 +728,29 @@ font-size: 1em;
     place-items: center;
     gap: 4em;
     box-shadow: 0 0 50px 50px black;
-    background-color:#000000da;
+    background-color:#000000de;
     position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100%);
 }
 
-.collectionbackground{
+.collectionsBackground{
 position: absolute;
-height: 30em;
+height: 100vh;
+width: 50%;
 z-index: 0;
-transform: rotate(-20deg);
+opacity: 0.7;
+animation: alternate 2s projectsBackground infinite;
+position: absolute;
+top: 100px;
+/* -webkit-box-reflect: below;*/
 }
+
 .characterTwo{
-    opacity: 1;
     position: absolute;
     left: -2em;
     top: 2em;
-    z-index: 0;
+    z-index: 1;
     gap: 0em;
 }
 
@@ -721,34 +761,48 @@ transform: rotate(-20deg);
   justify-content: center;
   width: 100%;
   height: 80vh;
-
 }
 
 .collectionOfProjects{
-    width: 15em;
+    height: 10em;
     position: absolute;
-    height: 15em;
     opacity: 0.8;
-    cursor: pointer;
+    cursor: zoom-in;
     border-radius: 10px ;
     transition: all 0.8s linear;
-    transition-delay: 0.5s;
+    object-fit: cover;
 }
 
 .collectionOfProjects:hover{
 opacity: 1;
 box-shadow: 0 0 20px 1px #f33f1275;
-transition: all 0.2s linear;
 z-index: 5;
 }
 
+.collectionOfProjects:focus  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(2) !important;
+    box-shadow: 0 0 50px 25px black;
+    padding: 7;
+    z-index: 10;
+    opacity: 1;
+    overflow: hidden;
+    
 
+}
+
+.collectionOfProjects:hover:focus:hover{
+cursor:zoom-out;
+transform: translate(-50%,-50%) scale(2) rotate(0);
+}
+ 
 .proOne{
     transform: translate(-55%,-10%) scale(1.05) rotate(-15deg);
     transform-origin:right ;
     z-index: 2;
 }
-
 .proOne:hover{
     transform: translate(-60%,-15%) scale(1.2) rotate(-18deg);
     transform-origin:right ;
@@ -758,49 +812,81 @@ z-index: 5;
     transform: translate(50%,-15%) scale(1.1) rotate(15deg);
     z-index: 1;
 }
-
 .proTwo:hover{
     transform: translate(55%,-20%) scale(1.2) rotate(18deg);
-    transform-origin:left ;
 }
 
 .proThree{
     transform: translate(-15%,30%) scale(1) rotate(-45deg);
-    z-index: 1;
+    z-index: 2;
 }
-
 .proThree:hover{
     transform: translate(-15%,30%) scale(1.15) rotate(-35deg);
-    transform-origin:center ;
-
 }
 
 .proFour{
     transform: translate(50%,50%) scale(0.9) rotate(60deg);
     z-index: 1;
 }
-
 .proFour:hover{
     transform: translate(50%,50%) scale(1.05) rotate(30deg);
-    transform-origin: right;
 }
-
 
 .proFive{
-    transform: translate(50%,30%) scale(1.4)   skew(-10deg) rotate(45deg);
+    transform: translate(40%,30%) scale(1)   rotate(20deg);
     z-index: 0;
 }
-
 .proFive:hover{
     transform: translate(40%,30%) scale(1.3)   rotate(25deg);
     transform-origin: center;
+}
+
+.proSix{
+    transform: translate(-50%,60%) scale(0.85)   rotate(-25deg);
+    z-index: 1;
+}
+.proSix:hover{
+    transform:  translate(-50%,60%) scale(1.05)   rotate(-35deg);
+}
+
+.proSeven{
+    transform: translate(-30%,60%) scale(0.85)   rotate(-25deg);
+    z-index: 0;
+}
+.proSeven:hover{
+    transform: translate(-30%,60%) scale(1)   rotate(-35deg);
+}
+
+.proEight{
+    transform: translate(0%,0%) scale(0.9)   rotate(-25deg);
+
+}
+.proEight:hover{
+    transform: translate(-10%,-10%) scale(1.1)   rotate(-5deg);
+   
+
+}
+
+.proNine{
+    transform: translate(-40%,-30%) scale(1.1)   rotate(0deg);
+    
+}
+.proNine:hover{
+    transform: translate(-40%,-35%) scale(1.3)   rotate(-10deg);
+}
+
+.proTeen{
+    transform: translate(0%,75%) scale(0.85)   rotate(25deg);
+}
+.proTeen:hover{
+    transform: translate(0%,75%) scale(1)  rotate(10deg);
 }
 
 
 .ProjectsPageLink{
 position: absolute;
 right: 0em;
-bottom: -4em;
+bottom: 0em;
 z-index: 50;
 font-size: 1em;
 padding: 10px;
@@ -1064,8 +1150,6 @@ width: 145px;
     z-index: 300;
     animation: alternate LineBottomAnim 3s infinite linear;
 }
-
-
 
 
 /* 
@@ -2198,6 +2282,28 @@ opacity: 1;
     }
     }
 
+@-webkit-keyframes projectsBackground {
+    0%{
+        transform:  scale(0.99);
+        opacity: 1;
+
+    }
+    100%{
+        transform:  scale(1);
+        opacity: 0.5;
+    }
+}
+@keyframes projectsBackground {
+    0%{
+        transform:  scale(0.99);
+        opacity: 1;
+
+    }
+    100%{
+        transform:  scale(1);
+        opacity: 0.5;
+    }
+}
 
 
 
