@@ -670,11 +670,11 @@ transform: translate(-50%,-50%) scale(2) rotate(0);
     transform: translate(-55%,-10%) scale(1.05) rotate(-15deg);
     transform-origin:right ;
     z-index: 2;
-    object-fit: cover;
 }
 .proOne:hover{
     transform: translate(-60%,-15%) scale(1.2) rotate(-18deg);
     transform-origin:right ;
+    
 }
 
 .proTwo{
