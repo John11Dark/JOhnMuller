@@ -37,6 +37,9 @@ window.onscroll = ('onscroll', ()=> {// logo back circuit
   LogoRotate.style = ` transform:rotate(${offsetY}deg); transform-origin: center;`;
 }); 
 
+Header.addEventListener('onHover', ()=>{
+Header.style = `opacity:1;`
+});
 
 window.addEventListener('scroll', ()=>{
 

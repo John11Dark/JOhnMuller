@@ -152,6 +152,9 @@ z-index: 250; /*maybe in the future i will add new items so i make the header is
 transition: all 1s linear;
 }
 
+header:hover{
+    opacity: 1;
+}
 .headerJS{
     opacity: 0.1;
     transition-duration: 1s;
