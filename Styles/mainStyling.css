@@ -1,8 +1,9 @@
 :root {
   /* Fonts */
-  --_primaryFont: "Poppins", sans-serif;
-  --_secondaryFont: "Montserrat Alternates", sans-serif;
-  --_titleFont: "Poppins";
+  ---primaryFont: "Pacifico", cursive;
+  ---primaryFontTwo: "Edu VIC WA NT Beginner", cursive;
+  ---secondaryFont: "Quicksand", sans-serif;
+
   /*     --_titleFont: 'Shizuru', cursive;
 */
   /* Colors */
@@ -103,9 +104,10 @@ h2,
 h3,
 h4 {
   margin: 0 0 0.25em 0;
-  font-weight: 600;
+  font-weight: 600 !important;
   font-size: var(--_titleFontSize);
   color: var(--_primaryColor);
+  font-family: var(---primaryFont);
   word-wrap: break-word;
   line-height: 2em;
 }
@@ -115,7 +117,7 @@ p {
   line-height: 1.5em;
   font-weight: 100;
   word-wrap: break-word;
-  font-family: var(--_secondaryFont);
+  font-family: var(---secondaryFont);
 }
 
 a {
