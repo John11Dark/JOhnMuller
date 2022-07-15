@@ -1715,9 +1715,11 @@ svg {
 }
 
 .heroSection {
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   display: grid;
+  padding-inline: 1em;
+  padding: 0 1em;
   place-content: center;
   place-items: center;
 }
@@ -1728,11 +1730,11 @@ svg {
 }
 .title {
   text-align: center;
-  font-size: 2.5em;
+  font-size: var(--_titleFontSize);
   width: 16em;
   color: var(--_primaryColorLight);
 }
 
 .gifImage {
-  width: 31em;
+  width: min(30em, 95%);
 }
