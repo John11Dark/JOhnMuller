@@ -1731,7 +1731,6 @@ svg {
 .title {
   text-align: center;
   font-size: var(--_titleFontSize);
-  background-color: #099bdf;
   color: var(--_primaryColorLight);
 }
 
