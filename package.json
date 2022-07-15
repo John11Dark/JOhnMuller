@@ -1,0 +1,24 @@
+{
+  "name": "John-Muller-2022-App",
+  "version": "1.0.0",
+  "description": "John Muller website created on 2022-15-7",
+  "main": "index.html",
+  "scripts": {
+    "test": "testApp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/John11Dark/JohnMuller2022"
+  },
+  "keywords": [
+    "John",
+    "Muller",
+    "John",
+    "Dark",
+    "ProtFolio",
+    "Website",
+    "App"
+  ],
+  "author": "John Muller",
+  "license": "MIT"
+}
