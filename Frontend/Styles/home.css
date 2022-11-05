@@ -6,10 +6,8 @@ section[attr='section'] {
   width: max(100%, 100vw);
   max-width: max(100%, 100vw);
   padding: 0 1rem;
-  margin: 0 auto;
   isolation: isolate;  
 }
-
 
 .gridSection{
   display: grid;
@@ -24,10 +22,15 @@ section[attr='section'] {
   /* margin-bottom: 0.35em; */
 }
 
+.sectionTypography{
+    padding: 1rem;
+    max-width: 95%;
+}
 .sectionParagraph {
   font-size: var(----bodyFS);
   font-weight: var(----Lighter);
   max-width: 100ch;
+  color: var(----primaryColorLightGray);
 }
 
 .sec-effect {
@@ -63,70 +66,11 @@ section[attr='section'] {
   transform: translate(-15%, -50%);
 }
 
-.scrollableContainerParent {
-  max-width: 90vw;
-  position: relative;
-  padding-bottom: 1em;
-}
-
-.scrollableContainer {
-  display: grid;
-  max-width: max(99%, 99vw);
-  grid-auto-flow: column;
-  overflow-x: auto;
-  overflow-y: visible;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-}
-
-.scrollableContainer::-webkit-scrollbar {
-  display: none;
-}
-
-.snapOrder {
-  scroll-snap-align: start;
-}
-
-.indicatorsList {
-  width: 100%;
-  height: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  gap: 1rem;
-  bottom: 0;
-  display: none;
-}
-
-.indicators {
-  width: 25px;
-  height: 100%;
-  background-color: var(----grayOpacity);
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.25s linear;
-  transform-origin: center;
-}
-
-.indicators[active='true'] {
-  transition-delay: 0.1s;
-  background-color: var(----primaryColor);
-  transform: scale(1.2);
-}
-
-.indicators[active='false'] {
-  transition-delay: 0.15s;
-}
-
 @media (max-width: 50em) {
+
   .sectionTypography {
     margin: 0em 0em var(----margin) 0;
     text-align: left;
-  }
-  .indicatorsList {
-    display: flex;
   }
 }
 
@@ -156,13 +100,13 @@ section[attr='section'] {
   display: none;
 }
 .hs-article {
-  height: 100vh;
+  height: 90vh;
   display: grid;
   align-content: flex-end;
   padding: 0 0 6vmax 2vmax;
-  border-radius: 0.5rem 40rem 40rem 0.5rem;
   text-shadow: 1px 1px 0.2rem var(----darkOpacity);
 }
+
 .hs-heading {
   font-size: var(----subHeadingFS);
   font-weight: var(----semiBold);
@@ -182,6 +126,7 @@ section[attr='section'] {
   .hs-heading {
     font-weight: 600;
     font-size: 1.5rem;
+    margin-bottom: 1em;
   }
   .hs-heading::before {
     content: '';
@@ -278,6 +223,7 @@ section[attr='section'] {
 /* projects Section */
 
 .myProjectsSection {
+  display: none;
 }
 
 .mys-main-effect {
@@ -337,11 +283,6 @@ section[attr='section'] {
 
 .abs-mef-icon {
   transform: translate(10%, -5%);
-}
-
-.abs-typography {
-  padding: 1rem;
-  max-width: 95%;
 }
 
 .abs-title {
@@ -432,15 +373,16 @@ section[attr='section'] {
   flex-wrap: wrap;
   place-content: space-around;
   place-items: center;
+  margin: 5em 0;
 }
 
 .whyChoosingSection::before {
   content: '';
   position: absolute;
-  bottom: 0em;
+  bottom: -2.5rem;
   right: 0;
   width: 90%;
-  height: 85%;
+  height: 95%;
   background-color: var(----grayOpacity);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -466,10 +408,10 @@ section[attr='section'] {
 
 .mys-background-effect {
   position: absolute;
-  bottom: 0em;
+  bottom: -2.5rem;
   right: 0;
   width: 90%;
-  height: 85%;
+  height: 90%;
   background: linear-gradient(-45deg, #0a0500, #4426086e);
   z-index: -3;
   border-radius: 40vw 10px 10px;
@@ -544,6 +486,7 @@ section[attr='section'] {
   padding-left: 0.5rem;
   font-size: var(----bodyFS);
   font-weight: 400;
+  color: var(----primaryColorLightGray);
 }
 
 /* list */
@@ -562,9 +505,6 @@ section[attr='section'] {
 .wys-list {
   gap: 2rem;
   counter-reset: counter;
-  display: grid;
-  grid-auto-flow: unset;
-  overflow-x: unset;
 }
 
 .wys-list-order {
@@ -617,6 +557,10 @@ section[attr='section'] {
     place-self: center;
   }
 
+  .wys-typography {
+    transform: translateY(-10%);
+  }
+  
   .whyChoosingSection::before {
     width: 100%;
     border-radius: 60vw 10px 10px;
@@ -632,7 +576,6 @@ section[attr='section'] {
     left: 0rem;
     width: calc(7.5vmax + 4rem + 5vw);
     height: calc(7.5vmax + 4rem + 5vw);
-    z-index: -10;
   }
 
   .wys-typography::before {
@@ -646,9 +589,10 @@ section[attr='section'] {
   }
 
   .wys-effect {
-    left: 0;
-    right: unset;
-    transform: translate(0) scale(2);
+    left: unset;
+    right: -0.5rem;
+    top: 26vh;
+    transform: translate(0) scale(0.6);
     opacity: 0.8;
   }
 
@@ -695,49 +639,60 @@ section[attr='section'] {
 
 
 
+/* ? */
+.whatPeopleSay{
+  display: none;
+}
 
 
 
 
-/* Plans section */
+
+/* ? <-*-> Plans section <-*-> */
+
+.plansSection{
+  display: grid;
+  width: 100vw;
+  margin-bottom: 2em;
+}
+
+
 
 .pls-cards{
-display: grid;
-grid-auto-flow: column;
-/* grid-auto-columns: 100%; */
-grid-template-columns: repeat(3, minmax(27.5vw, 0.9fr));
-width: 100%;
-max-width: 100%;
-min-height: max(80vh, 600px);
+  /* 
+//*? cards container 
+//*! it has a parent (scrollableContainerParent) 
+//*! and another class (scrollableContainer)   
+*/
+width: 95% ;
+display: flex;
+justify-content: space-around;
+align-items: center;
 gap: 0 3vw;
-margin: 2em auto;
-align-items: flex-end;
-justify-content: center;
+margin: 3em auto 0;
+min-height: max(80vh, 700px) ;
+
 }
-/* card */
 
 .pls-card {
+  /* card */
   ----_btnPrimaryColor: var(----primaryColorLight);
   ----_btnSecondaryColor: var(----primaryColor);
   ----_cardBackgroundColor: #b499755d;
-  height: 90%;
-  width: 95%;
-  max-width: 100%;
   position: relative;
   display: grid;
   align-items: center;
   justify-content: center;
-  isolation: isolate;
+  align-content: center;
+  min-height: max(70vh, 650px) ;
+  width: 90%;
   transform-style: preserve-3d;
-  transform: scale(0.9) translateZ(-25px);
   transform-origin: center;
-}
-
-.pls-card[attr='primary'] {
-  ----_btnPrimaryColor: var(----primaryColorLight);
-  ----_btnSecondaryColor: var(----tertiaryColor);
-  ----_cardBackgroundColor: #4462749d;
-  transform: scale(1);
+  transition: transform 0.6s ease;
+  transition-duration: 0.4s;
+  margin: 0 1em;
+  border-radius: 0.5rem;
+  transform: scale(0.9);
 }
 
 .pls-card::before {
@@ -756,30 +711,51 @@ justify-content: center;
   border-radius: 0.5rem;
 }
 
-.pls-img-container {
+.pls-card[attr='primary'] {
+  ----_btnPrimaryColor: var(----primaryColorLight);
+  ----_btnSecondaryColor: var(----tertiaryColor);
+  ----_cardBackgroundColor: #4462749d;
+  transform: scale(1);
+}
+
+.pls-img-container{
   position: relative;
   width: 100%;
-  height: 100px;
+  max-width: 100%;
+  height: 200px;
   display: grid;
-  place-content: center;
   place-items: center;
-  place-self: center;
+  place-content: center;
 }
 
 .pls-card-image {
-  width: 100%;
   position: absolute;
   top: 0;
-  transform: translate(0%, -50%) scale(1.2) ;
+  margin: 0 auto;
+  transform: translateY(-50%) scale(1.1);
   transform-origin: center;
+
 }
 
 .cardTypography {
-  text-align: center;
+text-align: center;
+margin-bottom: 2em;
+}
+
+.pls-card-heading{
+  font-family: var(----secondaryFont);
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.pls-card-heading[attr='primary']{
+  color: #729fb9;
 }
 
 .pls-card-paragraph {
-  font-size: var(----bodyFS);
+  font-family: var(----primaryFont);
+  font-size: calc( var(----bodyFS) + 0.2rem);
+  font-weight: 500;
 }
 
 .pls-card-button {
@@ -794,6 +770,7 @@ justify-content: center;
   transition: all 0.5s ease;
   font-size: var(----bodyFS);
   margin: 0 0 2em ;
+
 }
 
 .pls-card-button:hover {
@@ -822,7 +799,7 @@ justify-content: center;
 
 .plans-plants-illustration{
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   bottom: 0;
   right: 0%;
   height: min(12.5vmax, 200px);
@@ -831,6 +808,43 @@ justify-content: center;
   transform: translateX(50%);
 }
 
-[hide="true"]{
-  
+@media (max-width: 50em) {
+.pls-cards{
+  display: grid;
+  grid-auto-flow: column;
+  width: 100vw;
+  max-width: 100vw;
+  min-width: 100vw;
+  grid-auto-columns: 100%;
+  gap: 0 0;
+  place-content: center;
+  place-items: center;
+  justify-content: flex-start;
+  height: 90vh;
+  margin-left: 1em;
 }
+
+
+.pls-card{
+  place-self: flex-start;
+  margin: 0 0;
+  width: 85%;
+  transform: scale(0.7);
+}
+
+.pls-card[attr='primary'] {
+  transform: scale(0.7);
+}
+.pls-card[isObserving="true"]{
+  transform: scale(1);
+}
+
+.plans-plants-illustration{
+  height: min(15vmax, 250px);
+  width:  min(15vmax, 250px);
+  object-fit: contain;
+  transform: translateX(30%);
+}
+
+}
+

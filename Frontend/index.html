@@ -1695,8 +1695,8 @@
                 </div>
             </section>
 
-            <section id="___" class="testimonialSectionBackDrop | gridSection" hide="true">
-                <section class="backgroundEffect Circles">
+            <section id="___" class="testimonialSectionBackDrop" hide="true">
+                <section class="backgroundEffect">
                     <div class="circle" attr="primary"></div>
                     <div class="circle" attr="secondary"></div>
                 </section>
@@ -1728,7 +1728,7 @@
             </section>
 
             <!-- ? what i can do section -->
-            <section class="canDoSection | gridSection" id="what-i-can-do-section" attr="section" hide="true">
+            <section class="canDoSection" id="what-i-can-do-section" attr="section" hide="true">
 
                 <article class="cds-typography | sectionTypography" attr="">
 
@@ -2084,22 +2084,20 @@
             </section>
 
             <!-- ? Plans section  -->
-            <section class="plansSection | gridSection" id="plans-section" title="Plans Section" attr="section"
-                hide="true">
+            <section class="plansSection" id="plans-section" title="Plans Section" attr="" hide="false">
+
                 <article class="pls-typography | sectionTypography" attr="">
                     <h2 class="pls-title | sectionTitle">Plans</h2>
 
                     <p class="pls-paragraph | sectionParagraph">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit maxime repellendus
-                        dignissimos provident blanditiis minima excepturi. Accusamus temporibus, animi porro ea
-                        asperiores impedit odio sint!
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe similique iusto molestias dolor
+                        animi quia incidunt, consequuntur tempora, obcaecati est dolore illum qui atque cumque?
                     </p>
                 </article>
 
                 <article class="scrollableContainerParent">
-                    <article class="pls-cards scrollableContainer">
-
-                        <article class="pls-card | snapOrder">
+                    <ol class="pls-cards | scrollableContainer">
+                        <li class="pls-card | snapOrder" index="0" isObserving="true">
                             <article class="pls-img-container">
                                 <img src="./Assets/Illustrations/Cards/illustration Secondary@2x.png" alt=""
                                     class="pls-card-image" />
@@ -2126,9 +2124,9 @@
                             <img class="plans-plants-illustration"
                                 src="./Assets/Illustrations/Plants/plants Effect Secondary@2x.png" alt="illustration"
                                 aria-hidden="true">
-                        </article>
+                        </li>
 
-                        <article class="pls-card | snapOrder" attr="primary">
+                        <li class="pls-card | snapOrder" attr="primary" index="1" isObserving="false">
 
                             <article class="pls-img-container">
                                 <img src="./Assets/Illustrations/Cards/illustration Primary@2x.png" alt=""
@@ -2155,9 +2153,9 @@
                             <img class="plans-plants-illustration"
                                 src="./Assets/Illustrations/Plants/plants Effect primary@2x.png" alt="illustration"
                                 aria-hidden="true">
-                        </article>
+                        </li>
 
-                        <article class="pls-card | snapOrder">
+                        <li class="pls-card | snapOrder" index="2" isObserving="false">
                             <article class="pls-img-container">
                                 <img src="./Assets/Illustrations/Cards/illustration@2x.png" alt=""
                                     class="pls-card-image" />
@@ -2183,15 +2181,16 @@
                             <img class="plans-plants-illustration"
                                 src="./Assets/Illustrations/Plants/plants Effect software@2x.png" alt="illustration"
                                 aria-hidden="true">
-                        </article>
+                        </li>
 
                         <ol class="pls-indicators-list | indicatorsList" role="list" aria-hidden="true">
-                            <li class="indicators" target="#speedSlide" active="true"></li>
-                            <li class="indicators" target="#performanceSlide" active="false"></li>
-                            <li class="indicators" target="#modernDesignSlide" active="false"></li>
+                            <li class="indicators" target="#graphics" active="true"></li>
+                            <li class="indicators" target="#custom-all-in-one" active="false"></li>
+                            <li class="indicators" target="#software" active="false"></li>
                         </ol>
-                    </article>
+                    </ol>
                 </article>
+
             </section>
 
 
@@ -2199,7 +2198,7 @@
 
             <!-- ? contact section -->
             <section class="contactSection | gridSection lastSection" blur="true" lastSection="true" isObserving="false"
-                id="contact-section" attr="section" hide="false">
+                id="contact-section" attr="section" hide="true">
 
                 <!-- ? background effect -->
 

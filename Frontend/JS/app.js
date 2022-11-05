@@ -32,6 +32,13 @@ const whatICanDoListIndicators = document.querySelectorAll(
   '.cds-card-indicators'
 );
 
+//
+const plansList = document.querySelector('.pls-cards');
+const plansListElements = document.querySelectorAll('.pls-card');
+const plansListIndicators = document.querySelectorAll(
+  '.pls-indicators-list'
+);
+
 const abbreviationsList = document.querySelectorAll('abbr');
 // ? * --> Functions
 
@@ -95,21 +102,6 @@ function logoRotate() {
   return;
 }
 
-// instance of observer
-const observer = new IntersectionObserver((e) => {
-  e.forEach(({ isIntersecting, target }) => {
-    isSlideObserving(isIntersecting, target);
-  });
-}, config);
-const sectionObserver = new IntersectionObserver((e) => {
-  e.forEach(({ isIntersecting, target }) => {
-    isIntersecting === true && target.getAttribute('isObserving') === 'false'
-      ? target.setAttribute('isObserving', true)
-      : target.setAttribute('isObserving', false);
-    console.log(target) ;
-  });
-}, topObserverConfig);
-
 // set Age
 function calcAge(element, dateOfBirth) {
   dateOfBirth = new Date(dateOfBirth).getUTCFullYear();
@@ -137,22 +129,19 @@ function tabListIndicators(indicator, index, list) {
 
 // is slide observing
 
-function isSlideObserving(isIntersecting, target) {
+function isSlideObserving(isIntersecting, target, elementName, indicatorsList) {
   const isObserving = target.getAttribute('isObserving');
   const currentSlide = document.querySelector(
-    '.wys-list-order[isObserving="true"]'
+    `.${elementName}[isObserving="true"]`
   );
-  const isObservingIndicator = parseInt(currentSlide.getAttribute('index'));
+  const activeIndicator = parseInt(currentSlide.getAttribute('index'));
   if (isObserving === 'true') return;
   else if (isIntersecting === true && isObserving === 'false') {
     const targetIndex = parseInt(target.getAttribute('index'));
     currentSlide.setAttribute('isObserving', false);
     target.setAttribute('isObserving', true);
-    whyChoosingListIndicators[isObservingIndicator].setAttribute(
-      'active',
-      false
-    );
-    whyChoosingListIndicators[targetIndex].setAttribute('active', true);
+    indicatorsList[activeIndicator].setAttribute('active',false);
+    indicatorsList[targetIndex].setAttribute('active', true);
   }
   /**
    * Brief description about is slide observing.
@@ -161,6 +150,42 @@ function isSlideObserving(isIntersecting, target) {
    * @param {Int} index
    */
 }
+
+
+// ? * --> Instance 
+
+// instance of observer
+const observer = new IntersectionObserver((e) => {
+  e.forEach(({ isIntersecting, target }) => {
+    console.log(target);
+    isSlideObserving(isIntersecting, target, "wys-list-order", whyChoosingListIndicators);
+  });
+}, config);
+// TODO : Fix the observer so it does not have two instance for the same thing 
+const observerTwo = new IntersectionObserver((e) => {
+  e.forEach(({ isIntersecting, target }) => {
+    console.log(target);
+    isSlideObserving(isIntersecting, target, "cds-card", whatICanDoListIndicators);
+  });
+}, config);
+
+const observerThree = new IntersectionObserver((e) => {
+  e.forEach(({ isIntersecting, target }) => {
+    isSlideObserving(isIntersecting, target, "pls-card", plansListIndicators);
+  });
+}, config);
+
+
+const sectionObserver = new IntersectionObserver((e) => {
+  e.forEach(({ isIntersecting, target }) => {
+    isIntersecting === true && target.getAttribute('isObserving') === 'false'
+      ? target.setAttribute('isObserving', true)
+      : target.setAttribute('isObserving', false);
+    console.log(target) ;
+  });
+}, topObserverConfig);
+
+
 
 // ? * --> Event Listeners
 
@@ -197,6 +222,12 @@ whatICanDoListIndicators.forEach((indicator, index) => {
   );
 });
 
+plansListIndicators.forEach((indicator, index) => {
+  indicator.addEventListener('pointerdown', () =>
+    tabListIndicators(indicator, index, plansListElements)
+  );
+});
+
 // Scroll Events * -->
 
 // header
@@ -206,6 +237,15 @@ window.addEventListener('scroll', () => {
   logoRotate();
 });
 
+
+// What i can do list
+whatICanDoList.addEventListener('scroll', () => {
+  whatICanDoListElements.forEach((element) => {
+    observerTwo.observe(element);
+  });
+});
+
+
 // why choosing list
 whyChoosingList.addEventListener('scroll', () => {
   whyChoosingListElements.forEach((element) => {
@@ -213,11 +253,38 @@ whyChoosingList.addEventListener('scroll', () => {
   });
 });
 
+// why choosing list
+plansList.addEventListener('scroll', () => {
+  plansListElements.forEach((element) => {
+    observerThree.observe(element);
+  });
+});
+
+
 abbreviationsList.forEach((abbr) => {
   abbr.addEventListener('pointerdown', () => {
     abbr.classList.add('visible');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ? * --> Theme
 
@@ -274,6 +341,6 @@ root.style.setProperty(
 
 // test
 
-const lastSection = document.querySelector('[lastSection]');
+// const lastSection = document.querySelector('[lastSection]');
 
-sectionObserver.observe(lastSection);
+// sectionObserver.observe(lastSection);

@@ -75,6 +75,13 @@
   ----iconSize-400: 4.5rem;
 }
 
+@media (max-width: 90em) {
+  :root {
+    ----width-700: calc(30vw + 10rem + 10vmax + 5vh);
+    ----height-700: calc(25vh + 5rem + 5vw);
+  }
+}
+
 @media (max-width: 50em) {
   :root {
     ----largeHeadingFS: calc(1.5vmax + 2.65rem);
@@ -690,6 +697,8 @@ header:hover {
   width: 100%;
 }
 
+
+
 .scrollIcon {
   width: 25px;
   height: 50px;
@@ -727,6 +736,7 @@ footer {
   overflow: hidden;
   cursor: pointer;
   transition: all 0.5 ease-in ;
+  display: none ;
 }
 
 .lastSection[isObserving="true"] footer{
@@ -767,6 +777,9 @@ footer {
 }
 
 @media (max-width: 50em) {
+  .scrollDownButton{
+    bottom: 4em;
+  }
   .contactSection {
     grid-template-columns: none;
     grid-template-rows: 10% 45% 40% 10%;
