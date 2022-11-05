@@ -1,0 +1,363 @@
+.testimonialSectionBackDrop {
+  /*Outer container*/
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(----width-700);
+  height: var(----height-700);
+  margin: var(----spacing-700) auto;
+  border-radius: 0.5rem;
+}
+
+.testimonialSection {
+  /* inner container*/
+  display: grid;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: var(----padding-200);
+  border-radius: 0.5rem;
+  background-color: var(----grayOpacity);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  box-shadow: 1px 1px var(----shadowBlur) -0.1px rgba(85, 85, 85, 0.164);
+  opacity: 0.9;
+}
+
+.backgroundEffect {
+  /* container background effect */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  width: 95%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.Right .backgroundEffect {
+  left: unset;
+  right: 0;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(18vmax, 225px);
+  height: min(18vmax, 225px);
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(40px);
+}
+
+.Right .circle {
+  left: unset;
+  top: unset;
+  right: 0;
+  bottom: 0;
+}
+
+.circle[attr='primary'] {
+  background-color: var(----primaryColor);
+  transform: translate(50%, 50%);
+}
+
+.circle[attr='secondary'] {
+  background-color: var(----primaryColorLight);
+}
+
+.Right .circle[attr='primary'] {
+  transform: translate(-25%, -50%);
+}
+
+.tes-Heading {
+  /* hading text */
+  margin-bottom: var(----margin);
+  font-size: var(----titleFS);
+  font-weight: var(----semiLight);
+  text-align: center;
+}
+
+.tes-authorContainer {
+  /* author container*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 var(----spacing-200);
+  text-transform: capitalize;
+}
+
+.tc-authorImage {
+  /* author Image*/
+  border-radius: 50%;
+  height: min(8vmax, 100px);
+  width: min(8vmax, 100px);
+}
+.tc-name {
+  /* author name */
+  line-height: 1;
+  font-size: var(----bodyFS);
+  font-weight: var(----Light);
+}
+.tc-role {
+  /* author role */
+  color: var(----primaryColorGrayish);
+  font-size: var(----paragraphFS);
+  font-weight: var(----Lighter);
+}
+
+.SectionMainEffect,
+.testimonialMainEffect {
+  /* main effect ring section */
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonialMainEffect {
+  /* main effect ring testimonial */
+  bottom: -2em;
+  right: -2em;
+}
+
+.main-Ef-rel,
+.mef-rel-container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  place-self: center;
+  width: min(10vmax, 150px);
+  height: min(10vmax, 150px);
+}
+
+.Right .testimonialMainEffect {
+  right: unset;
+  left: -4rem;
+}
+
+.mef-outline {
+  width: min(10vmax, 150px);
+  height: min(10vmax, 150px);
+  border-radius: 50%;
+  border: 2px solid var(----primaryColorGrayish);
+}
+
+.mef-circle {
+  width: min(7vmax, 100px);
+  height: min(7vmax, 100px);
+  border-radius: 50%;
+  background-color: var(----primaryColor);
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  opacity: 0.8;
+}
+
+.mef-icon {
+  position: absolute;
+  fill: var(----primaryColorGrayish);
+  max-width: var(----iconSize-300);
+  max-height: var(----iconSize-300);
+  opacity: 0.9;
+}
+
+.mef-circle[observing='true'] {
+  box-shadow: 0 0 var(----shadowBlur) 0 var(----primaryColor);
+}
+
+@media (max-width: 50em) {
+  .testimonialMainEffect {
+    bottom: -2.5rem;
+    right: -1rem;
+  }
+  .Right .testimonialMainEffect {
+    right: unset;
+    left: -1rem;
+  }
+}
+
+
+[blur="true"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  background-color: var(----grayOpacity);
+  box-shadow: 10px 10px 1rem -0.1px rgba(85, 85, 85, 0.164);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  filter: blur(10px);
+}
+
+
+/* contact section */
+
+.contactSection {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  grid-template-rows: 15% 65% 15%;
+}
+
+.cos-title {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  font-size: var(----largeHeadingFS);
+  width: 100%;
+  height: 100%;
+}
+
+.cos-illustration {
+  grid-column: 1;
+  grid-row: 2 / span 3;
+  max-width: 95%;
+  max-height: 95%;
+  margin: 1em auto;
+  object-fit: contain;
+}
+
+form {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 15% 15% 40%;
+  gap: 1rem 1.5rem;
+  place-items: center;
+  place-content: center;
+  place-self: center;
+  margin: 0 auto;
+}
+
+.fieldContainer {
+  position: relative;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+  display: flex;
+}
+
+.filedLabel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  font-weight: 600;
+  color: var(----primaryColor);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.inputField {
+  border-radius: 0.4rem;
+  background-color: var(----primaryColorDark);
+  color: var(----primaryColorGrayish);
+  min-width: 100%;
+  min-height: 100%;
+  padding: 1rem;
+}
+
+.Email {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+
+.Message {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+}
+
+.Message .filedLabel {
+  top: 20px;
+  transform: translateY(0);
+}
+.inputField:focus-within,
+.inputField:focus-visible,
+.inputField:focus {
+  border: 0.125rem solid #b6824398;
+  box-shadow: 0.5rem 0.5rem 1rem -0.5rem #694e328e;
+}
+
+.fieldContainer:focus-within .filedLabel,
+.fieldContainer:focus .filedLabel,
+.fieldContainer:focus-visible .filedLabel,
+.filedLabel[hasContent='true'] {
+  top: 0;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.submitBtn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.send-message-icon {
+  fill: var(----primaryColor);
+  max-width: 41px;
+  max-height: 41px;
+}
+
+.socialLinksNavigation {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  place-content: space-between;
+  place-items: center;
+  place-self: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.navigationTitle {
+  font-size: var(----bodyFS);
+  font-family: var(----primaryFont);
+  font-weight: var(----Bold);
+  letter-spacing: 1.1px;
+  transform: scale(1.1);
+  color: var(----primaryColorGrayish);
+}
+
+.socialIcons {
+  fill: var(----primaryColorLight);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.25rem;
+}
+
+.socialLinksList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.cos-bottom-Illustration {
+  position: absolute;
+  bottom: 0;
+  right: -1rem;
+  width:  10vmax;
+  height: 10vmax;
+  object-fit: contain;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "johnmullerportfolio",
+  "version": "1.0.0",
+  "description": "John's official website",
+  "main": "index.html",
+  "scripts": {
+    "test": "run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/John11Dark/JohnMuller.git"
+  },
+  "keywords": [
+    "John",
+    "Muller",
+    "UI",
+    "UIX",
+    "JS",
+    "JavaScript",
+    "Python"
+  ],
+  "author": "John Muller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/John11Dark/JohnMuller/issues"
+  },
+  "homepage": "https://github.com/John11Dark/JohnMuller#readme"
+}

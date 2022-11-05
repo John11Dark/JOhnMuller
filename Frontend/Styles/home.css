@@ -1,0 +1,836 @@
+/* common */
+
+section[attr='section'] {
+  position: relative;
+  min-height: 100vh;
+  width: max(100%, 100vw);
+  max-width: max(100%, 100vw);
+  padding: 0 1rem;
+  margin: 0 auto;
+  isolation: isolate;  
+}
+
+
+.gridSection{
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.sectionTitle {
+  font-size: var(----headingFS);
+  font-family: var(----primaryFont);
+  letter-spacing: 1.5px;
+  /* margin-bottom: 0.35em; */
+}
+
+.sectionParagraph {
+  font-size: var(----bodyFS);
+  font-weight: var(----Lighter);
+  max-width: 100ch;
+}
+
+.sec-effect {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  filter: blur(50px);
+}
+
+.cir-sec-effect {
+  position: absolute;
+  width: max(22.5vmax, 22.5vw);
+  height: max(22.5vmax, 22.5vw);
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  filter: blur(75px);
+  opacity: 0.9;
+  background-color: var(----primaryColor);
+}
+
+.cir-sec-effect[attr='primary'] {
+  transform: translate(15%, 10%);
+  opacity: 0.5;
+}
+.cir-sec-effect[attr='secondary'] {
+  background-color: var(----primaryColorGrayish);
+  transform: translate(-15%, -50%);
+}
+
+.scrollableContainerParent {
+  max-width: 90vw;
+  position: relative;
+  padding-bottom: 1em;
+}
+
+.scrollableContainer {
+  display: grid;
+  max-width: max(99%, 99vw);
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+}
+
+.scrollableContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.snapOrder {
+  scroll-snap-align: start;
+}
+
+.indicatorsList {
+  width: 100%;
+  height: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  gap: 1rem;
+  bottom: 0;
+  display: none;
+}
+
+.indicators {
+  width: 25px;
+  height: 100%;
+  background-color: var(----grayOpacity);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.25s linear;
+  transform-origin: center;
+}
+
+.indicators[active='true'] {
+  transition-delay: 0.1s;
+  background-color: var(----primaryColor);
+  transform: scale(1.2);
+}
+
+.indicators[active='false'] {
+  transition-delay: 0.15s;
+}
+
+@media (max-width: 50em) {
+  .sectionTypography {
+    margin: 0em 0em var(----margin) 0;
+    text-align: left;
+  }
+  .indicatorsList {
+    display: flex;
+  }
+}
+
+/*hero section */
+.heroSection {
+  width: 100vw;
+  background-image: url(../Assets/images/john\ muller/John\ Muller\ had-dingle.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  isolation: isolate;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background-image: url(../Assets/images/john\ muller/johnmuller.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+.hs-article {
+  height: 100vh;
+  display: grid;
+  align-content: flex-end;
+  padding: 0 0 6vmax 2vmax;
+  border-radius: 0.5rem 40rem 40rem 0.5rem;
+  text-shadow: 1px 1px 0.2rem var(----darkOpacity);
+}
+.hs-heading {
+  font-size: var(----subHeadingFS);
+  font-weight: var(----semiBold);
+  position: relative;
+}
+
+@media (max-width: 35em) {
+  .heroSection {
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .heroSection::before {
+    display: inline-block;
+  }
+
+  .hs-heading {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .hs-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1rem;
+    background-color: var(----primaryColor);
+    z-index: -1;
+    transform: translate(-60%, -10%) rotate(-45deg);
+  }
+  .hs-heading::after {
+    content: '';
+    position: absolute;
+    right: 1em;
+    bottom: 0;
+    width: 15rem;
+    height: 15rem;
+    z-index: -1;
+    transform: translate(60%, 40%);
+    border-radius: 0.5rem;
+    background-image: url(../Assets/Illustrations/Plants/Polygon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hs-heading > br {
+    display: none;
+  }
+}
+
+/* what i can do section */
+
+.canDoSection {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.cds-typography {
+  text-align: center;
+  margin: 1em;
+}
+
+.cds-cards {
+  grid-template-columns: repeat(3, minmax(20em, 0.8fr));
+}
+
+.cds-card {
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  place-self: center;
+  place-content: center;
+  margin: 0 auto;
+}
+
+.cds-card-image {
+  width: calc(100px + 1.5em + 5rem + 10vmax + 1.5vh + 1.5vw);
+  height: calc(100px + 1.5em + 5rem + 10vmax + 1.5vh + 1.5vw);
+  border-radius: 50%;
+  opacity: 0.9;
+  position: relative;
+  margin: 1em auto;
+}
+
+.cds-card-typography {
+  max-width: 90%;
+  text-align: center;
+}
+
+.cds-card-heading {
+  font-size: var(----subHeadingFS);
+  font-family: var(----primaryFont);
+  font-weight: var(----Bold);
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 50em) {
+  .cds-cards {
+    grid-template-columns: unset;
+    grid-auto-columns: 100%;
+  }
+}
+
+@media (min-width: 60em) {
+  .cds-typography {
+    max-width: 60ch;
+  }
+}
+
+/* projects Section */
+
+.myProjectsSection {
+}
+
+.mys-main-effect {
+  top: 0;
+  right: 0;
+  transform: translate(-100%, -50%);
+}
+
+.mys-paragraph {
+  max-width: 45%;
+}
+
+.mys-illustration {
+  position: absolute;
+  max-width: 70%;
+  max-height: 70%;
+  right: 5rem;
+  top: 5rem;
+}
+
+.mys-button {
+  background-color: var(----grayOpacity);
+  filter: drop-shadow(0.5px 0.5px 25px var(----grayOpacity));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin: 10em 3em;
+  transform: skewX(10deg) rotateY(-5deg) perspective(1em) translateZ(15px);
+  perspective-origin: left;
+  transform-origin: left;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  transform-style: preserve-3d;
+}
+
+.mys-button:hover {
+  transform: scale(1.1) skewX(10deg) rotateY(-5deg) perspective(1em)
+    translateZ(15px);
+  text-shadow: 2px 2px 0.2px #9e5e0b;
+}
+.mys-button:hover > svg {
+  transition-delay: -0.3s;
+  filter: drop-shadow(1px 1px 0.2px #9e5e0b);
+}
+
+/* about John section */
+
+.aboutMeSection {
+  margin-top: 1em;
+}
+
+.abs-main-effect {
+  position: absolute;
+  top: 0em;
+  left: 3em;
+  display: none;
+}
+
+.abs-mef-icon {
+  transform: translate(10%, -5%);
+}
+
+.abs-typography {
+  padding: 1rem;
+  max-width: 95%;
+}
+
+.abs-title {
+  font-size: var(----largeHeadingFS);
+  font-family: var(----secondaryFont);
+  font-weight: var(----semiLight);
+  margin-bottom: 1rem;
+}
+
+.abs-illustration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: max(28.5%, 27.5vmax);
+  max-height: max(28.5%, 27.5vmax);
+  z-index: -1;
+  transform: translate(-5%, 0%) scale(1.3) translateY(-5%);
+}
+.abs-article {
+  display: grid;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+  gap: 1.25rem;
+  counter-reset: abj-SubHeading-dot;
+}
+
+.abs-article::after,
+.abs-article::before {
+  content: '';
+  position: absolute;
+  background-color: var(----primaryColorGrayish);
+  opacity: 0.5;
+  bottom: 4em;
+  right: -10rem;
+  width: max(20vmax, 150px);
+  height: max(20vmax, 150px);
+  border-radius: 50%;
+  z-index: -2;
+}
+
+.abs-article::before {
+  background-color: var(----primaryColor);
+  transform: translate(-25%, 40%);
+}
+.abj-subHeading {
+  font-size: var(----subHeadingFS);
+  color: var(----primaryColor);
+  font-weight: var(----semiLight);
+  counter-increment: abj-SubHeading-dot;
+}
+.abj-subHeading::before {
+  content: counter(abj-SubHeading-dot, disc);
+  position: relative;
+  left: 0;
+  top: 0.5vh;
+  margin-right: 0.5rem;
+  font-size: var(----headingFS);
+}
+.abj-paragraph {
+  font-size: var(----bodyFS);
+  /* color: var(----primaryColorGrayish); */
+  max-width: clamp(90ch, 10rem + 10vw, 95%);
+}
+
+@media (max-width: 50em) {
+  .abs-illustration {
+    position: relative;
+    z-index: -1;
+    max-width: 95%;
+    max-height: 95%;
+    transform: scale(1.3) translateX(7.5%);
+  }
+  .abs-article::after,
+  .abs-article::before {
+    bottom: unset;
+    top: 0%;
+    right: -6rem;
+  }
+}
+
+/* why choosing John section */
+
+/* container */
+
+.whyChoosingSection {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: space-around;
+  place-items: center;
+}
+
+.whyChoosingSection::before {
+  content: '';
+  position: absolute;
+  bottom: 0em;
+  right: 0;
+  width: 90%;
+  height: 85%;
+  background-color: var(----grayOpacity);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 1px 1px var(----shadowBlur) -0.1px rgba(85, 85, 85, 0.164);
+  z-index: -1;
+  border-radius: 40vw 10px 10px;
+}
+
+/* effect */
+
+.wys-effect {
+  top: 10%;
+  transform: translateY(-15%);
+  right: 3em;
+}
+
+.wys-mef-icon {
+  filter: drop-shadow(2px 2px 1px var(----primaryColorGrayish));
+  transform: translateX(20%);
+}
+
+/* background effect */
+
+.mys-background-effect {
+  position: absolute;
+  bottom: 0em;
+  right: 0;
+  width: 90%;
+  height: 85%;
+  background: linear-gradient(-45deg, #0a0500, #4426086e);
+  z-index: -3;
+  border-radius: 40vw 10px 10px;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.mys-be-circle {
+  border-radius: 50%;
+  position: absolute;
+  top: unset;
+  left: unset;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: max(25vmax, 22vw);
+  height: max(25vmax, 22vw);
+  opacity: 0.3;
+  filter: blur(40px);
+  background-color: var(----primaryColor);
+}
+
+.mys-be-circle[attr='secondary'] {
+  background-color: var(----primaryColorGrayish);
+  transform: scale(1.1) translate(20%, -70%);
+  opacity: 0.6;
+}
+
+/* typography */
+.wys-typography {
+  position: relative;
+  margin: 0;
+  transform: translateY(-5%);
+}
+
+.wys-typography::before,
+.wys-typography::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(7.5vmax + 4rem + 5vw + 5vh);
+  height: calc(7.5vmax + 4rem + 5vw + 5vh);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.wys-typography::before {
+  border-radius: 50%;
+  background-color: var(----primaryColor);
+  transform: translate(-30%, -30%);
+}
+
+.wys-typography::after {
+  background-image: url(../Assets/Illustrations/Plants/Polygon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.3) translate(-45%, -10%) rotate(-10deg);
+}
+
+.wys-title {
+  font-size: var(----largeHeadingFS);
+  letter-spacing: 1.5px;
+  font-weight: var(----extraBold);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.wys-paragraph {
+  max-width: 40ch;
+  text-align: left;
+  padding-left: 0.5rem;
+  font-size: var(----bodyFS);
+  font-weight: 400;
+}
+
+/* list */
+.wys-list-wrapper {
+  position: relative;
+  display: grid;
+  align-items: unset;
+  justify-content: unset;
+  width: unset;
+  max-width: 30ch;
+  margin: unset;
+  padding-bottom: unset;
+  transform: translate(-10%, 15%);
+}
+
+.wys-list {
+  gap: 2rem;
+  counter-reset: counter;
+  display: grid;
+  grid-auto-flow: unset;
+  overflow-x: unset;
+}
+
+.wys-list-order {
+  position: relative;
+}
+
+.wys-list-order::before {
+  counter-increment: counter;
+  content: counter(counter);
+  color: var(----primaryColorLight);
+  background-color: var(----primaryColor);
+  position: absolute;
+  top: 0.35rem;
+  left: -4rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50% 15%;
+  opacity: 0.8;
+  font-size: var(----bodyFS);
+  font-weight: var(----extraBold);
+  text-align: center;
+}
+
+.wys-list-heading {
+  font-size: var(----subHeadingFS);
+  font-weight: var(----Bold);
+  font-family: var(----primaryFont);
+  color: var(----primaryColorLight);
+}
+
+.wys-list-paragraph {
+  font-size: var(----bodyFS);
+}
+
+/* illustration */
+.wys-illustration {
+  position: absolute;
+  bottom: -6rem;
+  left: 45%;
+  transform: translate(-30%);
+  max-width: max(25%, 20vmax);
+  max-height: max(25%, 20vmax);
+}
+
+@media (max-width: 50em) {
+  .whyChoosingSection {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    place-self: center;
+  }
+
+  .whyChoosingSection::before {
+    width: 100%;
+    border-radius: 60vw 10px 10px;
+  }
+
+  .mys-background-effect {
+    width: 100%;
+    border-radius: 60vw 10px 10px;
+  }
+
+  .wys-typography::after {
+    top: 0rem;
+    left: 0rem;
+    width: calc(7.5vmax + 4rem + 5vw);
+    height: calc(7.5vmax + 4rem + 5vw);
+    z-index: -10;
+  }
+
+  .wys-typography::before {
+    display: none;
+  }
+
+  .wys-typography::after {
+    border-radius: 1rem;
+    background-color: var(----tertiaryColor);
+    transform: translate(-60%, 30%) rotate(25deg) scale(0.9);
+  }
+
+  .wys-effect {
+    left: 0;
+    right: unset;
+    transform: translate(0) scale(2);
+    opacity: 0.8;
+  }
+
+  .wys-list-wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: max(100%, 93vw);
+    margin: 0.5rem auto 3rem;
+    padding-bottom: 1em;
+    transform: translate(0);
+  }
+
+  .wys-list {
+    grid-auto-columns: 100%;
+  }
+
+  .wys-list-order {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .wys-list-order::before {
+    left: unset;
+    right: 1.1rem;
+    top: 0.5rem;
+  }
+
+  .wys-list-order::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.4rem;
+    height: 85%;
+    width: 4px;
+    background-color: var(----primaryColor);
+    border-radius: 1rem;
+    opacity: 0.8;
+  }
+
+  .wys-indicators-list {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+/* Plans section */
+
+.pls-cards{
+display: grid;
+grid-auto-flow: column;
+/* grid-auto-columns: 100%; */
+grid-template-columns: repeat(3, minmax(27.5vw, 0.9fr));
+width: 100%;
+max-width: 100%;
+min-height: max(80vh, 600px);
+gap: 0 3vw;
+margin: 2em auto;
+align-items: flex-end;
+justify-content: center;
+}
+/* card */
+
+.pls-card {
+  ----_btnPrimaryColor: var(----primaryColorLight);
+  ----_btnSecondaryColor: var(----primaryColor);
+  ----_cardBackgroundColor: #b499755d;
+  height: 90%;
+  width: 95%;
+  max-width: 100%;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  transform: scale(0.9) translateZ(-25px);
+  transform-origin: center;
+}
+
+.pls-card[attr='primary'] {
+  ----_btnPrimaryColor: var(----primaryColorLight);
+  ----_btnSecondaryColor: var(----tertiaryColor);
+  ----_cardBackgroundColor: #4462749d;
+  transform: scale(1);
+}
+
+.pls-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: var(----_cardBackgroundColor);
+  opacity: 0.5;
+  filter: blur(2px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+}
+
+.pls-img-container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+}
+
+.pls-card-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transform: translate(0%, -50%) scale(1.2) ;
+  transform-origin: center;
+}
+
+.cardTypography {
+  text-align: center;
+}
+
+.pls-card-paragraph {
+  font-size: var(----bodyFS);
+}
+
+.pls-card-button {
+  color: var(----_btnPrimaryColor);
+  background-color: var(----_btnSecondaryColor);
+  padding: 1.25rem;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-size: var(----bodyFS);
+  margin: 0 0 2em ;
+}
+
+.pls-card-button:hover {
+  ----_btnPrimaryColor: var(----primaryColor);
+  ----_btnSecondaryColor: var(----primaryColorLight);
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+.pls-card-button:hover[attr='primary'] {
+  ----_btnPrimaryColor: var(----tertiaryColor);
+  ----_btnSecondaryColor: var(----primaryColorLight);
+}
+
+.btn-icon {
+  fill: var(----_btnPrimaryColor);
+  margin: 0.5rem;
+  max-width: 30px;
+  max-height: 30px;
+  transition: all 0.3s ease;
+}
+
+.pls-card-button:hover .btn-icon {
+  transform: scale(1.1) translate(10%, -15%);
+}
+
+.plans-plants-illustration{
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  right: 0%;
+  height: min(12.5vmax, 200px);
+  width:  min(12.5vmax, 200px);
+  object-fit: contain;
+  transform: translateX(50%);
+}
+
+[hide="true"]{
+  
+}
