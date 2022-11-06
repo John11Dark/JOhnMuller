@@ -32,9 +32,6 @@
   left: 0;
   bottom: 0;
   overflow: hidden;
-  display: flex;
-  place-content: center;
-  place-items: center;
   width: 95%;
   height: 100%;
   opacity: 0.8;
@@ -200,7 +197,89 @@
 }
 
 
-/* contact section */
+/* ? <-*-> horizontal scrollable container <-*-> */
+
+
+.scrollableContainer {
+  display: grid;
+  max-width: max(99%, 99vw);
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  transition: all 0.5s ease;
+}
+
+.scrollableContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.snapOrder {
+  scroll-snap-align: start;
+}
+
+.indicatorsList {
+  width: 90%;
+  height: 8px;
+  display: flex;
+  position: absolute;
+  gap: 1rem;
+  bottom: 0;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  display: none;
+
+}
+
+.indicators {
+  width: 30px;
+  height: 100%;
+  background-color: var(----grayOpacity);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.25s linear;
+  transform-origin: center;
+}
+
+.indicators[active='true'] {
+  transition-delay: 0.1s;
+  background-color: var(----primaryColor);
+  transform: scale(1.2);
+}
+
+.indicators[active='false'] {
+  transition-delay: 0.15s;
+}
+
+@media (max-width: 50em) {
+  .scrollableContainerParent {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: max(100%, 93vw);
+  }
+  .scrollableContainer{
+      grid-auto-columns: 100%;
+      grid-auto-flow: column;
+      overflow-x: auto;
+      padding-bottom: 1em;
+  }
+  /* .snapOrder{
+    transform: scale(0.7);
+  }
+  .snapOrder[isObserving="true"]{
+    transform: scale(1);
+  } */
+  .indicatorsList {
+    display: flex;
+  }
+}
+
+
+/* ? <--> Contact section <--> */
 
 .contactSection {
   display: grid;
@@ -213,7 +292,6 @@
   grid-row: 1;
   font-size: var(----largeHeadingFS);
   width: 100%;
-  height: 100%;
 }
 
 .cos-illustration {
@@ -286,6 +364,7 @@ form {
   top: 20px;
   transform: translateY(0);
 }
+
 .inputField:focus-within,
 .inputField:focus-visible,
 .inputField:focus {
@@ -360,4 +439,45 @@ form {
   width:  10vmax;
   height: 10vmax;
   object-fit: contain;
+  display: none;
 }
+
+@media (max-width: 50em) {
+  .contactSection{
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 50% 25% 10%;
+    min-height: 100vh;
+  }
+  .cos-title {
+      grid-column: 1 ;
+      grid-row: 1;
+  }
+  .cos-illustration {
+    grid-row: 3;
+    transform: scale(1.2);
+  }
+  form {
+    grid-column: 1;
+    grid-row: 2;
+    height: 110%;
+    margin-bottom: 1em;
+  }
+  .inputField{
+    font-size: calc(1vw + 1vh + 0.25rem);
+  }
+  .socialIcons {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .socialLinksNavigation {
+    grid-column: 1;
+    grid-row: 4;
+    display: flex;
+    place-content: space-between;
+    place-items:   center;
+    place-self:    flex-end;
+    width: 95%;
+  }
+  
+}
+
