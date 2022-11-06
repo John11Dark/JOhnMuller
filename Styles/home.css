@@ -1,15 +1,15 @@
 /* ? <-*-> common <-*-> */
 
-section[attr='section'] {
+section[attr="section"] {
   position: relative;
   min-height: 100vh;
   width: max(100%, 100vw);
   max-width: max(100%, 100vw);
   padding: 0 1rem;
-  isolation: isolate;  
+  isolation: isolate;
 }
 
-.gridSection{
+.gridSection {
   display: grid;
   place-content: center;
   place-items: center;
@@ -58,34 +58,28 @@ section[attr='section'] {
   background-color: var(----primaryColor);
 }
 
-.cir-sec-effect[attr='primary'] {
+.cir-sec-effect[attr="primary"] {
   transform: translate(15%, 10%);
   opacity: 0.5;
 }
 
-.cir-sec-effect[attr='secondary'] {
+.cir-sec-effect[attr="secondary"] {
   background-color: var(----primaryColorGrayish);
   transform: translate(-15%, -50%);
 }
 
 @media (max-width: 50em) {
-
   .sectionTypography {
     margin: 0em 0em var(----margin) 0;
     text-align: left;
   }
 }
 
-
-
-
-
-
 /* ? <-*-> Hero section <-*-> */
 
 .heroSection {
   width: 100vw;
-  background-image: url(../Assets/images/john\ muller/John\ Muller\ had-dingle.jpg);
+  background-image: url(../Assets/images/john\ muller/johnmuller.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -94,7 +88,7 @@ section[attr='section'] {
 }
 
 .heroSection::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 30%;
   left: 50%;
@@ -138,7 +132,7 @@ section[attr='section'] {
     margin-bottom: 1em;
   }
   .hs-heading::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -150,7 +144,7 @@ section[attr='section'] {
     transform: translate(-60%, -10%) rotate(-45deg);
   }
   .hs-heading::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 1em;
     bottom: 0;
@@ -168,10 +162,6 @@ section[attr='section'] {
   }
 }
 
-
-
-
-
 /* ? <-*-> What i can do section <-*-> */
 
 .canDoSection {
@@ -186,7 +176,7 @@ section[attr='section'] {
   margin: 1em;
 }
 
-.cds-list-wrapper{
+.cds-list-wrapper {
 }
 
 .cds-cards {
@@ -237,13 +227,7 @@ section[attr='section'] {
   }
 }
 
-
-
-
-
-
-
-/* ? <-*-> Projects Section <-*-> */  
+/* ? <-*-> Projects Section <-*-> */
 
 .myProjectsSection {
   display: none;
@@ -292,8 +276,6 @@ section[attr='section'] {
   filter: drop-shadow(1px 1px 0.2px #9e5e0b);
 }
 
-
-
 /* ? <-*-> About John section <-*-> */
 
 .aboutMeSection {
@@ -339,7 +321,7 @@ section[attr='section'] {
 
 .abs-article::after,
 .abs-article::before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: var(----primaryColorGrayish);
   opacity: 0.5;
@@ -394,10 +376,6 @@ section[attr='section'] {
   }
 }
 
-
-
-
-
 /* ? <-*-> why choosing John section  <-*-> */
 
 .whyChoosingSection {
@@ -410,7 +388,7 @@ section[attr='section'] {
 }
 
 .whyChoosingSection::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2.5rem;
   right: 0;
@@ -465,7 +443,7 @@ section[attr='section'] {
   background-color: var(----primaryColor);
 }
 
-.mys-be-circle[attr='secondary'] {
+.mys-be-circle[attr="secondary"] {
   background-color: var(----primaryColorGrayish);
   transform: scale(1.1) translate(20%, -70%);
   opacity: 0.6;
@@ -478,7 +456,7 @@ section[attr='section'] {
 
 .wys-typography::before,
 .wys-typography::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -519,7 +497,7 @@ section[attr='section'] {
 }
 
 .wys-list-wrapper {
-/* list */
+  /* list */
   max-width: 30ch;
   transform: translate(-10%, 15%);
 }
@@ -562,7 +540,7 @@ section[attr='section'] {
 }
 
 .wys-illustration {
-/* illustration */
+  /* illustration */
   position: absolute;
   bottom: -6rem;
   left: 45%;
@@ -574,14 +552,14 @@ section[attr='section'] {
 @media (max-width: 50em) {
   .whyChoosingSection {
     display: grid;
-    grid-template-rows: 40% 30% 20% ;
+    grid-template-rows: 40% 30% 20%;
   }
 
   .wys-typography {
     grid-row: 1;
     transform: translateY(5%);
   }
-  
+
   .whyChoosingSection::before {
     width: 100%;
     border-radius: 60vw 10px 10px;
@@ -612,7 +590,7 @@ section[attr='section'] {
   }
 
   .wys-list-order::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 1.4rem;
@@ -626,47 +604,39 @@ section[attr='section'] {
   .wys-effect {
     display: none;
   }
-
 }
-
-
 
 /* ? */
-.whatPeopleSay{
-  
+.whatPeopleSay {
 }
-
-
-
-
 
 /* ? <-*-> Plans section <-*-> */
 
-.plansSection{
+.plansSection {
   display: grid;
-  grid-template-rows: 25vh 5vh 70vh ;
+  grid-template-rows: 25vh 5vh 70vh;
   place-content: space-around;
   align-items: flex-start;
   margin-bottom: 3em;
 }
 
-.pls-typography{
+.pls-typography {
   grid-row: 1;
   padding: 1rem;
   transform: translateY(-30%);
 }
 
-.pls-list-wrapper{
+.pls-list-wrapper {
   grid-row: 3;
-  width: 100% ;
+  width: 100%;
   display: grid;
   place-content: center;
   place-items: center;
   place-self: center;
 }
 
-.pls-cards{
-    /* 
+.pls-cards {
+  /* 
   //*? cards container 
   //*! it has a parent (scrollableContainerParent) 
   //*! and another class (scrollableContainer)   
@@ -683,7 +653,7 @@ section[attr='section'] {
   gap: 2em;
 }
 
-.pls-card{
+.pls-card {
   position: relative;
   display: grid;
   place-content: space-around;
@@ -695,7 +665,7 @@ section[attr='section'] {
 }
 
 .pls-card::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   z-index: -1;
@@ -709,14 +679,14 @@ section[attr='section'] {
   border-radius: 0.5rem;
 }
 
-.pls-card[attr='primary'] {
+.pls-card[attr="primary"] {
   ----_btnPrimaryColor: var(----primaryColorLight);
   ----_btnSecondaryColor: var(----tertiaryColor);
   ----_cardBackgroundColor: #4462749d;
   transform: scale(1);
 }
 
-.pls-img-container{
+.pls-img-container {
   width: 80%;
   height: 100%;
   display: grid;
@@ -729,22 +699,22 @@ section[attr='section'] {
 }
 
 .cardTypography {
-text-align: center;
+  text-align: center;
 }
 
-.pls-card-heading{
+.pls-card-heading {
   font-family: var(----secondaryFont);
   font-weight: 600;
   opacity: 0.8;
 }
 
-.pls-card-heading[attr='primary']{
+.pls-card-heading[attr="primary"] {
   color: #729fb9;
 }
 
 .pls-card-paragraph {
   font-family: var(----primaryFont);
-  font-size: calc( var(----bodyFS) + 0.2rem);
+  font-size: calc(var(----bodyFS) + 0.2rem);
   font-weight: 500;
 }
 
@@ -759,7 +729,7 @@ text-align: center;
   border-radius: 0.5rem;
   transition: all 0.5s ease;
   font-size: var(----bodyFS);
-  margin:  2em ;
+  margin: 2em;
 }
 
 .pls-card-button:hover {
@@ -769,7 +739,7 @@ text-align: center;
   transform-origin: center;
 }
 
-.pls-card-button:hover[attr='primary'] {
+.pls-card-button:hover[attr="primary"] {
   ----_btnPrimaryColor: var(----tertiaryColor);
   ----_btnSecondaryColor: var(----primaryColorLight);
 }
@@ -786,44 +756,44 @@ text-align: center;
   transform: scale(1.1) translate(10%, -15%);
 }
 
-.plans-plants-illustration{
+.plans-plants-illustration {
   position: absolute;
   z-index: 1;
   bottom: 0;
   right: 0%;
   height: min(12.5vmax, 200px);
-  width:  min(12.5vmax, 200px);
+  width: min(12.5vmax, 200px);
   object-fit: contain;
   transform: translateX(50%);
 }
 
 @media (max-width: 50em) {
-  .pls-list-wrapper{
-  padding-bottom: 1.5em;
+  .pls-list-wrapper {
+    padding-bottom: 1.5em;
   }
-  .pls-cards{
+  .pls-cards {
     width: 100vw;
     grid-auto-columns: 100%;
-    gap: 0 ;
+    gap: 0;
   }
-  .pls-img-container{
+  .pls-img-container {
     left: 0.5em;
   }
-  .pls-card::before{
-  left: 0.5em;
+  .pls-card::before {
+    left: 0.5em;
   }
-  .pls-card{
+  .pls-card {
     width: 95%;
     transform: scale(1) !important;
   }
-  
-  .plans-plants-illustration{
+
+  .plans-plants-illustration {
     height: min(15vmax, 250px);
-    width:  min(15vmax, 250px);
+    width: min(15vmax, 250px);
     object-fit: contain;
     transform: translateX(30%);
   }
-  }
-  
-[hide="true"]{
+}
+
+[hide="true"] {
 }
