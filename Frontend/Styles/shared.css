@@ -197,12 +197,8 @@
 }
 
 
+/* ? <-*-> horizontal scrollable container <-*-> */
 
-.scrollableContainerParent {
-  /* max-width: 90vw;
-  position: relative;
-  padding-bottom: 1em; */
-}
 
 .scrollableContainer {
   display: grid;
@@ -211,6 +207,7 @@
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
+  transition: all 0.5s ease;
 }
 
 .scrollableContainer::-webkit-scrollbar {
@@ -222,15 +219,18 @@
 }
 
 .indicatorsList {
-  width: 100%;
+  width: 90%;
   height: 8px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   gap: 1rem;
   bottom: 0;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
   display: none;
+
 }
 
 .indicators {
@@ -254,11 +254,25 @@
 }
 
 @media (max-width: 50em) {
-  .scrollableContainer{
-    grid-auto-flow: column;
-    overflow-x: auto;
+  .scrollableContainerParent {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: max(100%, 93vw);
   }
-
+  .scrollableContainer{
+      grid-auto-columns: 100%;
+      grid-auto-flow: column;
+      overflow-x: auto;
+      padding-bottom: 1em;
+  }
+  /* .snapOrder{
+    transform: scale(0.7);
+  }
+  .snapOrder[isObserving="true"]{
+    transform: scale(1);
+  } */
   .indicatorsList {
     display: flex;
   }

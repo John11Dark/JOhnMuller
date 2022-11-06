@@ -36,7 +36,7 @@ const whatICanDoListIndicators = document.querySelectorAll(
 const plansList = document.querySelector('.pls-cards');
 const plansListElements = document.querySelectorAll('.pls-card');
 const plansListIndicators = document.querySelectorAll(
-  '.pls-indicators-list'
+  '.pls-indicators'
 );
 
 const abbreviationsList = document.querySelectorAll('abbr');
@@ -157,14 +157,13 @@ function isSlideObserving(isIntersecting, target, elementName, indicatorsList) {
 // instance of observer
 const observer = new IntersectionObserver((e) => {
   e.forEach(({ isIntersecting, target }) => {
-    console.log(target);
     isSlideObserving(isIntersecting, target, "wys-list-order", whyChoosingListIndicators);
   });
+
 }, config);
 // TODO : Fix the observer so it does not have two instance for the same thing 
 const observerTwo = new IntersectionObserver((e) => {
   e.forEach(({ isIntersecting, target }) => {
-    console.log(target);
     isSlideObserving(isIntersecting, target, "cds-card", whatICanDoListIndicators);
   });
 }, config);
@@ -240,21 +239,24 @@ window.addEventListener('scroll', () => {
 
 // What i can do list
 whatICanDoList.addEventListener('scroll', () => {
-  whatICanDoListElements.forEach((element) => {
+  console.log("scrolling what can i ");
+  whatICanDoListElements.forEach((element,) => {
     observerTwo.observe(element);
   });
 });
 
 
-// why choosing list
+// Why choosing list
 whyChoosingList.addEventListener('scroll', () => {
+  console.log("scrolling why ");
   whyChoosingListElements.forEach((element) => {
     observer.observe(element);
   });
 });
 
-// why choosing list
+// Plans list
 plansList.addEventListener('scroll', () => {
+  console.log("scrolling plans ");
   plansListElements.forEach((element) => {
     observerThree.observe(element);
   });
