@@ -186,11 +186,16 @@ section[attr='section'] {
   margin: 1em;
 }
 
+.cds-list-wrapper{
+}
+
 .cds-cards {
-  grid-template-columns: repeat(3, minmax(20em, 0.8fr));
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
 }
 
 .cds-card {
+  width: 100%;
   max-width: 100%;
   display: grid;
   place-items: center;
@@ -222,7 +227,6 @@ section[attr='section'] {
 
 @media (max-width: 50em) {
   .cds-cards {
-    grid-template-columns: unset;
     grid-auto-columns: 100%;
   }
 }

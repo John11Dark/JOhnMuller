@@ -1,11 +1,11 @@
-window.dataLayer=window.dataLayer||[]; function gtag() {dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','UA-684863-8'); 
+// window.dataLayer=window.dataLayer||[]; function gtag() {dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','UA-684863-8'); 
 // ? * --> variables
 const platform = navigator.platform;
 const userModePreference = window.matchMedia('(prefers-color-scheme: Dark)');
 const ColorSchemeMetaTag = document.querySelector('meta[name=color-scheme]');
 const today = new Date();
 const config = { rootMargin: '0px 0px 100px 0px' };
-const topObserverConfig = { rootMargin: '200px 0px 0px 0px' };
+const topObserverConfig = { rootMargin: '0px 0px 0px 0px' };
 let beforeScrollTop = 0;
 
 // ? * --> Dom Elements
@@ -130,6 +130,7 @@ function tabListIndicators(indicator, index, list) {
 // is slide observing
 
 function isSlideObserving(isIntersecting, target, elementName, indicatorsList) {
+  console.log("is slide", target);
   const isObserving = target.getAttribute('isObserving');
   const currentSlide = document.querySelector(
     `.${elementName}[isObserving="true"]`
@@ -188,7 +189,7 @@ const sectionObserver = new IntersectionObserver((e) => {
 
 // ? * --> Event Listeners
 
-// load
+// * -->  Load
 
 document.addEventListener('load', calcAge(ageElement, '2001/3/16'));
 
@@ -205,7 +206,7 @@ messageInputField.addEventListener('input', () =>
   inputControls(messageInputField, messageInputField.labels[0])
 );
 
-// click
+// ? * -->  Click
 
 navButton.addEventListener('pointerdown', navigationToggle);
 
@@ -227,7 +228,7 @@ plansListIndicators.forEach((indicator, index) => {
   );
 });
 
-// Scroll Events * -->
+// ? * --> Scroll Events
 
 // header
 
@@ -239,7 +240,6 @@ window.addEventListener('scroll', () => {
 
 // What i can do list
 whatICanDoList.addEventListener('scroll', () => {
-  console.log("scrolling what can i ");
   whatICanDoListElements.forEach((element,) => {
     observerTwo.observe(element);
   });
@@ -248,7 +248,6 @@ whatICanDoList.addEventListener('scroll', () => {
 
 // Why choosing list
 whyChoosingList.addEventListener('scroll', () => {
-  console.log("scrolling why ");
   whyChoosingListElements.forEach((element) => {
     observer.observe(element);
   });
@@ -256,7 +255,6 @@ whyChoosingList.addEventListener('scroll', () => {
 
 // Plans list
 plansList.addEventListener('scroll', () => {
-  console.log("scrolling plans ");
   plansListElements.forEach((element) => {
     observerThree.observe(element);
   });
