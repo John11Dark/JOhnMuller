@@ -1,38 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@300;400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@300;400;600;700;800&display=swap");
 
-/* custom props */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
-/* Colors */
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    ----primaryColorDark: #11100e;
-    ----primaryColorLight: #fcf6db;
-    ----primaryColorGrayish: #d8d6d1;
-    ----primaryColorLightGray: #b4b3b1;
-    ----primaryColorDarkGray: #928c86;
-    ----backgroundColor: #0f0f0e, #171311;
-    ----darkOpacity: #11100ed7;
-    ----grayOpacity: #ffffff26;
-  }
-}
-
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    ----primaryColorDark: #fcf6db;
-    ----primaryColorLight: #11100e;
-    ----primaryColorGrayish: #131212;
-    ----primaryColorLightGray: #b4b3b1;
-    ----primaryColorDarkGray: #928c86;
-    ----backgroundColor: #f0eee9, #f7f2f0;
-    ----secondaryColor: #e5dfc6;
-    ----darkOpacity: #11100ed7;
-    ----grayOpacity: #141212c4;
-  }
-}
-
+/* ? <-*-> custom props <-*-> */
 :root {
   /*  */
   ----primaryColor: #eaa244;
@@ -40,9 +10,9 @@
   ----tertiaryColor: #264e65;
   ----linkColor: var(----primaryColor);
   /* Fonts */
-  ----primaryFont: 'Quicksand', sans-serif;
-  ----secondaryFont: 'Rubik', sans-serif;
-  ----tertiaryFont: 'Poppins', sans-serif;
+  ----primaryFont: "Quicksand", sans-serif;
+  ----secondaryFont: "Rubik", sans-serif;
+  ----tertiaryFont: "Poppins", sans-serif;
   ----iconFS: calc(1vmax + 1rem + 0.5vw + 0.5vh);
 
   /* Sizes */
@@ -73,6 +43,39 @@
   ----spacing-200: 1em;
   ----iconSize-300: 3.5rem;
   ----iconSize-400: 4.5rem;
+}
+
+/* Colors */
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    ----modeDropShadow: #b9b5ab8a;
+    ----primaryColorDark: #11100e;
+    ----primaryColorLight: #fcf6db;
+    ----primaryColorGrayish: #d8d6d1;
+    ----primaryColorLightGray: #b4b3b1;
+    ----primaryColorDarkGray: #928c86;
+    ----backgroundColor: #0f0f0e, #171311;
+    ----darkOpacity: #11100ed7;
+    ----grayOpacity: #ffffff26;
+  }
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    ----modeDropShadow: #dfaa18c0;
+    ----primaryColorDark: #fcf6db;
+    ----primaryColorLight: #11100e;
+    ----primaryColorGrayish: #131212;
+    ----primaryColorLightGray: #b4b3b1;
+    ----primaryColorDarkGray: #928c86;
+    ----backgroundColor: #f0eee9, #f7f2f0;
+    ----secondaryColor: #e5dfc6;
+    ----darkOpacity: #11100ed7;
+    ----grayOpacity: #141212c4;
+  }
 }
 
 @media (max-width: 90em) {
@@ -161,7 +164,7 @@ body {
 }
 
 /* when another element is observing disable scrolling */
-body[isObserving='false'] {
+body[isObserving="false"] {
   height: 100vh;
   overflow-y: hidden;
 }
@@ -170,10 +173,10 @@ body[isObserving='false'] {
 keyword {
   color: var(----primaryColor);
 }
-keyword[attr='tertiary'] {
+keyword[attr="tertiary"] {
   color: #729fb9;
 }
-keyword[attr='3d-like'] {
+keyword[attr="3d-like"] {
   text-shadow: 4px 4px 1px #9e5e0b;
 }
 
@@ -230,7 +233,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   text-indent: 1px;
-  text-overflow: '';
+  text-overflow: "";
   padding: 1rem;
   cursor: pointer;
 }
@@ -415,11 +418,13 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 10% 20% 20% 40% 10%;
+  justify-content: center;
   align-items: center;
   background-color: transparent;
   transition: all 0.3s ease;
+  padding-top: 0.5em;
 }
 
 /* header[isIntersecting='true'] {
@@ -433,12 +438,15 @@ header:hover {
 }
 
 .logo {
-  max-width: 100px;
-  max-height: 100px;
+  grid-column: 2;
+  font-family: "Pacifico", cursive;
+  color: var(----primaryColorGrayish);
+  font-size: 1.5rem;
 }
 
 .navigationBar {
-  width: 70%;
+  grid-column: 4;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 2em;
@@ -458,12 +466,12 @@ header:hover {
   transition: all 0.3s ease;
 }
 
-.link[active='false']:hover {
+.link[active="false"]:hover {
   transform: scale(1.1);
   color: var(----primaryColor);
 }
 
-.link[active='true'] {
+.link[active="true"] {
   color: var(----primaryColor);
   font-weight: var(----Bold);
   transform: scale(1.1);
@@ -524,8 +532,8 @@ header:hover {
 } */
 
 .modeSwitchButton {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 50px;
+  max-height: 50px;
   background-color: transparent;
   border-radius: 50%;
   overflow: hidden;
@@ -534,6 +542,7 @@ header:hover {
   place-items: center;
   place-self: center;
   padding: 0;
+  box-shadow: 0 0 1rem 0 var(----modeDropShadow);
 }
 .modeSwitchSvg {
   max-width: 80px;
@@ -607,22 +616,22 @@ header:hover {
     transform: rotate(0) translate(0, 0);
   }
 
-  .navSvgButton[expanded='true'] .line {
+  .navSvgButton[expanded="true"] .line {
     background-color: var(----primaryColorLight);
     margin: 0;
   }
 
-  .navSvgButton[expanded='true'] .One {
+  .navSvgButton[expanded="true"] .One {
     transform: rotate(-45deg) translate(-5%, 5%);
   }
 
-  .navSvgButton[expanded='true'] .Two {
+  .navSvgButton[expanded="true"] .Two {
     transform: translateX(100%);
     opacity: 0;
     display: contents;
   }
 
-  .navSvgButton[expanded='true'] .Three {
+  .navSvgButton[expanded="true"] .Three {
     transform: rotate(45deg) translate(-5%, 5%);
   }
 
@@ -658,7 +667,7 @@ header:hover {
     margin: 0;
   }
 
-  .navigationBar[visible='true'] {
+  .navigationBar[visible="true"] {
     opacity: 1;
     top: 50%;
     transform: translate(-50%, -45%);
@@ -697,7 +706,6 @@ header:hover {
   width: 100%;
 }
 
-
 .scrollIcon {
   width: 25px;
   height: 50px;
@@ -721,7 +729,7 @@ header:hover {
 }
 
 footer {
-  width:  2.5em;
+  width: 2.5em;
   height: 2.5em;
   display: grid;
   grid-template-rows: 92.5% 7.5%;
@@ -734,12 +742,12 @@ footer {
   opacity: 0.8;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.5 ease-in ;
-  display: none ;
+  transition: all 0.5 ease-in;
+  display: none;
 }
 
-.lastSection[isObserving="true"] footer{
- background-color: red;
+.lastSection[isObserving="true"] footer {
+  background-color: red;
 }
 
 .copyRight {
@@ -773,10 +781,13 @@ footer {
 }
 
 @media (max-width: 90em) {
+  header {
+    padding-top: 1.5em;
+  }
 }
 
 @media (max-width: 50em) {
-  .scrollDownButton{
+  .scrollDownButton {
     bottom: 4em;
   }
 }

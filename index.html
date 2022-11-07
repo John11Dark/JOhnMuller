@@ -1586,8 +1586,8 @@
         <header hide="true">
 
             <!-- Logo direct to home page -->
-            <a aria-hidden="true" title="Home page" href="./index.html" class="logo">
-                <img src="./Assets/logo.svg" alt="Logo Description ---- * ! * " width="50" height="50" />
+            <a aria-hidden="true" title="Home page" href="./index.html" class="logo"> John Müller
+                <!-- <img src="./Assets/logo.svg" alt="Logo Description ---- * ! * " width="50" height="50" /> -->
             </a>
 
             <!-- Mobile button -->
@@ -1663,6 +1663,7 @@
             <section class="heroSection" id="hero-section" attr="section" hide="true">
                 <!-- <img class="hs-image" src="./Assets/images/john Müller/John Müller had-dingle.jpg"
                         alt="John Müller looking at the sea Image" width="300" height="300" /> -->
+                <div class="hs-background"></div>
                 <article class="hs-article">
                     <h1 class="hs-heading">
                         Hey, & Welcome to my <keyword> portfolio </keyword> . <br />
@@ -1733,7 +1734,7 @@
 
                     <ol role="list" class="cds-cards | scrollableContainer" id="#cds-cards-list">
 
-                        <li class="cds-card | snapOrder" index="0" isObserving="true">
+                        <li id="UI-UIX" class="cds-card | snapOrder" index="0" isObserving="true">
                             <img src="./Assets/Illustrations/illustration Ui-UIX@2x.png"
                                 alt="illustrations  representing graphics effects and tools" class="cds-card-image" />
                             <article class="cds-card-typography">
@@ -1744,7 +1745,7 @@
                             </article>
                         </li>
 
-                        <li class="cds-card | snapOrder" index="1" isObserving="false">
+                        <li id="Back-end" class="cds-card | snapOrder" index="1" isObserving="false">
                             <img src="./Assets/Illustrations/backend illustration@2x.png"
                                 alt="illustrations  representing server effects and backend tools"
                                 class="cds-card-image" />
@@ -1756,12 +1757,24 @@
                             </article>
                         </li>
 
-                        <li class="cds-card | snapOrder" index="2" isObserving="false">
+                        <li id="Cross-Platform" class="cds-card | snapOrder" index="2" isObserving="false">
                             <img src="./Assets/Illustrations/illustration cross platform@2x.png"
                                 alt="illustrations  representing mobile and cross platform tools"
                                 class="cds-card-image" />
                             <article class="cds-card-typography">
                                 <h2 class="cds-card-heading">Cross Platform</h2>
+                                <p class="cds-card-paragraph">Secure, Fast and Simple.
+                                    Modi
+                                    cupiditate nesciunt voluptatem commodi placeat ea fugit quae magni</p>
+                            </article>
+                        </li>
+                        <li id="Marketing-and-Advertisement" class="cds-card | snapOrder" hidden index="3"
+                            isObserving="false">
+                            <img src="./Assets/Illustrations/illustration cross platform@2x.png"
+                                alt="illustrations  representing mobile and cross platform tools"
+                                class="cds-card-image" />
+                            <article class="cds-card-typography">
+                                <h2 class="cds-card-heading">Marketing & Advertisement</h2>
                                 <p class="cds-card-paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                     Modi
                                     cupiditate nesciunt voluptatem commodi placeat ea fugit quae magni</p>
@@ -1771,9 +1784,11 @@
                     </ol>
 
                     <ol class="cds-cards-list-indicators | indicatorsList" role="list" aria-hidden="true">
-                        <li class="cds-card-indicators indicators" active="true"></li>
-                        <li class="cds-card-indicators indicators" active="false"></li>
-                        <li class="cds-card-indicators indicators" active="false"></li>
+                        <li class="cds-card-indicators indicators" target="#UI-UIX" active="true"></li>
+                        <li class="cds-card-indicators indicators" target="#Back-end" active="false"></li>
+                        <li class="cds-card-indicators indicators" target="#Cross-Platform" active="false"></li>
+                        <li class="cds-card-indicators indicators" target="#Marketing-and-Advertisement" active="false">
+                        </li>
                     </ol>
 
                 </section>
@@ -2031,7 +2046,7 @@
             </section>
 
             <section class="whatPeopleSay | gridSection" attr="section" hide="true">
-                <h2 class="wys-subheading | sectionSubHeading">What People say about john</h2>
+                <h2 class="wys-subheading | sectionSubHeading">What People say about John</h2>
 
                 <section class="testimonialSectionBackDrop">
                     <section class="backgroundEffect Circles">
@@ -2077,8 +2092,10 @@
                     <h2 class="pls-title | sectionTitle">Plans</h2>
 
                     <p class="pls-paragraph | sectionParagraph">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe similique iusto molestias dolor
-                        animi quia incidunt, consequuntur tempora, obcaecati est dolore illum qui atque cumque?
+                        Do you have a <delayText class="dealyText" id="dly-txt-project">project</delayText> in mind and
+                        do not know from where to start?.
+                        check out my different plans and see what fits your <delayText class="dealyText"
+                            id="dly-txt-business">business</delayText>
                     </p>
                 </article>
 
@@ -2226,8 +2243,8 @@
 
                     <article class="fieldContainer | Email">
                         <label hasContent="false" class="filedLabel" for="email">Email address</label><input
-                            class="inputField" pattern="" type="email" title="insert your email please" name="email"
-                            id="email" required aria-required="true" />
+                            class="inputField" type="email" title="insert your email please" name="email" id="email"
+                            required aria-required="true" />
                     </article>
                     <article class="fieldContainer | Message">
                         <label hasContent="false" class="filedLabel" for="body">Message</label>
