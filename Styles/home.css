@@ -79,7 +79,7 @@ section[attr="section"] {
 
 .heroSection {
   width: 100vw;
-  background-image: url(../Assets/images/john\ muller/johnMullerBlur.jpg);
+  background-image: url(../Assets/images/JohnMuller/johnMullerBlur.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -96,7 +96,7 @@ section[attr="section"] {
   width: 15em;
   height: 15em;
   border-radius: 50%;
-  background-image: url(../Assets/images/john\ muller/johnmuller.jpg);
+  background-image: url(../Assets/images/JohnMuller/johnmuller.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
