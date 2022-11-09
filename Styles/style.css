@@ -1,8 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@300;400;600;700;800&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+/* custom props */
 
-/* ? <-*-> custom props <-*-> */
+/* Colors */
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    ----modeDropShadow: #b9b5ab8a;
+    ----primaryColorDark: #11100e;
+    ----primaryColorLight: #fcf6db;
+    ----primaryColorGrayish: #d8d6d1;
+    ----primaryColorLightGray: #b4b3b1;
+    ----primaryColorDarkGray: #928c86;
+    ----backgroundColor: #0f0f0e, #171311;
+    ----darkOpacity: #11100ed7;
+    ----grayOpacity: #ffffff26;
+  }
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    ----modeDropShadow: #dfaa18c0;
+    ----primaryColorDark: #fcf6db;
+    ----primaryColorLight: #11100e;
+    ----primaryColorGrayish: #131212;
+    ----primaryColorLightGray: #b4b3b1;
+    ----primaryColorDarkGray: #928c86;
+    ----backgroundColor: #f0eee9, #f7f2f0;
+    ----secondaryColor: #e5dfc6;
+    ----darkOpacity: #11100ed7;
+    ----grayOpacity: #141212c4;
+  }
+}
+
 :root {
   /*  */
   ----primaryColor: #eaa244;
@@ -43,39 +75,6 @@
   ----spacing-200: 1em;
   ----iconSize-300: 3.5rem;
   ----iconSize-400: 4.5rem;
-}
-
-/* Colors */
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    ----modeDropShadow: #b9b5ab8a;
-    ----primaryColorDark: #11100e;
-    ----primaryColorLight: #fcf6db;
-    ----primaryColorGrayish: #d8d6d1;
-    ----primaryColorLightGray: #b4b3b1;
-    ----primaryColorDarkGray: #928c86;
-    ----backgroundColor: #0f0f0e, #171311;
-    ----darkOpacity: #11100ed7;
-    ----grayOpacity: #ffffff26;
-  }
-}
-
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    ----modeDropShadow: #dfaa18c0;
-    ----primaryColorDark: #fcf6db;
-    ----primaryColorLight: #11100e;
-    ----primaryColorGrayish: #131212;
-    ----primaryColorLightGray: #b4b3b1;
-    ----primaryColorDarkGray: #928c86;
-    ----backgroundColor: #f0eee9, #f7f2f0;
-    ----secondaryColor: #e5dfc6;
-    ----darkOpacity: #11100ed7;
-    ----grayOpacity: #141212c4;
-  }
 }
 
 @media (max-width: 90em) {
@@ -420,7 +419,6 @@ header {
   left: 0;
   display: grid;
   grid-template-columns: 10% 20% 20% 40% 10%;
-  justify-content: center;
   align-items: center;
   background-color: transparent;
   transition: all 0.3s ease;
@@ -439,9 +437,8 @@ header:hover {
 
 .logo {
   grid-column: 2;
-  font-family: "Pacifico", cursive;
-  color: var(----primaryColorGrayish);
-  font-size: 1.5rem;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .navigationBar {
@@ -584,8 +581,11 @@ header:hover {
 
 @media (max-width: 50em) {
   header {
+    display: flex;
+    grid-template-columns: none;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 1em;
+    padding-top: 2em;
   }
 
   /* button */
