@@ -58,38 +58,6 @@ export async function fetchJsonData(url, callback) {
   }
 }
 
-/*
-{
-      // themeIcon.setAttribute("xlink:href", "#LIGHT-MODE-ICON");
-    // logos.forEach((logo) => {
-    //   logo.src = `/Assets/DarkEnginesLibraryLogoDark.png`;
-    // });
-   // logos.forEach((logo) => {
-    //   logo.src = `/Assets/DarkEnginesLibraryLogoLight.png`;
-    // });
-    // themeIcon.setAttribute("xlink:href", "#DARK-MODE-ICON");
-  // if (!userModePreference.matches) {
-  //   linkIcon.href = "/Assets/DarkEnginesLibraryLogoDark.png";
-  // } else {
-  //   linkIcon.href = "/Assets/DarkEnginesLibraryLogoLight.png";
-  // }
-
-  // const path = document.querySelector("#themeIconPath");
-  // const SUN_SVG_PATH = "M32.5,0A32.5,32.5,0,1,1,0,32.5,32.5,32.5,0,0,1,32.5,0Z";
-
-  // const MOON_SVG_PATH =
-  //   "M32.5,0c17.949,0-20.258,10.871-8.048,38.881S50.449,65,32.5,65a32.5,32.5,0,0,1,0-65Z";
-  // themeSwitch.addEventListener("pointerover", () => {
-  //   if (path.getAttribute("theme") === "dark") {
-  //     path.setAttribute("d", SUN_SVG_PATH);
-  //     path.setAttribute("theme", "light");
-  //   } else {
-  //     path.setAttribute("d", MOON_SVG_PATH);
-  //     path.setAttribute("theme", "dark");
-  //   }
-  // });
-}*/
-
 /**
  * Changes the theme of the page based on the provided theme and color options.
  * Updates the `ColorSchemeMetaTag` and `localStorage` to reflect the new theme.
@@ -114,11 +82,11 @@ export function setTheme(
   if (currentTheme === "light") {
     newTheme = "dark";
     updateCSSVariables(darkThemeColors);
-    tileColor = "#171311";
+    tileColor = darkThemeColors.tileColor;
   } else if (currentTheme === "dark") {
     newTheme = "light";
     updateCSSVariables(lightThemeColors);
-    tileColor = "#fcf6db";
+    tileColor = lightThemeColors.tileColor;
   } else {
     console.error(`Invalid theme: ${currentTheme}`);
     return;
@@ -155,14 +123,46 @@ export function setTheme(
       .querySelector('meta[name="theme-color"]')
       .setAttribute("content", color);
   }
-  addToCalendar();
+
+  /*
+{
+      // themeIcon.setAttribute("xlink:href", "#LIGHT-MODE-ICON");
+    // logos.forEach((logo) => {
+    //   logo.src = `/Assets/DarkEnginesLibraryLogoDark.png`;
+    // });
+   // logos.forEach((logo) => {
+    //   logo.src = `/Assets/DarkEnginesLibraryLogoLight.png`;
+    // });
+    // themeIcon.setAttribute("xlink:href", "#DARK-MODE-ICON");
+  // if (!userModePreference.matches) {
+  //   linkIcon.href = "/Assets/DarkEnginesLibraryLogoDark.png";
+  // } else {
+  //   linkIcon.href = "/Assets/DarkEnginesLibraryLogoLight.png";
+  // }
+
+  // const path = document.querySelector("#themeIconPath");
+  // const SUN_SVG_PATH = "M32.5,0A32.5,32.5,0,1,1,0,32.5,32.5,32.5,0,0,1,32.5,0Z";
+
+  // const MOON_SVG_PATH =
+  //   "M32.5,0c17.949,0-20.258,10.871-8.048,38.881S50.449,65,32.5,65a32.5,32.5,0,0,1,0-65Z";
+  // themeSwitch.addEventListener("pointerover", () => {
+  //   if (path.getAttribute("theme") === "dark") {
+  //     path.setAttribute("d", SUN_SVG_PATH);
+  //     path.setAttribute("theme", "light");
+  //   } else {
+  //     path.setAttribute("d", MOON_SVG_PATH);
+  //     path.setAttribute("theme", "dark");
+  //   }
+  // });
+}*/
 }
 
-function addToCalendar() {
+export function addToCalendar() {
   const event = {
-    title: "My Event Title",
+    title: "Meet with John",
     description: "My Event Description",
     location: "My Event Location",
+    url: "",
     startDateTime: new Date("2023-03-10T12:00:00Z"),
     endDateTime: new Date("2023-03-10T13:00:00Z"),
   };
@@ -171,7 +171,7 @@ function addToCalendar() {
   const link = document.createElement("a");
   link.href =
     "data:text/calendar;charset=utf-8," + encodeURIComponent(calendarLink);
-  link.download = "my-event.ics";
+  link.download = `meeting with John On ${event.startDateTime}.ics"`;
   link.click();
 }
 

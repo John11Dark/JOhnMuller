@@ -231,20 +231,7 @@ option {
   color: var(----primaryColor);
 }
 
-.selectDropDownIcon {
-  /* 
-the select and the icon must be in a container that has position relative
-*/
-  position: absolute;
-  z-index: 10;
-  max-width: 20px;
-  max-height: 20px;
-  fill: var(----primaryColor);
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
+
 
 button {
   ----_buttonColor: var(----primaryColor);

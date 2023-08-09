@@ -651,7 +651,7 @@
 
                 <section class="cos-section">
 
-                    <img cos-illustration visible="false" class="cos-illustration illustration | cos-items-controller"
+                    <img cos-illustration visible="true" class="cos-illustration illustration | cos-items-controller"
                         src="../Assets/Illustrations/Contact Page Illustrations.png"
                         alt="Contact section illustration" />
 
@@ -700,7 +700,7 @@
                         </article>
                     </form>
 
-                    <form cos-meeting-form visible="true" id="meetingPickerForm"
+                    <form cos-meeting-form visible="false" id="meetingPickerForm"
                         class="cos-form | cos-items-controller | cos-meeting-picker" action="?" method="post"
                         autocomplete="on" enctype="application/x-www-form-urlencoded" spellcheck="true"
                         exportparts="all" title="Setup an online meeting form">
@@ -787,17 +787,17 @@
                                     </article>
                                 </article>
 
-                                <article class="time-picker">
+                                <article class="time-picker | flex">
                                     <label for="time">Time</label>
                                     <input min="10:00" max="20:00" type="time" name="time" id="time"
                                         class="input-field | time-picker">
                                 </article>
 
                                 <article class="date-picker-action-buttons | action-buttons | flex">
-                                    <button type="button"
-                                        class="date-picker-button | secondary-button  | clickable">cancel</button>
-                                    <button type="button"
-                                        class="date-picker-button | primary-button | clickable">confirm</button>
+                                    <button type="button" class="date-picker-button | secondary-button  | clickable"
+                                        id="datePickerCancelButton">cancel</button>
+                                    <button type="button" class="date-picker-button | primary-button | clickable"
+                                        id="datePickerConfirmButton">confirm</button>
                                 </article>
                             </section>
                         </article>
@@ -826,19 +826,24 @@
 
             </section>
         </main>
+
         <footer attr="copy-right" class="footer | copy-right-footer | flex">
-            <p class="copy-right" copyRight id="copyRight" aria-label="copy right"> &copy; John Müller 2019 – Today. All
+            <p class="copy-right-text" copyRight id="copyRight" aria-label="copy right"> &copy; John Müller 2019 –
+                Today. All
                 rights reserved.</p>
             <nav class="sub-navigation | footer-navigation | flex">
                 <ul class="contents">
                     <li class="contents">
-                        <a title="Privacy Policy" href="./privacypolicy.html">Privacy Policy</a>
+                        <a class="link | copy-right-link" title="Privacy Policy" href="./privacypolicy.html">Privacy
+                            Policy</a>
                     </li>
                     <li class="contents">
-                        <a title="Terms of Service" href="./termsofservice.html">Terms of Service</a>
+                        <a class="link | copy-right-link" title="Terms of Service" href="./termsofservice.html">Terms
+                            of Service</a>
                     </li>
                     <li class="contents">
-                        <a title="Frequently asked questions (FQA)" href="./FQA.html">FQA</a>
+                        <a class="link | copy-right-link" title="Frequently asked questions (FQA)"
+                            href="./FQA.html">FQA</a>
                     </li>
                 </ul>
             </nav>
